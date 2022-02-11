@@ -52,12 +52,7 @@ The greatest project of all time presented by outstanding programmers:
 
 \
 \
-\
-\
-\
-\
-\
-\Sprints:
+
 
 
 # <a name="sprint-1"></a> `Sprint 🍭`
