@@ -58,8 +58,6 @@ The greatest project of all time presented by outstanding programmers:
 \
 \
 \
-
-
 # <a name="sprint-1"></a> `Sprint 🍭`
 some text
 
