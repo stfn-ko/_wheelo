@@ -47,12 +47,16 @@ The greatest project of all time presented by outstanding programmers:
 23 | *Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* | | |
 24 | *Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* |`🍰`| |
 25 | *Implement a link to Reading Neighbourhood Newsletter to keep customers abreast of local news.* | | |
+
+
 \
 \
 \
 \
 \
 \
+
+
 # <a name="sprint-1"></a> `Sprint 🍭`
 some text
 
