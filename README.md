@@ -13,9 +13,9 @@ The greatest project of all time presented by outstanding programmers: Siobhan a
 
 # <a name="productbacklog"></a> Product Backlog
 
-Feature # | Product Backlog | Sprint # | Status | Developer
+'Feature' | Product Backlog | 'Sprint' | Status | Developer
 --- | --- | --- | --- | --- 
-1 | *Implement a  "user-friendly" and "minimalist"  "used-car sales commercial aesthetically pleasing website".*
+1 | *Implement a  "user-friendly" and "minimalist"  "used-car sales commercial aesthetically pleasing website".* | | | - stephan
 2 | *Implement a navigation menus.*
 3 | *Add a "unique name" plus  a "branding logo" for this site on every page.*
 4 | *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.*
