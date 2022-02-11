@@ -1,8 +1,13 @@
 # SCRUM
-The greatest project of all time presented by outstanding programmers: Siobhan and Stephan
+## Car-Trading Website
+The greatest project of all time presented by outstanding programmers: Siobhan and Stephan.
+
+### Table of Content
+* [Product Backlog](##productbacklog)
 
 
-# Product backlog
+
+## Product Backlog
 
 Feature # | Product Backlog | Sprint # | Status | Developer
 --- | --- | --- | --- | --- 
