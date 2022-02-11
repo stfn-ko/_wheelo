@@ -1,6 +1,4 @@
-SCRUM 
-=================
-### Car-Trading Website
+# Car-Trading Website
 The greatest project of all time presented by outstanding programmers: 
 * `Stephan 👽 `
 * `Siobhan 👾`
