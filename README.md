@@ -18,9 +18,6 @@ The greatest project of all time presented by outstanding programmers:
 
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
 
 # <a name="productbacklog"></a> Product Backlog
 
