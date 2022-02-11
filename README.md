@@ -17,7 +17,7 @@ The greatest project of all time presented by outstanding programmers: Siobhan a
 --- | --- | --- | --- | --- 
 1 | *Implement a  "user-friendly" and "minimalist"  "used-car sales commercial aesthetically pleasing website".* | | |
 2 | *Implement a navigation menus.* |`1`| |
-3 | *Add a "unique name" plus  a "branding logo" for this site on every page.*  |`1`| |
+3 | *Add a "unique name" plus  a "branding logo" for this site on every page.*  |```+1```| |
 4 | *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* | | |
 5 | *Site visitors should be able to get back to the landing page quickly and easily.* | | |
 6 | *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |`1`| |
