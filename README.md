@@ -5,8 +5,8 @@ The greatest project of all time presented by outstanding programmers: Siobhan a
 # Product backlog
 
 Feature # | Product Backlog | Sprint # | Status | Developer
---- | --- | ---
-*Still* | `renders` | **nicely**
+--- | --- | --- | --- | --- 
+*Still* | `renders` | **nicely** | foo | goo
 1 | *Implement a  "user-friendly" and "minimalist"  "used-car sales commercial aesthetically pleasing website".*
 2 | *Implement a navigation menus.*
 3 | *Add a "unique name" plus  a "branding logo" for this site on every page.*
