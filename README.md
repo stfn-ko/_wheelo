@@ -16,8 +16,6 @@ The greatest project of all time presented by outstanding programmers:
 * [`Sprint 🍕`](#sprint-3)
 ------------------------------------
 
-<br/>
-<br/>
 
 # <a name="productbacklog"></a> Product Backlog
 
