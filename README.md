@@ -1,7 +1,8 @@
 # SCRUM
 ## Car-Trading Website
 The greatest project of all time presented by outstanding programmers: Siobhan and Stephan.
-
+## 
+-------------------------------------
 
 
 ## Table of Content
