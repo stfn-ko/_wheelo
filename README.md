@@ -48,30 +48,20 @@ The greatest project of all time presented by outstanding programmers:
 24 | *Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* |`🍰`| |
 25 | *Implement a link to Reading Neighbourhood Newsletter to keep customers abreast of local news.* | | |
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<Enter>
+  <Enter>
+    <Enter>
+      
 # <a name="sprint-1"></a> `Sprint 🍭`
 
 some text
-------------------------
+
 
 # <a name="sprint-2"></a> `Sprint 🍰`
 
 some text
--------------------------
+
 # <a name="sprint-2"></a> `Sprint 🍕`
 
 some text
-------------------------------
+
