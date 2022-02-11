@@ -6,7 +6,7 @@ The greatest project of all time presented by outstanding programmers: Siobhan a
 
 ### Table of Content
 * [Product Backlog](##productbacklog)
-* [Sprint 1](#sprint-1)
+* [Sprint 1](##sprint-1)
 
 
 
@@ -56,6 +56,6 @@ Feature # | Product Backlog | Sprint # | Status | Developer
 
 
 
-# <a name="sprint-1"></a> Sprint 1
+## <a name="sprint-1"></a> Sprint 1
 
 some text
