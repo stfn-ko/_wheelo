@@ -49,11 +49,25 @@ The greatest project of all times presented by outstanding programmers:
 <br/>
 
 # <a name="sprint-1"></a> `Sprint 🍭`
-some text
+ Task | Subtasks | `Dev`
+--- | --- | --- 
+*Implement a navigation menus.* | `- add favicon to the left`<br/> `- add "contact us"`<br/> `- add search`<br/> `- remove login + signin`<br/> `- add a single sign in` |`👾`
+*Add a "unique name" plus  a "branding logo" for this site on every page.* | *none* | `👽`
+*Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* | `- implement seraching algorithm`<br/>`- add car model to the database` |`👽`
+*Implement a way for customers to suggest improvements or  email queries or fill out a query form.* | - `add form to "contact us page"` |`👾`
+*Site visitors should be able to create a "My account" for the site which allows them to access additional features.* | `- implement contact us form for logged` `in visitors`<br/> `- add profile page` |`👽`
+*Site visitors must be able to log in after they have created a "My account".* | `- implement logout`<br/>`- check if user session is saved` |`👽`
+*Implement a "Google Map" feature signposting customers to the business location.* | `- add link to google maps with our` `address on "contact us" page` |`👾`
+*Site visitors should be able to locate all relevant contact information of the business.* | `- add "contact us" page` |`👾`
 
+<br/>
+<br/>
 
 # <a name="sprint-2"></a> `Sprint 🍰`
 some text
+
+<br/>
+<br/>
 
 # <a name="sprint-2"></a> `Sprint 🍕`
 some text
