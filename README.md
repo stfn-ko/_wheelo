@@ -59,16 +59,27 @@ The greatest project of all times presented by outstanding programmers:
 *Site visitors must be able to log in after they have created a "My account".* | `- implement logout`<br/>`- check if user session is saved` |`👽`
 *Implement a "Google Map" feature signposting customers to the business location.* | `- google maps address link on "contact us" page` |`👾`
 *Site visitors should be able to locate all relevant contact information of the business.* | `- add "contact us" page` |`👾`
+## Sprint reveiw:
+
 
 <br/>
 <br/>
+
 
 # <a name="sprint-2"></a> `Sprint 🍰`
-some text
+ Task | Subtasks | `Dev`
+--- | --- | --- 
+## Sprint reveiw:
+
 
 <br/>
 <br/>
 
-# <a name="sprint-2"></a> `Sprint 🍕`
-some text
+
+# <a name="sprint-3"></a> `Sprint 🍕`
+ Task | Subtasks | `Dev`
+--- | --- | --- 
+## Sprint reveiw:
+
+
 
