@@ -24,7 +24,7 @@ def login():
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('main.index')
-        flash("You are now signed in!", "success")
+        #flash("You are now signed in!", "success")
         return redirect(next_page)
     return render_template('auth/login.html', title='Login', form=form)
 
@@ -43,7 +43,7 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!', 'success')
+        #flash('Congratulations, you are now a registered user!', 'success')
         return(redirect(url_for('auth.login')))
     return render_template('auth/register.html', title='Register', form=form)
 
@@ -51,7 +51,7 @@ def register():
 def logout():
     logout_user()
     #session.clear()
-    flash("You've signed out!", "success")
+    #flash("You've signed out!", "success")
     return redirect(url_for('main.index'))
 
 @auth.route('/reset_password_request', methods=['GET', 'POST'])
@@ -83,6 +83,6 @@ def reset_password(token):
     if form.validate_on_submit():
         user.set_password(form.password.data)
         db.session.commit()
-        flash('Your password has been reset.', 'success')
+        #flash('Your password has been reset.', 'success')
         return redirect(url_for('auth.login'))
     return render_template('auth/reset_password.html', form=form)

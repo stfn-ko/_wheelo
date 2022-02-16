@@ -6,4 +6,4 @@ main = Blueprint('main', __name__)
 @main.route('/')
 @main.route('/index', methods=['GET', 'POST'])
 def index(cat=None):
-    return render_template('index.html',  title='Home')
+    return render_template('index.html',  title='_home')
