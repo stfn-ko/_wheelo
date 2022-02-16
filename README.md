@@ -21,7 +21,7 @@ The greatest project of all times presented by outstanding programmers:
 --- | --- | --- | --- | --- 
 **1** | *Implement a  "user-friendly" and "minimalist"  "used-car sales commercial aesthetically pleasing website".* | | |
 **2** | *Implement a navigation menus.* |[`🍭`](#sprint-1)| |`👾`
-**3** | *Add a "unique name" plus  a "branding logo" for this site on every page.*  |[`🍭`](#sprint-1)| |`👽`
+**3** | *Add a "unique name" plus  a "branding logo" for this site on every page.*  |[`🍭`](#sprint-1)|✔️|`👽`
 **4** | *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* | | | 
 **5** | *Site visitors should be able to get back to the landing page quickly and easily.* | | |
 **6** | *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |`🍭`| |`👽`
@@ -33,8 +33,8 @@ The greatest project of all times presented by outstanding programmers:
 **12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* | | |
 **13** | *Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* | | |
 **14** | *Implement a way for customers to suggest improvements or  email queries or fill out a query form.* |[`🍭`](#sprint-1)| |`👾`
-**15** | *Site visitors should be able to create a "My account" for the site which allows them to access additional features.* |`🍭`| |`👽`
-**16** | *Site visitors must be able to log in after they have created a "My account".* |[`🍭`](#sprint-1)| |`👽`
+**15** | *Site visitors should be able to create a "My account" for the site which allows them to access additional features.* |`🍭`|❌|`👽`
+**16** | *Site visitors must be able to log in after they have created a "My account".* |[`🍭`](#sprint-1)|✔️|`👽`
 **17** | *Implement a "Google Map" feature signposting customers to the business location.* |[`🍭`](#sprint-1)| |`👾`
 **18** | *Site visitors should be able to locate all relevant contact information of the business.* |[`🍭`](#sprint-1)| |`👾`
 **19** | *Site visitors should be able to see the list of the popular items on the landing page.* | | |
