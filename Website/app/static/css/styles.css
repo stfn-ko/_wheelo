@@ -1,5 +1,10 @@
 body{
-    background-color: rgb(22, 22, 22);
+    margin: 0;
+    height: 100vh;
+    font-weight: 100;
+    background: rgb(17,46,11);
+    background: rgb(14,36,21);
+    background: linear-gradient(0deg, rgba(14,36,21,1) 0%, rgba(5,23,11,1) 70%, rgba(0,0,0,1) 100%);
 }
 .navbar-trans {
     background-color: transparent;
@@ -45,11 +50,11 @@ body{
   }
   .navbar-doublerow .navbar-down .dropdown{
       padding: 5px;
-      color: #000;
+      color: rgb(255, 255, 255);
   }
   .navbar-doublerow .navbar-down .dropdown ul>li>a,
   .navbar-doublerow .navbar-down .dropdown ul>li>a:hover{
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     border-bottom: none;
   }
   .navbar-doublerow.navbar-trans.afterscroll {
@@ -82,8 +87,10 @@ body{
     background-color: transparent;
     border-bottom: none;
 }
-
+.dm-el-glow:hover{
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 42px #0fa, 0 0 82px #0fa,0 0 92px #0fa;
+}
   /*text*/
   .text-white,.text-white-hover:hover{color: rgb(207, 207, 207) !important}
   /*fontcolor*/
-  .light-grey {color:#000!important;background-color:#E6E9ED!important}
+  .light-grey {color:rgb(146, 146, 146)!important;background-color:#E6E9ED!important}
