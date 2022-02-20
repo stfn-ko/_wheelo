@@ -53,6 +53,34 @@ body{
     }
 }
 
+/* scroll bars */
+
+.sidenav::-webkit-scrollbar {
+    width: 15px; 
+    left: 100px;
+}
+.sidenav::-webkit-scrollbar-track {
+  background-color: rgb(75, 75, 75);
+}
+.sidenav::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
+    border-radius: 35px;
+    border: 4px solid rgb(75, 75, 75);
+}
+
+html::-webkit-scrollbar {
+    width: 10px; 
+}
+html::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+html::-webkit-scrollbar-thumb {
+  background: rgb(75, 75, 75);
+  border-radius: 35px;
+}
+
+/* end of scroll bars */
+
 .sidenav {
     z-index: 999;
     height: 100%;
@@ -68,7 +96,7 @@ body{
   }
   .sidenav a {
     position: relative;
-    top: 10%;
+    top: 35%;
     height: 100px;
     width: 58%;
     margin-top: -20px;
@@ -110,19 +138,36 @@ body{
     }
     #find_us:hover::before{
         transform: scale(1.1);
-        text-shadow: 0 0 15px #Be2531;
-        color: #Be2531;
+        text-shadow: 0 0 15px #dd2828;
+        color: #dd2828;
     }
     #about:hover::before{
         transform: scale(1.1);
         text-shadow: 0 0 15px #ffffff;
         color: #ffffff;
     }
+
     #logout:hover::before{
         transform: scale(1.1);
-        text-shadow: 0 0 15px #dd285e;
-        color: #dd285e;
+        text-shadow: 0 0 15px #dd4328;
+        color: #dd4328;
+        animation-name: shake;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
     }
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
 
 .transition-nav{
     position: fixed;
@@ -149,7 +194,7 @@ body{
         background-color: rgb(75, 75, 75);
         width: 0px;
         height: 100%;
-        left: 100px;
+        left: 75px;
     }
 }
 
@@ -173,6 +218,9 @@ body{
 }
 #reg{
     background-color: #00ffb3;
+}
+#fus{
+    background-color: #dd2828;
 }
 @keyframes trans-page{
     0%{
@@ -204,5 +252,3 @@ body{
         opacity: 1;
      }
 }
-
-
