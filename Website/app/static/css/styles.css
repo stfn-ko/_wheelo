@@ -107,6 +107,11 @@ body{
         text-shadow: 0 0 15px #fffb00;
         color: #fffb00;
     }
+    #find_us:hover::before{
+        transform: scale(1.1);
+        text-shadow: 0 0 15px #fffb00;
+        color: #fffb00;
+    }
     #about:hover::before{
         transform: scale(1.1);
         text-shadow: 0 0 15px #ffffff;

@@ -40,10 +40,13 @@
 
     {% endif %}
 
-    <a href="{{ url_for('main.contact') }}" id="contact" class="fas fa-pen">
+    <a href="{{ url_for('main.contact') }}" id="contact" class="fas fa-comment-dots">
     </a>
 
-    <a href="#aboutus" id="about" class="fas fa-at">
+    <a href="{{ url_for('main.findUs') }}" id="find_us" class=" fas fa-map-marker-alt">
+    </a>
+
+    <a href="#aboutus" id="about" class="fas fa-info-circle">
     </a>
 
     {%if current_user.is_authenticated%}
@@ -80,4 +83,13 @@
 {{ super() }}
 <script src="{{ url_for('static', filename='js/raty/lib/jquery.raty.js') }}"></script>
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+<script type="application/ld+json">{ 
+"@context": "https://schema.org", 
+"@type": "Organization", 
+"name": "Example Company", 
+"hasMap": "https://goo.gl/maps/4kXBP1hAWrsru4X99"
+}
+</script>
+
 {% endblock %}

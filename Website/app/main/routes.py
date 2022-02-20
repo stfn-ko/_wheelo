@@ -18,3 +18,8 @@ def contact():
 
         return redirect(url_for('main.contact'))
     return render_template('contact.html', title='Contact Us', form=form)
+
+
+@main.route('/FindUs', methods=['GET', 'POST'])
+def findUs():
+    return render_template('find_us.html', title='Find Us')
