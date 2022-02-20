@@ -56,18 +56,19 @@ body{
 .sidenav {
     z-index: 999;
     height: 100%;
-    width: 100px;
+    width: 75px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: rgb(75, 75, 75);
     overflow-x: hidden;
+    overflow-y: auto;
     animation-name: trans;
   }
   .sidenav a {
     position: relative;
-    top: 38%;
+    top: 10%;
     height: 100px;
     width: 58%;
     margin-top: -20px;
@@ -109,8 +110,8 @@ body{
     }
     #find_us:hover::before{
         transform: scale(1.1);
-        text-shadow: 0 0 15px #fffb00;
-        color: #fffb00;
+        text-shadow: 0 0 15px #Be2531;
+        color: #Be2531;
     }
     #about:hover::before{
         transform: scale(1.1);
@@ -203,3 +204,5 @@ body{
         opacity: 1;
      }
 }
+
+
