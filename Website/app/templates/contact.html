@@ -2,34 +2,26 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-
-<h2 style="text-align: center;"> CONTACT US </h2>
-
-<!-- add contact form here -->
-<div class="row">
+<div class="transition-page" id="cu"></div>
+<div class="row fade-in-content">
 	<div class="col-md-4 col-md-offset-4">
 		<form class="form form-horizontal" method="post" role="form">
 			{{ form.hidden_tag() }}
 			{{ wtf.form_errors(form, hiddens="only") }}
-
+			
+			{% if current_user.is_authenticated == False %}
 			{{wtf.form_field(form.name)}}
 			{{wtf.form_field(form.email)}}
 			{{wtf.form_field(form.contactNumber)}}
+			{% else %}
+			<h1>Hi, @{{ current_user.username }}!</h1>
+			<p>type in the message below to contact us</p>
+			{% endif %}
 			{{wtf.form_field(form.message)}}
 			{{wtf.form_field(form.submit, class="btn btn-info btn-block")}}
 		</form>
 	</div>
 </div>
-<div class='light x1'></div>
-<div class='light x2'></div>
-<div class='light x3'></div>
-<div class='light x4'></div>
-<div class='light x5'></div>
-<div class='light x6'></div>
-<div class='light x7'></div>
-<div class='light x8'></div>
-<div class='light x9'></div>
 <br>
-<h4> Alternatively call us on: 01234567891 </h4>
 
 {% endblock %}

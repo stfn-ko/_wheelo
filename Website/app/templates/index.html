@@ -1,94 +1,12 @@
-{% extends "bootstrap/base.html" %}
-{% block title %}
-    {{ title }}  // _wheelo
-{% endblock %}
-{% block styles %}
-    {{ super() }}
-    <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='w_c_favicon.ico') }}">
-{% endblock %}
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-
-{% block navbar%}
-<header>
-    <img src="https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="width: 100%; height: 100%">
-</header>
-
-<nav class="navbar navbar-default navbar-doublerow navbar-trans navbar-fixed-top">
-    <!-- top nav -->
-    <nav class="navbar navbar-top hidden-xs">
-      <div class="container">
-        <!-- left nav top -->
-        <ul class="nav navbar-nav pull-left">
-          <li><a href="{{ url_for('main.index')}}"><span class="glyphicon glyphicon-home text-white"></span></a></li>
-          <li><a href="https://www.instagram.com/_wheelo?utm_medium=copylink" target="_blank"><span class="glyphicon glyphicon-globe text-white"></span></a></li>
-          <li><a href="#search"><span class="glyphicon glyphicon-map-marker text-white"></span></a></li>
-        </ul>
-        <!-- right nav top -->
-        <ul class="nav navbar-nav pull-right">
-          <li><a href="" class="text-white">About Us</a></li>
-          <li><a href="{{url_for('main.contact') }}" class="text-white">Contact Us</a></li> 
-        </ul>
-      </div>
-      <div class="dividline light-grey"></div>
-    </nav>
-    <!-- down nav -->
-    <nav class="navbar navbar-down">
-      <div class="container">
-        <div class="flex-container">  
-          <div class="navbar-header flex-item">
-            <div class="navbar-brand" href="">_wheelo</div>
-          </div>
-          <ul class="nav navbar-nav flex-item hidden-xs">
-            <li><a href="#">FOO</a></li>
-            <li><a href="#">GOO</a></li> 
-            <li><a href="#">DOO</a></li> 
-          </ul>
-          <ul class="nav navbar-nav flex-item hidden-xs pull-right">
-            {% if current_user.is_authenticated %}
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> </span> {{ current_user.username }}
-                        <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dm-el dm-el-glow" href="#" >Profile</a></li>
-                            <li><a class="dm-el dm-el-glow" href="{{ url_for('auth.logout') }}" >Logout</a></li>
-                        </ul>
-                    </li>
-                {% else %}
-                    <li><a href="{{ url_for('auth.login') }}" >Login</a></li>
-                {% endif %}
-          </ul>
-          </div>  
-        </div>
-      </nav>
-    </nav>    
-{% endblock %}
-
-{% block content %}
-<div class="container">
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="alert alert-{{ category }} text-center">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">
-                        <span aria-hidden="true">&times;</span>
-                    </a>
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-
-    <div class="row">
-        {# application content needs to be provided in the app_content block #}
-        {% block app_content %}{% endblock %}
+{% block app_content %}
+<div class="transition-page" id="hm"></div>
+    <div class="row fade-in-content">
+        <form>
+            
+        </form>
     </div>
-
 </div>
-{% endblock %}
-
-{% block scripts %}
-{{ super() }}
-<script src="{{ url_for('static', filename='js/raty/lib/jquery.raty.js') }}"></script>
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 {% endblock %}
