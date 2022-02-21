@@ -5,18 +5,19 @@
 <div class="transition-page" id="cu"></div>
 <div class="row fade-in-content">
 	<div class="col-md-4 col-md-offset-4">
-		<h3 style="text-align: center;"> CONTACT US HERE: </h3>
 		<form class="form form-horizontal" method="post" role="form">
 			{{ form.hidden_tag() }}
 			{{ wtf.form_errors(form, hiddens="only") }}
 			
 			{% if current_user.is_authenticated == False %}
+			<h1 style="text-align: center;">Hello User!</h1>
+			<p style="text-align: center;">fill in the form below to contact us</p>
 			{{wtf.form_field(form.name)}}
 			{{wtf.form_field(form.email)}}
 			{{wtf.form_field(form.contactNumber)}}
 			{% else %}
-			<h1>Hi, @{{ current_user.username }}!</h1>
-			<p>type in the message below to contact us</p>
+			<h1 style="text-align: center;">Hi, @{{ current_user.username }}!</h1>
+			<p style="text-align: center;">type in the message below to contact us</p>
 			{% endif %}
 			{{wtf.form_field(form.message)}}
 			{{wtf.form_field(form.submit, class="btn btn-info btn-block")}}
@@ -26,7 +27,7 @@
 		<hr>
 		<br>
 
-		<h3 style="text-align: center;"> ALTERNATIVELY: </h3>
+		<h2 style="text-align: center;"> ALTERNATIVELY: </h2>
 		<P> Call us on: 01234567891 </P>
 		<p> Email us at: info@_wheelo.com </p>
 	</div>
