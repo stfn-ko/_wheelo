@@ -22,33 +22,33 @@
 
 <nav class="sidenav">   
     <div class="transition-nav"></div>
-    <a href=" {{ url_for('main.index') }} " id="index" class="fas fa-home">
+    <a href=" {{ url_for('main.index') }} " id="index" class="fas fa-home" data-toggle="tooltip" title="Home">
     </a>
 
-    <a href="#popular" id="popular" class="fas fa-car">
+    <a href="#popular" id="popular" class="fas fa-car" data-toggle="tooltip" title="?">
     </a>
 
     {%if current_user.is_authenticated%}
-    <a href="{{ url_for('auth.login') }}" id="auth-complete" class="fa-solid fa-user-check">
+    <a href="{{ url_for('auth.login') }}" id="auth-complete" class="fa-solid fa-user-check" data-toggle="tooltip" title="User Logged In">
     </a>
 
     {% else %}
-    <a href="{{ url_for('auth.login') }}" id="auth" class="fas fa-user">
+    <a href="{{ url_for('auth.login') }}" id="auth" class="fas fa-user" data-toggle="tooltip" title="Log In">
     </a>
 
     {% endif %}
 
-    <a href="{{ url_for('main.contact') }}" id="contact" class="fas fa-comment-dots">
+    <a href="{{ url_for('main.contact') }}" id="contact" class="fas fa-comment-dots" data-toggle="tooltip" title="Contact Us">
     </a>
 
-    <a href="{{ url_for('main.findUs') }}" id="find_us" class=" fas fa-location-dot">
+    <a href="{{ url_for('main.findUs') }}" id="find_us" class=" fas fa-location-dot" data-toggle="tooltip" title="Find Us">
     </a>
 
-    <a href="#aboutus" id="about" class="fas fa-info-circle">
+    <a href="#aboutus" id="about" class="fas fa-info-circle" data-toggle="tooltip" title="About Us">
     </a>
 
     {%if current_user.is_authenticated%}
-    <a href="{{ url_for('auth.logout') }}" id="logout" class="fas fa-arrow-right-from-bracket">
+    <a href="{{ url_for('auth.logout') }}" id="logout" class="fas fa-arrow-right-from-bracket" data-toggle="tooltip" title="Log Out">
     </a>
     {% endif %}
 
@@ -88,6 +88,12 @@
 "name": "Example Company", 
 "hasMap": "https://goo.gl/maps/4kXBP1hAWrsru4X99"
 }
+</script>
+
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
 </script>
 
 
