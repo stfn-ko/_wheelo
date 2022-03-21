@@ -24,6 +24,7 @@ class User(db.Model, TimestampMixin, UserMixin):
     password_hash = db.Column(db.String(128))
     first_name = db.Column(db.String(20), nullable=False)
     last_name = db.Column(db.String(20), nullable=False)
+    vehicles = db.relationship('Vehicle', backref='user', lazy='dynamic')
 
     # print to console username created
     def __repr__(self):
@@ -49,3 +50,40 @@ class User(db.Model, TimestampMixin, UserMixin):
         except:
             return
         return User.query.get(id)
+    
+class Make(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30), nullable=False, unique=True)
+    models = db.relationship('Model', backref='make', lazy='dynamic')
+    vehicles = db.relationship('Vehicle', backref='make', lazy='dynamic')
+
+    def __repr__(self):
+        return f'<Make {self.name}>'
+
+
+class Model(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30), nullable=False, unique=True)
+    make_id = db.Column(db.Integer, db.ForeignKey('make.id'))
+    
+    def __repr__(self):
+        return f'<Model {self.name}>'
+
+
+class Vehicle(TimestampMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    desctiption = db.Column(db.Text)
+    first_registration = db.Column(db.Date, nullable=False)
+    make_id = db.Column(db.Integer, db.ForeignKey('make.id'))
+    model_id = db.Column(db.Integer, db.ForeignKey('model.id'))
+    color = db.Column(db.String(80), default="not available")
+    license_plate = db.Column(db.String(100), nullable=True, unique=True)
+    vin = db.Column(db.String(17), nullable=True, unique=True)
+    mileage = db.Column(db.Integer, nullable=False)
+    image = db.Column(db.String(30))
+    price = db.Column(db.Float)
+    
+    def __repr__(self):
+        return f'<Vehicle {self.title}>'
+    
