@@ -60,7 +60,18 @@ The greatest project of all times presented by outstanding programmers:
 *Implement a "Google Map" feature signposting customers to the business location.* | `- google maps address link on "contact us" page` |`👾`
 *Site visitors should be able to locate all relevant contact information of the business.* | `- add "contact us" page` |`👾`
 ## Sprint reveiw:
+* Look more at specification. 
+* Pretty good timing with project and workload, however, not enough presentation planning. 
+* Should do more presentation preparation. 
+* Overall good performance. 
+* Code is scalable and readable, needs commenting though. 
+* Task management for sprints is needed (difficulty distribution).
+* Everything was completed on time.
+* The project management format is good for nowadys circumstances.
 
+<br/>
+
+`Overall rating: 7.5⭐/10⭐`
 
 <br/>
 <br/>
