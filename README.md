@@ -10,8 +10,20 @@ The greatest project of all times presented by outstanding programmers:
 ### Table of Content
 * [`Product Backlog`](#productbacklog)
 * [`Sprint 🍭`](#sprint-1)
+  * [`⏰ Minutes`](#sprint-1-minutes)
+  * [`⭐ Reveiw`](#sprint-1-review)
+  
+  </br>
+  
 * [`Sprint 🍰`](#sprint-2)
+  * [`⏰ Minutes`](#sprint-2-minutes)
+  * [`⭐ Reveiw`](#sprint-2-review)
+ 
+  </br>
+  
 * [`Sprint 🍕`](#sprint-3)
+  * [`⏰ Minutes`](#sprint-3-minutes)
+  * [`⭐ Reveiw`](#sprint-3-review)
 ------------------------------------
 
 
@@ -49,7 +61,7 @@ The greatest project of all times presented by outstanding programmers:
 <br/>
 
 # <a name="sprint-1"></a> `Sprint 🍭`
- Task | Subtasks | `Dev`
+ `Task` | Subtasks | `Dev`
 --- | --- | --- 
 *Implement a navigation menus.* | `- add favicon to the left`<br/> `- add "contact us"`<br/> `- add search`<br/> `- remove login + signin`<br/> `- add a single sign in` |`👾`
 *Add a "unique name" plus  a "branding logo" for this site on every page.* | *none* | `👽`
@@ -59,7 +71,24 @@ The greatest project of all times presented by outstanding programmers:
 *Site visitors must be able to log in after they have created a "My account".* | `- implement logout`<br/>`- check if user session is saved` |`👽`
 *Implement a "Google Map" feature signposting customers to the business location.* | `- google maps address link on "contact us" page` |`👾`
 *Site visitors should be able to locate all relevant contact information of the business.* | `- add "contact us" page` |`👾`
-## Sprint reveiw:
+
+<br/>
+
+## <a name="sprint-1-minutes"></a> ⏰ Minutes:
+`📅 Date` | Objectives | `⏰ Time`
+--- | --- | --- 
+`21/2/2022` | Sprint baclog creation; Prioritization of stories; Tasks assignment; Roles assignment; Subtasks Creation; | `120 mins`
+`24/2/2022` | Daily SCRUM | `30 mins`
+`28/2/2022` | Mid-session review; Dev feedback; Management feedback; Task's priority validation; | `60 mins`
+`28/2/2022` | Code review | `60 mins`
+`1/3/2022` `7/3/2022` | WEEK-OFF | `7 days`
+`10/3/2022` | Daily SCRUM | `30 mins`
+`17/3/2022` | Sprint Review | `60 mins`
+`17/3/2022` | Sprint Retrospective | `60 mins`
+`Total:` | `7 hrs / 420 mins ` | 
+<br/>
+
+## <a name="sprint-1-review"></a> ⭐ Sprint reveiw:
 * Look more at specification. 
 * Pretty good timing with project and workload, however, not enough presentation planning. 
 * Should do more presentation preparation. 
@@ -76,12 +105,22 @@ The greatest project of all times presented by outstanding programmers:
 <br/>
 <br/>
 
-
 # <a name="sprint-2"></a> `Sprint 🍰`
  Task | Subtasks | `Dev`
 --- | --- | --- 
 ## Sprint reveiw:
+<br/>
 
+## <a name="sprint-2-minutes"></a> ⏰ Minutes:
+`📅 Date` | Objectives | `⏰ Time`
+--- | --- | --- 
+<br/>
+
+## <a name="sprint-2-review"></a> ⭐ Sprint reveiw:
+
+<br/>
+
+`Overall rating: _⭐/10⭐`
 
 <br/>
 <br/>
@@ -91,5 +130,20 @@ The greatest project of all times presented by outstanding programmers:
  Task | Subtasks | `Dev`
 --- | --- | --- 
 ## Sprint reveiw:
+<br/>
+
+## <a name="sprint-3-minutes"></a> ⏰ Minutes:
+`📅 Date` | Objectives | `⏰ Time`
+--- | --- | --- 
+<br/>
+
+## <a name="sprint-3-review"></a> ⭐ Sprint reveiw:
+
+<br/>
+
+`Overall rating: _⭐/10⭐`
+
+<br/>
+<br/>
 
 
