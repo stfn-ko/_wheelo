@@ -58,6 +58,10 @@ The greatest project of all times presented by outstanding programmers:
 **25** | *Implement a link to Reading Neighbourhood Newsletter to keep customers abreast of local news.* |[`🍭`](#sprint-1)|✅|`👾`
 
 <br/>
+
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
+
+<br/>
 <br/>
 
 # <a name="sprint-1"></a> `Sprint 🍭`
@@ -103,6 +107,10 @@ The greatest project of all times presented by outstanding programmers:
 `Overall rating: 7.5⭐/10⭐`
 
 <br/>
+
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
+
+<br/>
 <br/>
 
 # <a name="sprint-2"></a> `Sprint 🍰`
@@ -123,8 +131,11 @@ The greatest project of all times presented by outstanding programmers:
 `Overall rating: _⭐/10⭐`
 
 <br/>
-<br/>
 
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
+
+<br/>
+<br/>
 
 # <a name="sprint-3"></a> `Sprint 🍕`
  Task | Subtasks | `Dev`
@@ -144,6 +155,8 @@ The greatest project of all times presented by outstanding programmers:
 `Overall rating: _⭐/10⭐`
 
 <br/>
+
+🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
+
 <br/>
-
-
+<br/>
