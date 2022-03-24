@@ -20,6 +20,6 @@ def contact():
     return render_template('contact.html', title='Contact Us', form=form)
 
 
-@main.route('/FindUs', methods=['GET', 'POST'])
-def findUs():
-    return render_template('find_us.html', title='Find Us')
+@main.route('/FrequentlyAskedQuestions', methods=['GET', 'POST'])
+def questions():
+    return render_template('questions.html', title='Frequently Asked Questions')
