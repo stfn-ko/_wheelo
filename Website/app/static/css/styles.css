@@ -299,8 +299,8 @@ html::-webkit-scrollbar-thumb {
 }
 
 iframe {
-    margin:auto;
-    display:block;
-    text-align: center;
-    border: 0;
+  margin:auto;
+  display:block;
+  text-align: center;
+  border: 0;
 }
