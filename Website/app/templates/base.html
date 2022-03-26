@@ -52,16 +52,14 @@
   <a
     href="{{ url_for('main.contact') }}"
     id="contact"
-    class="fas fa-comment-dots"
-    title="contact us"
+    class="fas fa-phone"
   >
   </a>
 
   <a
-    href="{{ url_for('main.findUs') }}"
-    id="find_us"
-    class="fas fa-location-dot"
-    title="find us"
+    href="{{ url_for('main.questions') }}"
+    id="questions"
+    class=" fas fa-question-circle"
   >
   </a>
 
@@ -112,6 +110,20 @@
   $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
+</script>
+
+<script>
+  $(".carousel").swipe({
+
+    swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+
+      if (direction == 'left') $(this).carousel('next');
+      if (direction == 'right') $(this).carousel('prev');
+
+    },
+    allowPageScroll:"vertical"
+  });
+
 </script>
 
 {% endblock %}

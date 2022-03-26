@@ -145,7 +145,7 @@ html::-webkit-scrollbar-thumb {
   text-shadow: 0 0 15px #fffb00;
   color: #fffb00;
 }
-#find_us:hover::before {
+#questions:hover::before {
   transform: scale(1.1);
   text-shadow: 0 0 15px #dd2828;
   color: #dd2828;
@@ -284,8 +284,56 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
+<<<<<<< HEAD
 .readingLink {
   width: 30%;
   height: 30%;
   padding-left: 5%;
 }
+=======
+.container{
+  padding-left: 50px;
+}
+
+.readingLink {
+  width:  20%;
+  height: 20%;
+}
+
+.socialMediaLink{
+  width: 50px;
+  height: 50px;
+}
+
+iframe {
+  margin:auto;
+  display:block;
+  text-align: center;
+  border: 0;
+}
+
+.carousel-inner{
+  background-color: rgb(75, 75, 75);
+}
+
+.carousel-text{
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rbg(0,0,0);
+}
+
+
+.column{
+  flex: 25%;
+  padding: 5px;
+}
+
+.flex-container{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+>>>>>>> 1f45436b9412675cf19626ecce0f527d1c617142
