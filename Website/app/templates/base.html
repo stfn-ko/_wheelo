@@ -1,5 +1,5 @@
-{% extends "bootstrap/base.html" %} {% block title %} {{ title }} // _wheelo {%
-endblock %} {% block styles %} {{ super() }}
+{% extends "bootstrap/base.html" %} {% block title %} {{ title }} // _wheelo
+{%endblock %} {% block styles %} {{ super() }}
 <link
   href="{{url_for('static', filename='css/styles.css')}}"
   rel="stylesheet"
@@ -20,34 +20,40 @@ endblock %} {% block styles %} {{ super() }}
 
 <nav class="sidenav">
   <div class="transition-nav"></div>
-  <a href=" {{ url_for('main.index') }} " id="index" class="fas fa-home"> </a>
 
   <a
-    href="#popular"
-    id="popular"
-    class="fas fa-car"
-    data-toggle="tooltip"
-    title=""
+    href=" {{ url_for('main.index') }} "
+    id="index"
+    class="fas fa-home"
+    title="home"
   >
   </a>
 
-  {%if current_user.is_authenticated%}
+  <a href="#popular" id="popular" class="fas fa-car" title="popular"> </a>
+
+  {%if current_user.is_authenticated%} {% if current_user.admin %}
   <a
-    href="{{ url_for('auth.login') }}"
+    href="{{ url_for('auth.admin') }}"
     id="auth-complete"
     class="fa-solid fa-user-check"
+    title="users list"
   >
   </a>
-
-  {% else %}
-  <a href="{{ url_for('auth.login') }}" id="auth" class="fas fa-user"> </a>
-
+  {% endif %} {% else %}
+  <a
+    href="{{ url_for('auth.login') }}"
+    id="auth"
+    class="fas fa-user"
+    title="login"
+  >
+  </a>
   {% endif %}
 
   <a
     href="{{ url_for('main.contact') }}"
     id="contact"
     class="fas fa-comment-dots"
+    title="contact us"
   >
   </a>
 
@@ -55,18 +61,21 @@ endblock %} {% block styles %} {{ super() }}
     href="{{ url_for('main.findUs') }}"
     id="find_us"
     class="fas fa-location-dot"
+    title="find us"
   >
   </a>
 
-  <a href="#aboutus" id="about" class="fas fa-info-circle"> </a>
+  <a href="#" id="about" class="fas fa-info-circle" title="about us"> </a>
 
   {%if current_user.is_authenticated%}
   <a
     href="{{ url_for('auth.logout') }}"
     id="logout"
     class="fas fa-arrow-right-from-bracket"
+    title="logout"
   >
   </a>
+
   {% endif %}
 </nav>
 {% endblock %} {% block content %}

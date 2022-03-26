@@ -284,10 +284,8 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
-
-
 .readingLink {
-  width:  30%;
+  width: 30%;
   height: 30%;
   padding-left: 5%;
 }
