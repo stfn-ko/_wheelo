@@ -101,11 +101,7 @@ class Vehicle(TimestampMixin, db.Model):
         return f'<Vehicle {self.title}>'
 
 
-class FAQs(db.Model):
+class faqs(db.Model):
     question_id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.Text)
     answer = db.Column(db.Text)
-    
-    def __repr__(self):
-        return f'<FAQs {self.title}>'
-    
