@@ -304,3 +304,18 @@ iframe {
   text-align: center;
   border: 0;
 }
+
+.carousel-inner{
+  background-color: rgb(75, 75, 75);
+}
+
+.carousel-text{
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rbg(0,0,0);
+}
+
+
