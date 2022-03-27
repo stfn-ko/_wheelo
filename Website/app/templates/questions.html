@@ -16,6 +16,16 @@ app_content %}
     <p>{{ q.answer }}</p>
     <br />
     {% endfor %}
+      <div class="col-md-8">
+        <form class="form-inline" method="post" role="form">
+          {{ form.hidden_tag() }} 
+          {{ wtf.form_errors(form, hiddens="only") }} 
+          {{ wtf.form_field(form.question, class="msg-form-faq", placeholder="question") }}
+          <br> 
+          {{ wtf.form_field(form.name, class="name-form-faq pull-left", placeholder="name") }} 
+          {{ wtf.form_field(form.submit, class="btn btn-info") }}
+        </form>
+      </div>
   </div>
 </div>
 {% endblock %}
