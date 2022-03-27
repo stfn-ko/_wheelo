@@ -101,7 +101,7 @@ class Vehicle(TimestampMixin, db.Model):
         return f'<Vehicle {self.title}>'
 
 
-class FAQs(db.Model):
+class faq(db.Model):
     question_id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.Text)
     answer = db.Column(db.Text)
