@@ -1,15 +1,14 @@
-{% extends "base.html" %} {% import 'bootstrap/wtf.html' as wtf %} {% block
-app_content %}
-<div class="transition-page" id="fus"></div>
-<div class="row fade-in-content">
-  <div class="container">
-    <h1 style="text-align: center">Frequently Asked Questions</h1>
-    <p style="text-align: center">
-      If the answer to your question is not below, or you want some more
-      information, then please do not hesitate to contact us
-    </p>
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-    <hr style="background-color: rgb(75, 75, 75)" />
+{% block app_content %}
+<div class="transition-page" id="hm"></div>
+<div class="row fade-in-content">
+    <div class="container">
+        <h1 style="text-align:center;"> Frequently Asked Questions </h1>
+        <p style="text-align:center;"> If the answer to your question is not below, or you want some more information, then please do not hesitate to contact us </p>
+
+        <hr style="background-color: rgb(75, 75, 75);">
 
     {%for q in faq %}
     <h3 style="text-align: center">{{ q.question }}</h3>

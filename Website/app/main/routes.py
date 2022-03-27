@@ -21,7 +21,6 @@ def contact():
         return redirect(url_for('main.contact'))
     return render_template('contact.html', title='Contact Us', form=form)
 
-
 @main.route('/FAQ', methods=['GET', 'POST'])
 def FAQs():
     questions_for_render = FAQ.query.order_by(FAQ.question_id.asc())
