@@ -53,7 +53,7 @@ The greatest project of all times presented by outstanding programmers:
 **20** | *Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* | | |
 **21** | *Site administrator should be able to access the list of site visitors* |[`🍰`](#sprint-2)|✅|`👽`
 **22** | *Implement a "Frequently Asked Questions" facility in the site.* |[`🍰`](#sprint-2) |✅ |`👾`
-**23** | *Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |[`🍰`](#sprint-2)| |`👽`
+**23** | *Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |[`🍰`](#sprint-2)|✅|`👽`
 **24** | *Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* |[`🍰`](#sprint-2)|✅ |`👾`
 **25** | *Implement a link to Reading Neighbourhood Newsletter to keep customers abreast of local news.* |[`🍭`](#sprint-1)|✅|`👾`
 
@@ -122,7 +122,7 @@ The greatest project of all times presented by outstanding programmers:
 *Site visitors should be able to see the list of the popular items on the landing page.* | |`👾`
 *Site administrator should be able to access the list of site visitors* |✅|`👽`
 *Implement a "Frequently Asked Questions" facility in the site.* | |`👾`
-*Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* | |`👽`
+*Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |✅|`👽`
 *Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* | |`👾`
 ## Sprint reveiw:
 <br/>
