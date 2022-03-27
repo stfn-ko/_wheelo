@@ -11,3 +11,13 @@ class ContactForm(FlaskForm):
 	message = TextAreaField('Message', validators=[DataRequired(), Length(min=2, max=500)])
 	submit = SubmitField('Send Message')
 
+
+class FAQForm(FlaskForm):
+    question = TextAreaField(
+        '', validators=[DataRequired(), Length(min=10, max=400)])
+    name = StringField('', validators=[DataRequired(), Length(min=3, max=30)])
+    submit = SubmitField('Ask')
+
+class DeleteQuestionForm(FlaskForm):
+    delete = SubmitField('Delete')
+    cancel = SubmitField('Cancel')
