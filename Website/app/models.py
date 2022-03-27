@@ -102,7 +102,7 @@ class Vehicle(TimestampMixin, db.Model):
 
 
 class FAQ(db.Model):
-    question_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), nullable=False)
     display = db.Column(db.Integer, default=0)
     question = db.Column(db.Text)
