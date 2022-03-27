@@ -10,11 +10,11 @@
 
         <hr style="background-color: rgb(75, 75, 75);">
 
-    {%for q in faq %}
-    <h3 style="text-align: center">{{ q.question }}</h3>
-    <p>{{ q.answer }}</p>
-    <br />
-    {% endfor %}
-  </div>
+        {%for question in questions %}
+            <h3 style="text-align:center">{{ question.question }}</h3>
+            <p> {{ question.answer }}</p>
+            <br>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

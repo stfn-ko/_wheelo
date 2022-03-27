@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
-from app.models import User, FAQs
+from app.models import User, faq
 from app.main.forms import ContactForm
 
 main = Blueprint('main', __name__)
@@ -21,6 +21,6 @@ def contact():
     return render_template('contact.html', title='Contact Us', form=form)
 
 @main.route('/FAQ', methods=['GET', 'POST'])
-def faq():
-    questions_for_render = FAQs.query.order_by(FAQs.question_id.asc())
+def questions():
+    questions_for_render = faq.query.order_by(faq.question_id.asc())
     return render_template('questions.html', questions=questions_for_render, title='Frequently Asked Questions')
