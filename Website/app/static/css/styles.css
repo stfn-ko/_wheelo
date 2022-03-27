@@ -21,31 +21,7 @@ body {
   border-radius: 35px;
   border: 4px solid rgb(75, 75, 75);
 }
-.btn{
-  width: 100px;
-}
-.msg-form-faq {
-  height: 133px;
-  width: 707px;
-  padding: 6px 12px;
-  margin-bottom: 15px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-.name-form-faq {
-  width: 190px;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+
 html::-webkit-scrollbar {
   width: 1px;
 }
