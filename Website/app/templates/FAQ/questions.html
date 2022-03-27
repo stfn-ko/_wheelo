@@ -3,50 +3,60 @@ app_content %}
 <div class="transition-page" id="fus"></div>
 <div class="row fade-in-content">
   <div class="container">
-    <h1 style="text-align: center">Frequently Asked Questions</h1>
-    <p style="text-align: center">
+    <h1 style="text-align: left">Frequently Asked Questions</h1>
+    <p style="text-align: left">
       If the answer to your question is not below, or you want some more
-      information, then send as a <a href="#query" class="clickme">query</a>
+      information, then send as a <a href="#query" class="clickme">qestion</a>
     </p>
 
     <hr style="background-color: rgb(75, 75, 75)" />
 
     {% if current_user.admin %}
-    <a href="{{ url_for('main.viewAllQuestions') }}" class="pull-right clickme">
-      view all
-    </a>
-    <br />
-    {% endif %} {%for q in questions %} {% if q.display == True %} {% if
-    current_user.admin and current_user.is_authenticated %}
-    <h3 style="text-align: left">
-      {{ q.question }} <a href="#" class="clickme"> edit </a> |
-      <a
-        href="{{ url_for('main.delQuestion', id = q.id) }}"
-        class="text-danger clickme"
-      >
-        delete
+      <a href="{{ url_for('main.viewAllQuestions') }}" class="pull-right clickme">
+        view all
       </a>
-    </h3>
-    {% else %}
-    <h3 style="text-align: left">{{ q.question }}</h3>
-    {% endif %}
-    <p>{{ q.answer }}</p>
-    <p class="q-auth">asked by {{ q.name }}</p>
-    <br />
-    {% endif %} {% endfor %}
-
-    <hr style="background-color: rgb(75, 75, 75)" id="query" />
-
-    <div class="col-md-8">
-      <form class="form-inline" method="post" role="form">
-        {{ form.hidden_tag() }} {{ wtf.form_errors(form, hiddens="only") }} {{
-        wtf.form_field(form.question, class="msg-form-faq",
-        placeholder="question") }}
+      <br />
+    {% endif %} 
+    {%for q in questions %} 
+      {% if q.display == True %} 
+        {% if current_user.admin and current_user.is_authenticated %}
+          <h3 style="text-align: left">
+            {{ q.question }} |
+            <a href="{{ url_for('main.editQuestion', id = q.id) }}" class="clickme">
+              edit
+            </a>
+            |
+            <a
+              href="{{ url_for('main.delQuestion', id = q.id) }}"
+              class="text-danger clickme"
+            >
+              delete
+            </a>
+          </h3>
+        {% else %}
+          <h3 style="text-align: left">{{ q.question }}</h3>
+        {% endif %}
+        <p>{{ q.answer }}</p>
+        <p class="q-auth">asked by {{ q.name }}</p>
         <br />
-        {{ wtf.form_field(form.name, class="name-form-faq pull-left",
-        placeholder="name") }} {{ wtf.form_field(form.submit, class="btn
-        btn-info") }}
-      </form>
+      {% endif %} 
+    {% endfor %}
+
+    <h1 style="text-align: left" id="query">Query form</h1>
+    <hr style="background-color: rgb(75, 75, 75)" />
+    <div class="FAQuery-form">
+      <div class="col-md-8">
+        <form class="form-inline" method="post" role="form">
+          {{ form.hidden_tag() }} {{ wtf.form_errors(form, hiddens="only") }} {{
+            wtf.form_field(form.question, class="msg-form-faq",
+            placeholder="question") }}
+            <br />
+            {{ wtf.form_field(form.name, class="name-form-faq pull-left",
+            placeholder="name") }} {{ wtf.form_field(form.submit, class="btn
+            btn-info") }}
+          </form>
+        </div>
+      </div>
     </div>
+  {% endblock %}
 </div>
-{% endblock %}

@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import current_user, login_user, logout_user, login_required
-from app.main.forms import ContactForm, FAQForm, DeleteQuestionForm
+from app.main.forms import ContactForm, FAQForm, DeleteQuestionForm, EditQuestionForm
 from app.models import User, FAQ
 from app import db
 
@@ -57,6 +57,7 @@ def changeVisibility(id):
         return redirect(url_for('main.FAQs'))
     return render_template('FAQ/questions.html')
 
+
 @main.route('/FAQ/delete_question/<id>', methods=['GET', 'POST'])
 @login_required
 def delQuestion(id):
@@ -70,3 +71,24 @@ def delQuestion(id):
     if form.cancel.data:
         return redirect(url_for('main.FAQs'))
     return render_template('FAQ/delete_question.html', question=question, title="Delete Question", form=form)
+
+
+@main.route('/FAQ/edit_question/<id>', methods=['GET', 'POST'])
+@login_required
+def editQuestion(id):
+    question = FAQ.query.get_or_404(id)
+    form = EditQuestionForm()
+    if request.method == 'GET':
+        form.name.data = question.name
+        form.question.data = question.question
+        form.answer.data = question.answer
+    elif request.method == 'POST':
+        if form.update.data and form.validate_on_submit():
+            question.name = request.form['name']
+            question.question = request.form['question']
+            question.answer = request.form['answer']
+            db.session.commit()
+            return(redirect(url_for('main.FAQs')))
+        if form.cancel.data:
+            return(redirect(url_for('main.FAQs')))
+    return render_template('FAQ/edit_question.html',  question=question, title='Edit Question', form=form)

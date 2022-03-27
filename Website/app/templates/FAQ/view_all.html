@@ -1,33 +1,30 @@
-{% extends "base.html" %} 
-{% import 'bootstrap/wtf.html' as wtf %} 
-{% block app_content %}
+{% extends "base.html" %} {% import 'bootstrap/wtf.html' as wtf %} {% block
+app_content %}
 <div class="transition-page" id="fus"></div>
 <div class="row fade-in-content">
   <h1>List of all questions:</h1>
   {%for q in questions %}
   <br />
   <h3 style="text-align: left">
-    {{ q.question }} <a href="#" class="clickme"> edit </a> |
+    {{ q.question }}
+    |
+    <a href="{{ url_for('main.editQuestion', id = q.id) }}" class="clickme">
+      edit
+    </a>
+    |
     <a
       href="{{ url_for('main.delQuestion', id = q.id) }}"
       class="text-danger clickme"
     >
       delete
     </a>
-    |
-    {% if q.display %}
-    <a
-      href="{{ url_for('main.changeVisibility', id = q.id) }}"
-      class="clickme"
-    >
-     hide
+    | {% if q.display %}
+    <a href="{{ url_for('main.changeVisibility', id = q.id) }}" class="clickme">
+      hide
     </a>
     {% else %}
-    <a
-      href="{{ url_for('main.changeVisibility', id = q.id) }}"
-      class="clickme"
-    >
-     show
+    <a href="{{ url_for('main.changeVisibility', id = q.id) }}" class="clickme">
+      show
     </a>
     {% endif %}
   </h3>
