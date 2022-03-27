@@ -147,8 +147,8 @@ html::-webkit-scrollbar-thumb {
 }
 #questions:hover::before {
   transform: scale(1.1);
-  text-shadow: 0 0 15px #dd2828;
-  color: #dd2828;
+  text-shadow: 0 0 15px #28dd98;
+  color: #28dd98;
 }
 #about:hover::before {
   transform: scale(1.1);
@@ -251,7 +251,7 @@ html::-webkit-scrollbar-thumb {
   background-color: #00ffb3;
 }
 #fus {
-  background-color: #dd2828;
+  background-color: #28dd98;
 }
 @keyframes trans-page {
   0% {
@@ -284,13 +284,6 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
-<<<<<<< HEAD
-.readingLink {
-  width: 30%;
-  height: 30%;
-  padding-left: 5%;
-}
-=======
 .container{
   padding-left: 50px;
 }
@@ -336,4 +329,3 @@ iframe {
   flex-flow: row wrap;
 }
 
->>>>>>> 1f45436b9412675cf19626ecce0f527d1c617142
