@@ -34,8 +34,8 @@ The greatest project of all times presented by outstanding programmers:
 **1** | *Implement a  "user-friendly" and "minimalist"  "used-car sales commercial aesthetically pleasing website".* | | |
 **2** | *Implement a navigation menus.* |[`🍭`](#sprint-1)|✅|`👽`
 **3** | *Add a "unique name" plus  a "branding logo" for this site on every page.*  |[`🍭`](#sprint-1)|✅|`👽`
-**4** | *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* |[`🍰`](#sprint-2) |✅ |`👾`
-**5** | *Site visitors should be able to get back to the landing page quickly and easily.* |[`🍰`](#sprint-2) | |`👽`
+**4** | *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* |[`🍰`](#sprint-2) |✅|`👾`
+**5** | *Site visitors should be able to get back to the landing page quickly and easily.* |[`🍰`](#sprint-2) |✅|`👽`
 **6** | *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |[`🍰`](#sprint-2)||`👽`
 **7**| *Implement a page/facility to check vehicle history.* | | |
 **8**| *Implement a page/facility to obtain a quote for car insurance.* | | |
@@ -51,7 +51,7 @@ The greatest project of all times presented by outstanding programmers:
 **18** | *Site visitors should be able to locate all relevant contact information of the business.* |[`🍭`](#sprint-1)|✅|`👾`
 **19** | *Site visitors should be able to see the list of the popular items on the landing page.* |[`🍰`](#sprint-2) | |`👾`
 **20** | *Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* | | |
-**21** | *Site administrator should be able to access the list of site visitors* |[`🍰`](#sprint-2)| |`👽`
+**21** | *Site administrator should be able to access the list of site visitors* |[`🍰`](#sprint-2)|✅|`👽`
 **22** | *Implement a "Frequently Asked Questions" facility in the site.* |[`🍰`](#sprint-2) |✅ |`👾`
 **23** | *Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |[`🍰`](#sprint-2)| |`👽`
 **24** | *Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* |[`🍰`](#sprint-2)|✅ |`👾`
