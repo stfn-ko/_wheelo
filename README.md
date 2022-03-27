@@ -120,16 +120,24 @@ The greatest project of all times presented by outstanding programmers:
 *Site visitors should be able to get back to the landing page quickly and easily.* |✅|`👽`
 *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* | |`👽`
 *Site visitors should be able to see the list of the popular items on the landing page.* | |`👾`
-*Site administrator should be able to access the list of site visitors* | |`👽`
+*Site administrator should be able to access the list of site visitors* |✅|`👽`
 *Implement a "Frequently Asked Questions" facility in the site.* | |`👾`
 *Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* | |`👽`
 *Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* | |`👾`
 ## Sprint reveiw:
 <br/>
 
-## <a name="sprint-2-minutes"></a> ⏰ Minutes:
+## <a name="sprint-1-minutes"></a> ⏰ Minutes:
 `📅 Date` | Objectives | `⏰ Time`
 --- | --- | --- 
+`14/3/2022` | Sprint baclog creation; Prioritization of stories; Tasks assignment; Roles assignment; Subtasks Creation; | `120 mins`
+`18/3/2022` | Daily SCRUM | `30 mins`
+`21/3/2022` | Mid-session review; Dev feedback; Management feedback; Task's priority validation; | `60 mins`
+`21/3/2022` | Code review | `60 mins`
+`25/3/2022` | Daily SCRUM | `30 mins`
+`28/3/2022` | Sprint Review | `60 mins`
+`28/3/2022` | Sprint Retrospective | `60 mins`
+`Total:` | `7 hrs / 420 mins ` | 
 <br/>
 
 ## <a name="sprint-2-review"></a> ⭐ Sprint reveiw:
