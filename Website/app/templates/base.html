@@ -53,17 +53,17 @@
     href="{{ url_for('main.contact') }}"
     id="contact"
     class="fas fa-phone"
+    title="contact us"
   >
   </a>
 
   <a
     href="{{ url_for('main.faq') }}"
     id="questions"
-    class=" fas fa-question-circle"
+    class="fas fa-question-circle"
+    title="FAQs"
   >
   </a>
-
-  <a href="#" id="about" class="fas fa-info-circle" title="about us"> </a>
 
   {%if current_user.is_authenticated%}
   <a
@@ -114,16 +114,19 @@
 
 <script>
   $(".carousel").swipe({
-
-    swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-
-      if (direction == 'left') $(this).carousel('next');
-      if (direction == 'right') $(this).carousel('prev');
-
+    swipe: function (
+      event,
+      direction,
+      distance,
+      duration,
+      fingerCount,
+      fingerData
+    ) {
+      if (direction == "left") $(this).carousel("next");
+      if (direction == "right") $(this).carousel("prev");
     },
-    allowPageScroll:"vertical"
+    allowPageScroll: "vertical",
   });
-
 </script>
 
 {% endblock %}
