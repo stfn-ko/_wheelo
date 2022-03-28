@@ -26,7 +26,7 @@ class EditQuestionForm(FlaskForm):
     name = StringField('Name', validators=[
                        DataRequired(), Length(min=3, max=30)])
     question = TextAreaField(
-        'Qestion', validators=[DataRequired(), Length(min=1, max=400)])
+        'Question', validators=[DataRequired(), Length(min=1, max=400)])
     answer = TextAreaField(
         'Answer', validators=[DataRequired(), Length(min=1, max=400)])
     update = SubmitField('Update')
