@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import current_user, login_user, logout_user, login_required
 from app.main.forms import ContactForm, FAQForm, DeleteQuestionForm, EditQuestionForm
-from app.models import User, FAQ
+from app.models import User, FAQ, Post
 from app import db
 
 main = Blueprint('main', __name__)
@@ -10,7 +10,8 @@ main = Blueprint('main', __name__)
 @main.route('/')
 @main.route('/index', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html',  title='Home')
+    posts_for_render = Post.query.order_by(Post.created_at.asc())
+    return render_template('index.html', posts=posts_for_render, title='Home')
 
 
 @main.route('/ContactUs', methods=['GET', 'POST'])
@@ -92,3 +93,16 @@ def editQuestion(id):
         if form.cancel.data:
             return(redirect(url_for('main.FAQs')))
     return render_template('FAQ/edit_question.html',  question=question, title='Edit Question', form=form)
+
+@main.route('/new_post', methods=['GET', 'POST'])
+@login_required
+def newPost():
+    form = PostForm()
+    if form.validate_on_submit():
+        p = Post(
+            post=form.post.data,
+            user_id=current_user.get_id()
+        )
+        db.session.add(p)
+        db.session.commit()        
+    return render_template('blog/new_post.html', title='New Post', form=form)
