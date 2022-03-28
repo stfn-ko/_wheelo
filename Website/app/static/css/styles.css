@@ -4,7 +4,7 @@
 }
 body {
   font-family: "SF Mono";
-  background-color: #cccdd4;
+  background-color: #d4d4d4;
 }
 
 /* scroll bars */
@@ -21,18 +21,22 @@ body {
   border-radius: 35px;
   border: 4px solid rgb(75, 75, 75);
 }
-.btn{
+.btn {
   width: 100px;
 }
-.smaller-blog-info{
+.smaller-blog-info {
   font-size: smaller;
   font-style: italic;
-  color: #555;
+  color: #cccdd4;
 }
-.clickme{
+.norm-blog-info {
+  text-align: left;
+  color: #ffffff;
+}
+.clickme {
   cursor: pointer;
 }
-.q-auth{
+.q-auth {
   font-size: smaller;
   font-style: italic;
   color: rgb(102, 101, 101);
@@ -260,32 +264,37 @@ html::-webkit-scrollbar-thumb {
     opacity: 1;
   }
 }
-
 .blog {
-  padding-left: 90px;
+  padding: 15px;
+  border-radius: 25px;
+  background-color: #979797;
+  margin-left: 90px;
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
-
+.blog-post {
+  margin-bottom: 30px;
+  border: 2px solid rgb(95, 95, 95);
+  background-color: #555;
+  padding: 10px;
+  border-radius: 15px;
+}
 .container {
-  padding-left: 50px;
+  align-items: center;
 }
-
-
 .socialMediaLink {
   width: 50px;
   height: 50px;
 }
-
 iframe {
   margin: auto;
   display: block;
   text-align: center;
   border: 0;
 }
-
 .carousel-inner {
   background-color: rgb(75, 75, 75);
 }
-
 .carousel-text {
   position: absolute;
   top: 8px;
@@ -294,27 +303,21 @@ iframe {
   color: white;
   background-color: rbg(0, 0, 0);
 }
-
 .column {
   flex: 25%;
   padding: 5px;
 }
-
 .flex-container {
   display: flex;
   flex-flow: row wrap;
 }
-
-
-
-/* collapsible RSS feed styling */
-.collapsible-rss{
-  padding-left: 90px;
+.collapsible-rss {
+  margin-left: 90px;
 }
-
 .collapsible {
-  background-color: rgb(75, 75, 75);
-  color: #c4c4c4;
+  border-radius: 25px;
+  background-color: #555;
+  color: #ffffff;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -323,25 +326,20 @@ iframe {
   outline: none;
   font-size: 20px;
 }
-
-
-
 .rssFeed {
   padding: 0 18px;
-  background-color: #cccdd4;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+  margin-bottom: 90px;
+  margin-top: 20px;
 }
-
-
 .collapsible:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  content: "\02795"; /* Unicode character for "plus" sign (+) */
   float: right;
   margin-left: 5px;
 }
 
-.pressed:after{
- content: '\2796'; 
+.pressed:after {
+  content: "\2796";
 }
-

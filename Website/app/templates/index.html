@@ -80,27 +80,36 @@ app_content %}
     <br />
   </div>
 
-  <br>
-
   <div class="blog">
-
     <h1>Blog | <a href="{{ url_for('main.newPost') }}">New post</a></h1>
     <br />
     {%for p in posts %}
-    <p class="smaller-blog-info">
-      {{ p.created_at.strftime('%Y-%m-%d') }} by @{{ p.user.username }} 
-      {% if current_user.id == p.user_id
-      %} |
-      <a href="{{ url_for('main.editPost', id = p.id) }}" class="clickme"> edit </a>
-      |
-      <a href="{{ url_for('main.delPost', id = p.id) }}" class="text-danger clickme"> delete </a>
-      {% elif current_user.admin %} |
-      <a href="{{ url_for('main.delPost', id = p.id) }}" class="text-danger clickme"> delete </a>
-      {% endif %}
-    </p>
-    <p style="text-align: left">{{ p.caption }}</p>
+    <div class="blog-post">
+      <p class="smaller-blog-info">
+        {{ p.created_at.strftime('%Y-%m-%d') }} by @{{ p.user.username }} {% if
+        current_user.id == p.user_id %} |
+        <a href="{{ url_for('main.editPost', id = p.id) }}" class="clickme">
+          edit
+        </a>
+        |
+        <a
+          href="{{ url_for('main.delPost', id = p.id) }}"
+          class="text-danger clickme"
+        >
+          delete
+        </a>
+        {% elif current_user.admin %} |
+        <a
+          href="{{ url_for('main.delPost', id = p.id) }}"
+          class="text-danger clickme"
+        >
+          delete
+        </a>
+        {% endif %}
+      </p>
+      <p class="norm-blog-info">{{ p.caption }}</p>
+    </div>
     {% endfor %}
-
   </div>
   <!-- 
   <h1 style="text-align: center">Wheelo's Most Popular</h1>
@@ -111,10 +120,9 @@ app_content %}
     </div>
   </div>
   -->
-
   <div class="collapsible-rss">
-    <!--make rss feed collapsible --> 
-    <button type="button" class="collapsible"> Open Motor Authority News</button>
+    <!--make rss feed collapsible -->
+    <button type="button" class="collapsible">Open Motor Authority News</button>
 
     <!-- RSS Feed -->
     <div class="rssFeed">
