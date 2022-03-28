@@ -36,13 +36,13 @@ The greatest project of all times presented by outstanding programmers:
 **3** | *Add a "unique name" plus  a "branding logo" for this site on every page.*  |[`🍭`](#sprint-1)|✅|`👽`
 **4** | *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* |[`🍰`](#sprint-2) |✅|`👾`
 **5** | *Site visitors should be able to get back to the landing page quickly and easily.* |[`🍰`](#sprint-2) |✅|`👽`
-**6** | *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |[`🍰`](#sprint-2)||`👽`
+**6** | *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |||
 **7**| *Implement a page/facility to check vehicle history.* | | |
 **8**| *Implement a page/facility to obtain a quote for car insurance.* | | |
 **9**| *Implement a car reviews/rating facility.* | | |
 **10** | *Implement a blog facility.* | | |
 **11** | *Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* | | |
-**12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* | | |
+**12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |[`🍰`](#sprint-2)| |`👽`
 **13** | *Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* | | |
 **14** | *Implement a way for customers to suggest improvements or  email queries or fill out a query form.* |[`🍭`](#sprint-1)|✅|`👾`
 **15** | *Site visitors should be able to create a "My account" for the site which allows them to access additional features.* |`🍭`|✅|`👽`
