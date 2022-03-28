@@ -262,13 +262,9 @@ html::-webkit-scrollbar-thumb {
 }
 
 .container {
-  padding-left: 50px;
+  padding-left: 90px;
 }
 
-.readingLink {
-  width: 20%;
-  height: 20%;
-}
 
 .socialMediaLink {
   width: 50px;
