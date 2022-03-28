@@ -117,17 +117,17 @@ The greatest project of all times presented by outstanding programmers:
  Task | Subtasks | `Dev`
 --- | --- | --- 
 *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* | |`👾`
-*Site visitors should be able to get back to the landing page quickly and easily.* |✅|`👽`
-*Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* | |`👽`
+*Site visitors should be able to get back to the landing page quickly and easily.* |`Add link to homepage in the navbar`|`👽`
+*Implement a "Trade-in" feature so that "authenticated customers" can trade in their cars.* |`New HTML, form and model;` `Dependant dropdown (using ajax)`|`👽`
 *Site visitors should be able to see the list of the popular items on the landing page.* | |`👾`
-*Site administrator should be able to access the list of site visitors* |✅|`👽`
+*Site administrator should be able to access the list of site visitors* |`New HTML, form and model`|`👽`
 *Implement a "Frequently Asked Questions" facility in the site.* | |`👾`
 *Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |✅|`👽`
 *Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* | |`👾`
 ## Sprint reveiw:
 <br/>
 
-## <a name="sprint-1-minutes"></a> ⏰ Minutes:
+## <a name="sprint-2-minutes"></a> ⏰ Minutes:
 `📅 Date` | Objectives | `⏰ Time`
 --- | --- | --- 
 `14/3/2022` | Sprint baclog creation; Prioritization of stories; Tasks assignment; Roles assignment; Subtasks Creation; | `120 mins`
