@@ -9,18 +9,14 @@
   rel="stylesheet"
   href="//use.fontawesome.com/releases/v6.0.0/css/all.css"
 />
-
-{% endblock %} {% block navbar%}
-<div class="logo-container">
-  <link
-    rel="shortcut icon"
-    href="{{ url_for('static', filename='carsell.ico') }}"
-  />
-</div>
-
+<link
+  rel="shortcut icon"
+  href="{{ url_for('static', filename='carsell.ico') }}"
+/>
+{% endblock %}
+{% block navbar%}
 <nav class="sidenav">
   <div class="transition-nav"></div>
-
   <a
     href=" {{ url_for('main.index') }} "
     id="index"
