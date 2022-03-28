@@ -39,7 +39,17 @@ class DeleteQuestionForm(FlaskForm):
 
 
 class PostForm(FlaskForm):
-    post = TextAreaField(
+    caption = TextAreaField(
         'Text', validators=[DataRequired(), Length(min=1, max=600)])
     submit = SubmitField('Share')
+    cancel = SubmitField('Cancel')
+    
+class DeletePostForm(FlaskForm):
+    delete = SubmitField('Delete')
+    cancel = SubmitField('Cancel')
+    
+class EditPostForm(FlaskForm):
+    caption = TextAreaField(
+        'Text', validators=[DataRequired(), Length(min=1, max=600)])
+    update = SubmitField('Update')
     cancel = SubmitField('Cancel')

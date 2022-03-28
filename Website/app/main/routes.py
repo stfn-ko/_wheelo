@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import current_user, login_user, logout_user, login_required
-from app.main.forms import ContactForm, FAQForm, DeleteQuestionForm, EditQuestionForm
+from app.main.forms import ContactForm, FAQForm, DeleteQuestionForm, \
+    EditQuestionForm, PostForm, DeletePostForm, EditPostForm
 from app.models import User, FAQ, Post
 from app import db
 
@@ -94,15 +95,50 @@ def editQuestion(id):
             return(redirect(url_for('main.FAQs')))
     return render_template('FAQ/edit_question.html',  question=question, title='Edit Question', form=form)
 
-@main.route('/new_post', methods=['GET', 'POST'])
+
+@main.route('/blog/new_post', methods=['GET', 'POST'])
 @login_required
 def newPost():
     form = PostForm()
-    if form.validate_on_submit():
+    if form.submit.data and form.validate_on_submit():
         p = Post(
-            post=form.post.data,
+            caption=form.caption.data,
             user_id=current_user.get_id()
         )
         db.session.add(p)
-        db.session.commit()        
+        db.session.commit()
+        return redirect(url_for('main.index'))
+    if form.cancel.data:
+        return redirect(url_for('main.index'))
     return render_template('blog/new_post.html', title='New Post', form=form)
+
+
+@main.route('/blog/delete_post/<id>', methods=['GET', 'POST'])
+@login_required
+def delPost(id):
+    post = Post.query.get_or_404(id)
+    form = DeletePostForm()
+    if request.method == 'POST' and form.delete.data:
+        db.session.delete(post)
+        db.session.commit()
+        return redirect(url_for('main.index'))
+    if form.cancel.data:
+        return redirect(url_for('main.index'))
+    return render_template('blog/delete_post.html', post=post, title="Delete Post", form=form)
+
+
+@main.route('/blog/edit_post/<id>', methods=['GET', 'POST'])
+@login_required
+def editPost(id):
+    post = Post.query.get_or_404(id)
+    form = EditPostForm()
+    if request.method == 'GET':
+        form.caption.data = post.caption
+    elif request.method == 'POST':
+        if form.update.data and form.validate_on_submit():
+            post.caption = request.form['caption']
+            db.session.commit()
+            return(redirect(url_for('main.index')))
+        if form.cancel.data:
+            return(redirect(url_for('main.index')))
+    return render_template('blog/edit_post.html',  post=post, title='Edit Post', form=form)
