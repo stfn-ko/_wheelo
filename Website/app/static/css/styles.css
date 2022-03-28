@@ -341,5 +341,9 @@ iframe {
 }
 
 .pressed:after {
-  content: "\2796";
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.faqs{
+  margin-left: 90px;
 }
