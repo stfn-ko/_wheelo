@@ -324,10 +324,6 @@ iframe {
   font-size: 20px;
 }
 
-.active, .collapsible:hover{
-  background-color: #cccdd4;
-  color: rgb(75, 75, 75);
-}
 
 
 .rssFeed {
@@ -345,7 +341,7 @@ iframe {
   margin-left: 5px;
 }
 
-.active:after{
+.pressed:after{
  content: '\2796'; 
 }
 
