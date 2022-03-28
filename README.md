@@ -40,16 +40,16 @@ The greatest project of all times presented by outstanding programmers:
 **7**| *Implement a page/facility to check vehicle history.* | | |
 **8**| *Implement a page/facility to obtain a quote for car insurance.* | | |
 **9**| *Implement a car reviews/rating facility.* | | |
-**10** | *Implement a blog facility.* | | |
+**10** | *Implement a blog facility.* |[`🍰`](#sprint-2)|✅|`👽`
 **11** | *Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* | | |
-**12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |[`🍰`](#sprint-2)| |`👽`
-**13** | *Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* | | |
+**12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* || |
+**13** | *Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* |[`🍰`](#sprint-2)|✅|`👾`
 **14** | *Implement a way for customers to suggest improvements or  email queries or fill out a query form.* |[`🍭`](#sprint-1)|✅|`👾`
 **15** | *Site visitors should be able to create a "My account" for the site which allows them to access additional features.* |`🍭`|✅|`👽`
 **16** | *Site visitors must be able to log in after they have created a "My account".* |[`🍭`](#sprint-1)|✅|`👽`
 **17** | *Implement a "Google Map" feature signposting customers to the business location.* |[`🍭`](#sprint-1)|✅|`👾`
 **18** | *Site visitors should be able to locate all relevant contact information of the business.* |[`🍭`](#sprint-1)|✅|`👾`
-**19** | *Site visitors should be able to see the list of the popular items on the landing page.* |[`🍰`](#sprint-2) | |`👾`
+**19** | *Site visitors should be able to see the list of the popular items on the landing page.* |||
 **20** | *Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* | | |
 **21** | *Site administrator should be able to access the list of site visitors* |[`🍰`](#sprint-2)|✅|`👽`
 **22** | *Implement a "Frequently Asked Questions" facility in the site.* |[`🍰`](#sprint-2) |✅ |`👾`
@@ -118,11 +118,11 @@ The greatest project of all times presented by outstanding programmers:
 --- | --- | --- 
 *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* | |`👾`
 *Site visitors should be able to get back to the landing page quickly and easily.* |`Add link to homepage in the navbar`|`👽`
-*Implement a "Trade-in" feature so that "authenticated customers" can trade in their cars.* |`New HTML, form and model;` `Dependant dropdown (using ajax)`|`👽`
-*Site visitors should be able to see the list of the popular items on the landing page.* | |`👾`
+*Implement a blog facility.* |`New HTML, form and model;` `add new edit and delete forms;` `add view all page;` `alter db with post table;`|`👽`
+*Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* | |`👾`
 *Site administrator should be able to access the list of site visitors* |`New HTML, form and model`|`👽`
 *Implement a "Frequently Asked Questions" facility in the site.* | |`👾`
-*Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |✅|`👽`
+*Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |`add new edit and delete forms;` `add view all page;` `alter db with FAQ table;`|`👽`
 *Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* | |`👾`
 ## Sprint reveiw:
 <br/>
@@ -156,6 +156,7 @@ The greatest project of all times presented by outstanding programmers:
 # <a name="sprint-3"></a> `Sprint 🍕`
  Task | Subtasks | `Dev`
 --- | --- | --- 
+*Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |`Dependant dropdown (using ajax)`|
 ## Sprint reveiw:
 <br/>
 
