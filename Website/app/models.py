@@ -32,6 +32,7 @@ class User(db.Model, TimestampMixin, UserMixin):
     password_hash = db.Column(db.String(128))
     first_name = db.Column(db.String(20), nullable=False)
     last_name = db.Column(db.String(20), nullable=False)
+    posts = db.relationship('Post', backref='user', lazy='dynamic')
     vehicles = db.relationship('Vehicle', backref='user', lazy='dynamic')
 
     # print to console username created
@@ -82,6 +83,13 @@ class Model(db.Model):
     def __repr__(self):
         return f'<Model {self.name}>'
 
+class Post(db.Model, TimestampMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    caption = db.Column(db.Text)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    
+    def __repr__(self):
+        return f'<Post {self.name}>'
 
 class Vehicle(TimestampMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
