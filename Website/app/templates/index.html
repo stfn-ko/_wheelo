@@ -86,7 +86,7 @@ app_content %}
     {%for p in posts %}
     <div class="blog-post">
       <p class="smaller-blog-info">
-        {{ p.created_at.strftime('%Y-%m-%d') }} by @{{ p.user.username }} {% if
+        @{{ p.user.username }} {{ p.created_at.strftime('%Y-%m-%d') }} {% if
         current_user.id == p.user_id %} |
         <a href="{{ url_for('main.editPost', id = p.id) }}" class="clickme">
           edit
