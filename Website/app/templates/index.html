@@ -80,7 +80,7 @@ app_content %}
     <br />
   </div>
 
-  <br />
+  <br>
 
   <!-- 
   <h1 style="text-align: center">Wheelo's Most Popular</h1>
@@ -90,7 +90,17 @@ app_content %}
       </div>
     </div>
   </div>
--->
+  -->
 
-  {% endblock %}
+  <div class="collapsible-rss">
+    <!--make rss feed collapsible --> 
+    <button type="button" class="collapsible"> Open Motor Authority News</button>
+
+    <!-- RSS Feed -->
+    <div class="rssFeed">
+      <script src="//rss.bloople.net/?url=https%3A%2F%2Ffeeds.highgearmedia.com%2F%3Fsites%3DMotorAuthority&limit=5&showtitle=false&type=js"></script>
+    </div>
+  </div>
 </div>
+
+{% endblock %}

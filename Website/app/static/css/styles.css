@@ -299,3 +299,48 @@ iframe {
   display: flex;
   flex-flow: row wrap;
 }
+
+
+
+/* collapsible RSS feed styling */
+.collapsible-rss{
+  padding-left: 90px;
+}
+
+.collapsible {
+  background-color: rgb(75, 75, 75);
+  color: #c4c4c4;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+}
+
+.active, .collapsible:hover{
+  background-color: #cccdd4;
+  color: rgb(75, 75, 75);
+}
+
+
+.rssFeed {
+  padding: 0 18px;
+  background-color: #cccdd4;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after{
+ content: '\2796'; 
+}
+
