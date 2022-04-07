@@ -42,7 +42,7 @@ The greatest project of all times presented by outstanding programmers:
 **12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* || |
 **13** | *Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* |[`Sprint2`](#sprint-2)|✅|`Siobhan`
 **14** | *Implement a way for customers to suggest improvements or  email queries or fill out a query form.* |[`Sprint1`](#sprint-1)|✅|`Siobhan`
-**15** | *Site visitors should be able to create a "My account" for the site which allows them to access additional features.* |`Sprint1`|✅|`Stephan`
+**15** | *Site visitors should be able to create a "My account" for the site which allows them to access additional features.* |[`Sprint1`](#sprint-1)|✅|`Stephan`
 **16** | *Site visitors must be able to log in after they have created a "My account".* |[`Sprint1`](#sprint-1)|✅|`Stephan`
 **17** | *Implement a "Google Map" feature signposting customers to the business location.* |[`Sprint1`](#sprint-1)|✅|`Siobhan`
 **18** | *Site visitors should be able to locate all relevant contact information of the business.* |[`Sprint1`](#sprint-1)|✅|`Siobhan`
