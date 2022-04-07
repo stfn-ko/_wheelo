@@ -123,7 +123,7 @@ The greatest project of all times presented by outstanding programmers:
 <br/>
 <br/>
 
-# <a name="sprint-3"></a> `Sprint 🍕`
+# <a name="sprint-3"></a> `Sprint3`
  Task | Subtasks | `Dev`
 --- | --- | --- 
 *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |`Dependant dropdown (using ajax)`|
