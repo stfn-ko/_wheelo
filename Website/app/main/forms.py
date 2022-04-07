@@ -17,8 +17,8 @@ class ContactForm(FlaskForm):
 
 class FAQForm(FlaskForm):
     question = TextAreaField(
-        '', validators=[DataRequired(), Length(min=10, max=400)])
-    name = StringField('', validators=[DataRequired(), Length(min=3, max=30)])
+        'Question', validators=[DataRequired(), Length(min=10, max=400)])
+    name = StringField('Name', validators=[DataRequired(), Length(min=3, max=30)])
     submit = SubmitField('Ask')
 
 

@@ -2,10 +2,9 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<div class="transition-page" id="lgi"></div>
-  <div class="row fade-in-content">
+  <div class="row app-content">
     <div class="col-md-4 col-md-offset-4">
-      <h4 class="form-signin-heading">Login</h4>
+      <h3 style="text-align:center;">Login</h3>
       <form class="form form-horizontal" method="post" role="form">
         {{ form.hidden_tag() }}
         {{ wtf.form_errors(form, hiddens="only") }}
@@ -23,7 +22,7 @@
         Don't have an account? 
         <a href="{{ url_for('auth.register') }}">Register!</a>
       </div>
+      <br>
     </div>
   </div>
-  
 {% endblock %}

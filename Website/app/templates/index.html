@@ -1,134 +1,135 @@
-{% extends "base.html" %} {% import 'bootstrap/wtf.html' as wtf %} {% block
-app_content %}
-<div class="transition-page" id="hm"></div>
-<div class="row fade-in-content">
-  <br />
+{% extends "base.html" %} {% import 'bootstrap/wtf.html' as wtf %} 
+{% block app_content %}
+  <div class="row app-content">
+    <br />
 
-  <div class="container" style="padding-left: 90px">
-    <div id="information_carousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li
-          data-target="#information_carousel"
-          data-slide-to="0"
-          class="active"
-        ></li>
-        <li data-target="#information_carousel" data-slide-to="1"></li>
-        <li data-target="#information_carousel" data-slide-to="2"></li>
-        <li data-target="#information_carousel" data-slide-to="3"></li>
-      </ol>
+<!-- INFORMATION CAROUSEL HERE -->
+    <div class="container">
+      <div id="information_carousel" class="carousel " data-bs-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li
+            data-target="#information_carousel"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#information_carousel" data-slide-to="1"></li>
+          <li data-target="#information_carousel" data-slide-to="2"></li>
+          <li data-target="#information_carousel" data-slide-to="3"></li>
+        </ol>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <a
-            href="https://www.rac.co.uk/drive/advice/how-to/reducing-the-cost-of-insurance-for-new-drivers/"
-          >
-            <img src="static/information_slide_pics/slide_one.png" />
-          </a>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <a
+              href="https://www.rac.co.uk/drive/advice/how-to/reducing-the-cost-of-insurance-for-new-drivers/"
+            >
+              <img src="static/information_slide_pics/slide_one.png" />
+            </a>
+          </div>
+          <div class="item">
+            <a
+              href="https://www.autoexpress.co.uk/first-cars/64339/top-10-best-first-cars-new-drivers-2022"
+            >
+              <img src="static/information_slide_pics/slide_two.png" />
+            </a>
+          </div>
+          <div class="item">
+            <a
+              href="https://www.rac.co.uk/drive/advice/know-how/car-dashboard-warning-lights-meaning/"
+            >
+              <img src="static/information_slide_pics/slide_three.png" />
+            </a>
+          </div>
+          <div class="item">
+            <a href="https://www.readingchronicle.co.uk/news/">
+              <img
+                src="static/social_media_icons/reading_chronicle_logo.jpg"
+                alt="The Reading Chronicles Link"
+              />
+            </a>
+          </div>
         </div>
-        <div class="item">
+
+        <!-- Controls -->
+        <a
+          class="left carousel-control"
+          href="#information_carousel"
+          role="button"
+          data-slide="prev"
+        >
+          <span
+            class="glyphicon glyphicon-chevron-left"
+            aria-hidden="true"
+          ></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="right carousel-control"
+          href="#information_carousel"
+          role="button"
+          data-slide="next"
+        >
+          <span
+            class="glyphicon glyphicon-chevron-right"
+            aria-hidden="true"
+          ></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <br />
+    </div>
+
+<!--BLOG HERE -->
+    <div class="blog">
+      <h1>Blog | <a href="{{ url_for('main.newPost') }}">New post</a></h1>
+      <br />
+      {%for p in posts %}
+      <div class="blog-post">
+        <p class="smaller-blog-info">
+          @{{ p.user.username }} {{ p.created_at.strftime('%Y-%m-%d') }} {% if
+          current_user.id == p.user_id %} |
+          <a href="{{ url_for('main.editPost', id = p.id) }}" class="clickme">
+            edit
+          </a>
+          |
           <a
-            href="https://www.autoexpress.co.uk/first-cars/64339/top-10-best-first-cars-new-drivers-2022"
+            href="{{ url_for('main.delPost', id = p.id) }}"
+            class="text-danger clickme"
           >
-            <img src="static/information_slide_pics/slide_two.png" />
+            delete
           </a>
-        </div>
-        <div class="item">
+          {% elif current_user.admin %} |
           <a
-            href="https://www.rac.co.uk/drive/advice/know-how/car-dashboard-warning-lights-meaning/"
+            href="{{ url_for('main.delPost', id = p.id) }}"
+            class="text-danger clickme"
           >
-            <img src="static/information_slide_pics/slide_three.png" />
+            delete
           </a>
-        </div>
-        <div class="item">
-          <a href="https://www.readingchronicle.co.uk/news/">
-            <img
-              src="static/social_media_icons/reading_chronicle_logo.jpg"
-              alt="The Reading Chronicles Link"
-            />
-          </a>
+          {% endif %}
+        </p>
+        <p class="norm-blog-info">{{ p.caption }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+<!-- MOST POPULAR HERE -->
+    <!-- 
+    <h1 style="text-align: center">Wheelo's Most Popular</h1>
+    <div class="container">
+      <div class="flex-container">
+
         </div>
       </div>
-
-      <!-- Controls -->
-      <a
-        class="left carousel-control"
-        href="#information_carousel"
-        role="button"
-        data-slide="prev"
-      >
-        <span
-          class="glyphicon glyphicon-chevron-left"
-          aria-hidden="true"
-        ></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="right carousel-control"
-        href="#information_carousel"
-        role="button"
-        data-slide="next"
-      >
-        <span
-          class="glyphicon glyphicon-chevron-right"
-          aria-hidden="true"
-        ></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
-    <br />
-  </div>
+    -->
 
-  <div class="blog">
-    <h1>Blog | <a href="{{ url_for('main.newPost') }}">New post</a></h1>
-    <br />
-    {%for p in posts %}
-    <div class="blog-post">
-      <p class="smaller-blog-info">
-        @{{ p.user.username }} {{ p.created_at.strftime('%Y-%m-%d') }} {% if
-        current_user.id == p.user_id %} |
-        <a href="{{ url_for('main.editPost', id = p.id) }}" class="clickme">
-          edit
-        </a>
-        |
-        <a
-          href="{{ url_for('main.delPost', id = p.id) }}"
-          class="text-danger clickme"
-        >
-          delete
-        </a>
-        {% elif current_user.admin %} |
-        <a
-          href="{{ url_for('main.delPost', id = p.id) }}"
-          class="text-danger clickme"
-        >
-          delete
-        </a>
-        {% endif %}
-      </p>
-      <p class="norm-blog-info">{{ p.caption }}</p>
-    </div>
-    {% endfor %}
-  </div>
-  <!-- 
-  <h1 style="text-align: center">Wheelo's Most Popular</h1>
-  <div class="container">
-    <div class="flex-container">
-
-      </div>
+<!--RSS FEED HERE -->
+    <div class="collapsible-rss">
+      <!--make rss feed collapsible -->
+      <button type="button" class="collapsible">Open Motor Authority News RSS Feed</button>
+      <!-- RSS Feed -->
+      <div class="tagembed-container rssFeed" style=" width:100%;height:100%;overflow: auto;"><div class="tagembed-socialwall" data-wall-id="35011" view-url="https://widget.tagembed.com/35011?view">  </div> <script src="//widget.tagembed.com/embed.min.js" type="text/javascript"></script></div>
     </div>
   </div>
-  -->
-  <div class="collapsible-rss">
-    <!--make rss feed collapsible -->
-    <button type="button" class="collapsible">Open Motor Authority News</button>
-
-    <!-- RSS Feed -->
-    <div class="rssFeed">
-      <script src="//rss.bloople.net/?url=https%3A%2F%2Ffeeds.highgearmedia.com%2F%3Fsites%3DMotorAuthority&limit=5&showtitle=false&type=js"></script>
-    </div>
-  </div>
-</div>
-
 {% endblock %}
