@@ -1,72 +1,75 @@
-{% extends "bootstrap/base.html" %} {% block title %} {{ title }} // _wheelo {%
-endblock %} {% block styles %} {{ super() }}
+{% extends "bootstrap/base.html" %} {% block title %} {{ title }} / CarSell
+{%endblock %} {% block styles %} {{ super() }}
 <link
   href="{{url_for('static', filename='css/styles.css')}}"
   rel="stylesheet"
 />
-<link
-  rel="shortcut icon"
-  href="{{ url_for('static', filename='w_c_favicon.ico') }}"
-/>
+<link rel="shortcut icon" href="{{ url_for('static', filename='logo.ico') }}" />
 <link
   rel="stylesheet"
   href="//use.fontawesome.com/releases/v6.0.0/css/all.css"
 />
-{% endblock %} {% block navbar%}
-<div class="logo-container">
-  <div class="logo" id="logo-underscore">_</div>
-  <div class="logo">wheelo</div>
-</div>
-
+<link
+  rel="shortcut icon"
+  href="{{ url_for('static', filename='carsell.ico') }}"
+/>
+{% endblock %}
+{% block navbar%}
 <nav class="sidenav">
   <div class="transition-nav"></div>
-  <a href=" {{ url_for('main.index') }} " id="index" class="fas fa-home"> </a>
-
   <a
-    href="#popular"
-    id="popular"
-    class="fas fa-car"
-    data-toggle="tooltip"
-    title=""
+    href=" {{ url_for('main.index') }} "
+    id="index"
+    class="fas fa-home"
+    title="home"
   >
   </a>
 
-  {%if current_user.is_authenticated%}
+  <a href="#popular" id="popular" class="fas fa-car" title="popular"> </a>
+
+  {%if current_user.is_authenticated%} {% if current_user.admin %}
   <a
-    href="{{ url_for('auth.login') }}"
+    href="{{ url_for('auth.admin') }}"
     id="auth-complete"
     class="fa-solid fa-user-check"
+    title="users list"
   >
   </a>
-
-  {% else %}
-  <a href="{{ url_for('auth.login') }}" id="auth" class="fas fa-user"> </a>
-
+  {% endif %} {% else %}
+  <a
+    href="{{ url_for('auth.login') }}"
+    id="auth"
+    class="fas fa-user"
+    title="login"
+  >
+  </a>
   {% endif %}
 
   <a
     href="{{ url_for('main.contact') }}"
     id="contact"
-    class="fas fa-comment-dots"
+    class="fas fa-phone"
+    title="contact us"
   >
   </a>
 
   <a
-    href="{{ url_for('main.findUs') }}"
-    id="find_us"
-    class="fas fa-location-dot"
+    href="{{ url_for('main.FAQs') }}"
+    id="questions"
+    class="fas fa-question-circle"
+    title="FAQs"
   >
   </a>
-
-  <a href="#aboutus" id="about" class="fas fa-info-circle"> </a>
 
   {%if current_user.is_authenticated%}
   <a
     href="{{ url_for('auth.logout') }}"
     id="logout"
     class="fas fa-arrow-right-from-bracket"
+    title="logout"
   >
   </a>
+
   {% endif %}
 </nav>
 {% endblock %} {% block content %}
@@ -103,6 +106,41 @@ endblock %} {% block styles %} {{ super() }}
   $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
+</script>
+
+<script>
+  $(".carousel").swipe({
+    swipe: function (
+      event,
+      direction,
+      distance,
+      duration,
+      fingerCount,
+      fingerData
+    ) {
+      if (direction == "left") $(this).carousel("next");
+      if (direction == "right") $(this).carousel("prev");
+    },
+    allowPageScroll: "vertical",
+  });
+</script>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("pressed");
+      var rssFeed = this.nextElementSibling;
+      if (rssFeed.style.maxHeight){
+        rssFeed.style.maxHeight = null;
+      } else {
+        rssFeed.style.maxHeight = rssFeed.scrollHeight + "px";
+      }
+
+    });
+  }
 </script>
 
 {% endblock %}

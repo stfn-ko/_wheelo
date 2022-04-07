@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% import 'bootstrap/wtf.html' as wtf %} {% block
+app_content %}
+
+<div class="transition-page" id="lgi"></div>
+<div class="row fade-in-content">
+  <div class="col-md-6 col-md-offset-3">
+    <h3>Website users list:</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Option</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in user %}
+        <tr>
+          <td>{{ user.username }}</td>
+          <td>
+            <a
+              href="{{ url_for('auth.delete_user', id=user.id) }}"
+              class="text-danger"
+              >Delete</a
+            >
+          </td>
+          {% if user.admin == 1 %}
+          <td>Admin</td>
+          <td>
+            <a href="{{ url_for('auth.rm_admin', id=user.id) }}"
+              >- assign to user</a
+            >
+            {% else %}
+          </td>
+
+          <td>user</td>
+          <td>
+            <a href="{{ url_for('auth.give_admin', id=user.id) }}"
+              >- assign to admin</a
+            >
+          </td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

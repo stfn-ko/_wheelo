@@ -34,27 +34,27 @@ The greatest project of all times presented by outstanding programmers:
 **1** | *Implement a  "user-friendly" and "minimalist"  "used-car sales commercial aesthetically pleasing website".* | | |
 **2** | *Implement a navigation menus.* |[`🍭`](#sprint-1)|✅|`👽`
 **3** | *Add a "unique name" plus  a "branding logo" for this site on every page.*  |[`🍭`](#sprint-1)|✅|`👽`
-**4** | *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* | | | 
-**5** | *Site visitors should be able to get back to the landing page quickly and easily.* | | |
+**4** | *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* |[`🍰`](#sprint-2) |✅|`👾`
+**5** | *Site visitors should be able to get back to the landing page quickly and easily.* |[`🍰`](#sprint-2) |✅|`👽`
 **6** | *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |||
 **7**| *Implement a page/facility to check vehicle history.* | | |
 **8**| *Implement a page/facility to obtain a quote for car insurance.* | | |
 **9**| *Implement a car reviews/rating facility.* | | |
-**10** | *Implement a blog facility.* | | |
+**10** | *Implement a blog facility.* |[`🍰`](#sprint-2)|✅|`👽`
 **11** | *Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* | | |
-**12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* | | |
-**13** | *Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* | | |
+**12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* || |
+**13** | *Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* |[`🍰`](#sprint-2)|✅|`👾`
 **14** | *Implement a way for customers to suggest improvements or  email queries or fill out a query form.* |[`🍭`](#sprint-1)|✅|`👾`
 **15** | *Site visitors should be able to create a "My account" for the site which allows them to access additional features.* |`🍭`|✅|`👽`
 **16** | *Site visitors must be able to log in after they have created a "My account".* |[`🍭`](#sprint-1)|✅|`👽`
 **17** | *Implement a "Google Map" feature signposting customers to the business location.* |[`🍭`](#sprint-1)|✅|`👾`
 **18** | *Site visitors should be able to locate all relevant contact information of the business.* |[`🍭`](#sprint-1)|✅|`👾`
-**19** | *Site visitors should be able to see the list of the popular items on the landing page.* | | |
+**19** | *Site visitors should be able to see the list of the popular items on the landing page.* |||
 **20** | *Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* | | |
-**21** | *Site administrator should be able to access the list of site visitors* |[`🍰`](#sprint-2)| |
-**22** | *Implement a "Frequently Asked Questions" facility in the site.* | | |
-**23** | *Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* | | |
-**24** | *Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* |[`🍰`](#sprint-2)| |
+**21** | *Site administrator should be able to access the list of site visitors* |[`🍰`](#sprint-2)|✅|`👽`
+**22** | *Implement a "Frequently Asked Questions" facility in the site.* |[`🍰`](#sprint-2) |✅ |`👾`
+**23** | *Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |[`🍰`](#sprint-2)|✅|`👽`
+**24** | *Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* |[`🍰`](#sprint-2)|✅ |`👾`
 **25** | *Implement a link to Reading Neighbourhood Newsletter to keep customers abreast of local news.* |[`🍭`](#sprint-1)|✅|`👾`
 
 <br/>
@@ -116,12 +116,28 @@ The greatest project of all times presented by outstanding programmers:
 # <a name="sprint-2"></a> `Sprint 🍰`
  Task | Subtasks | `Dev`
 --- | --- | --- 
+*Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* | |`👾`
+*Site visitors should be able to get back to the landing page quickly and easily.* |`Add link to homepage in the navbar`|`👽`
+*Implement a blog facility.* |`New HTML, form and model;` `add new edit and delete forms;` `add view all page;` `alter db with post table;`|`👽`
+*Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* | |`👾`
+*Site administrator should be able to access the list of site visitors* |`New HTML, form and model`|`👽`
+*Implement a "Frequently Asked Questions" facility in the site.* | |`👾`
+*Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |`add new edit and delete forms;` `add view all page;` `alter db with FAQ table;`|`👽`
+*Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* | |`👾`
 ## Sprint reveiw:
 <br/>
 
 ## <a name="sprint-2-minutes"></a> ⏰ Minutes:
 `📅 Date` | Objectives | `⏰ Time`
 --- | --- | --- 
+`14/3/2022` | Sprint baclog creation; Prioritization of stories; Tasks assignment; Roles assignment; Subtasks Creation; | `120 mins`
+`18/3/2022` | Daily SCRUM | `30 mins`
+`21/3/2022` | Mid-session review; Dev feedback; Management feedback; Task's priority validation; | `60 mins`
+`21/3/2022` | Code review | `60 mins`
+`25/3/2022` | Daily SCRUM | `30 mins`
+`28/3/2022` | Sprint Review | `60 mins`
+`28/3/2022` | Sprint Retrospective | `60 mins`
+`Total:` | `7 hrs / 420 mins ` | 
 <br/>
 
 ## <a name="sprint-2-review"></a> ⭐ Sprint reveiw:
@@ -140,6 +156,7 @@ The greatest project of all times presented by outstanding programmers:
 # <a name="sprint-3"></a> `Sprint 🍕`
  Task | Subtasks | `Dev`
 --- | --- | --- 
+*Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |`Dependant dropdown (using ajax)`|
 ## Sprint reveiw:
 <br/>
 

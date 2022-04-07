@@ -5,19 +5,23 @@
 <div class="transition-page" id="cu"></div>
 <div class="row fade-in-content">
 	<div class="col-md-4 col-md-offset-4">
+		
 		<form class="form form-horizontal" method="post" role="form">
 			{{ form.hidden_tag() }}
 			{{ wtf.form_errors(form, hiddens="only") }}
 			
+			<!-- if the user isnt logged in -->
 			{% if current_user.is_authenticated == False %}
 			<h1 style="text-align: center;">Hello User!</h1>
-			<p style="text-align: center;">fill in the form below to contact us</p>
+			<p style="text-align: center;">Please fill in the form below to contact us</p>
 			{{wtf.form_field(form.name)}}
 			{{wtf.form_field(form.email)}}
 			{{wtf.form_field(form.contactNumber)}}
+
+			<!-- if the user is logged in -->
 			{% else %}
 			<h1 style="text-align: center;">Hi, @{{ current_user.username }}!</h1>
-			<p style="text-align: center;">type in the message below to contact us</p>
+			<p style="text-align: center;">Enter your message below to contact us</p>
 			{% endif %}
 			{{wtf.form_field(form.message)}}
 			{{wtf.form_field(form.submit, class="btn btn-info btn-block")}}
@@ -25,12 +29,49 @@
 
 		<br>
 		<hr style="background-color: rgb(75, 75, 75);">
-		<br>
 
-		<h2 style="text-align: center;"> ALTERNATIVELY: </h2>
+		<h2 style="text-align: center;"> Alternatively </h2>
 		<P> Call us on: 01234567891 </P>
-		<p> Email us at: info@_wheelo.com </p>
+		<p> Email us at: info@CarSell.com </p>
+		<p> Follow us on social media: </p>
+		<a href="https://www.facebook.com/">
+            <img src="static/social_media_icons/facebook_logo.png" alt="Facebook" class="socialMediaLink"> <!-- using logo of Instagram as image for link -->
+        </a>
+		<a href="https://www.instagram.com/">
+            <img src="static/social_media_icons/instagram_logo.png" alt="Instagram" class="socialMediaLink"> <!-- using logo of Instagram as image for link -->
+        </a>
+        <a href="https://twitter.com/?lang=e">
+            <img src="static/social_media_icons/twitter_logo.png" alt="Twitter" class="socialMediaLink"> <!-- using logo of Twitter as image for link -->
+        </a>
+
+        <br>
+		<hr style="background-color: rgb(75, 75, 75);">
+
+		<h2 style="text-align: center;"> Find Us Here :) </h2>
 	</div>
+		
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79563.52634689932!2d-1.066088103883874!3d51.45154281469006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48742078d93d3db7%3A0x2ae19f7fcefa7994!2sReading!5e0!3m2!1sen!2suk!4v1645445487535!5m2!1sen!2suk" width="600" height="450" allowfullscreen="" loading="lazy"></iframe> <!-- embedded map with location of reading -->
+
+	
+	<div class="col-md-4 col-md-offset-4">
+		<br>
+		<hr style="background-color: rgb(75, 75, 75);">
+
+		<div style="text-align:center;">
+			<h2> Opening Times </h2>
+			<p> Monday: 09:00 - 18:00 </p>
+			<p> Tuesday: 09:00 - 18:00 </p>
+			<p> Wednesday: 09:00 - 18:00 </p>
+			<p> Thurday: 09:00 - 18:00 </p>
+			<p> Friday: 09:00 - 18:00 </p>
+			<p> Saturday: 10:00 - 17:00 </p>
+			<p> Sunday: 10:00 - 16:00 </p>
+		</div>
+	</div>
+
+	
+
+
 </div>
 <br>
 
