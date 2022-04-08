@@ -10,17 +10,13 @@ The greatest project of all times presented by outstanding programmers:
 ### Table of Content
 * [`Product Backlog`](#productbacklog)
 * [`Sprint1`](#sprint-1)
-  * [`⭐ Reveiw`](#sprint-1-review)
-  
-  </br>
+  * [`Sprint-Reveiw`](#sprint-1-review)
   
 * [`Sprint2`](#sprint-2)
-  * [`⭐ Reveiw`](#sprint-2-review)
- 
-  </br>
+  * [`Sprint-Reveiw`](#sprint-2-review)
   
 * [`Sprint3`](#sprint-3)
-  * [`⭐ Reveiw`](#sprint-3-review)
+  * [`Sprint-Reveiw`](#sprint-3-review)
 ------------------------------------
 
 
@@ -55,10 +51,6 @@ The greatest project of all times presented by outstanding programmers:
 **25** | *Implement a link to Reading Neighbourhood Newsletter to keep customers abreast of local news.* |[`Sprint1`](#sprint-1)|✅|`Siobhan`
 
 <br/>
-
-🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
-
-<br/>
 <br/>
 
 # <a name="sprint-1"></a> `Sprint1`
@@ -90,10 +82,6 @@ The greatest project of all times presented by outstanding programmers:
 `Overall rating: 7.5⭐/10⭐`
 
 <br/>
-
-🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
-
-<br/>
 <br/>
 
 # <a name="sprint-2"></a> `Sprint2`
@@ -117,10 +105,6 @@ The greatest project of all times presented by outstanding programmers:
 `Overall rating: _⭐/10⭐`
 
 <br/>
-
-🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
-
-<br/>
 <br/>
 
 # <a name="sprint-3"></a> `Sprint3`
@@ -135,10 +119,6 @@ The greatest project of all times presented by outstanding programmers:
 <br/>
 
 `Overall rating: _⭐/10⭐`
-
-<br/>
-
-🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩
 
 <br/>
 <br/>
