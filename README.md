@@ -24,7 +24,7 @@ The greatest project of all times presented by outstanding programmers:
 
 `Feature` | Product Backlog | `Sprint` | Status | `Dev`
 --- | --- | --- | --- | --- 
-**1** | *Implement a  "user-friendly" and "minimalist"  "used-car sales commercial aesthetically pleasing website".* |`Sprint3`](#sprint-3)| |`Siobhan` `Stephan`
+**1** | *Implement a  "user-friendly" and "minimalist"  "used-car sales commercial aesthetically pleasing website".* |[`Sprint3`](#sprint-3)| |`Siobhan` `Stephan`
 **2** | *Implement a navigation menus.* |[`Sprint1`](#sprint-1)|✅|`Stephan`
 **3** | *Add a "unique name" plus  a "branding logo" for this site on every page.*  |[`Sprint1`](#sprint-1)|✅|`Stephan`
 **4** | *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* |[`Sprint2`](#sprint-2) |✅|`Siobhan`
@@ -110,13 +110,14 @@ The greatest project of all times presented by outstanding programmers:
 # <a name="sprint-3"></a> `Sprint3`
  Task | Subtasks | `Dev`
 --- | --- | --- 
-*Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |`Dependant dropdown (using ajax)`| `Stephan`
+*Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* ||`Stephan`
 *Site visitors should be able to see the list of the popular items on the landing page.* | | `Siobhan`
 *Implement a car reviews/rating facility.* | |`Stephan`
 *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* ||`Siobhan`
 *Implement a page/facility to obtain a quote for car insurance.* | |`Stephan`
-*Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* ||`Siobhan`
+*Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* ||`Siobhan`
 *Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* ||`Stephan`
+*Implement a page/facility to check vehicle history.* ||`Siobhan`
 
 <br/>
 
