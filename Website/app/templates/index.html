@@ -117,6 +117,11 @@
     <h3 style="text-align: center">CarSell's Most Popular</h3>
     <div class="container">
       <div class="flex-container">
+    <!--{% for car in popular_for_render %}
+          {% if car.popular == "true" %}
+            <img src="{{ url_for('static', filename='car_pics/' + car.pictures + '1.jpg') }}">
+          {% endif %}
+        {% endfor %}-->
         <div>
           <img class="popular_items" src="static/car_pics/C1_blue_08/1.jpg">
           <p class="popular_text"> Citroen C1 </p>
