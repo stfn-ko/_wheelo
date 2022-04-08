@@ -33,7 +33,7 @@ The greatest project of all times presented by outstanding programmers:
 **7**| *Implement a page/facility to check vehicle history.* | | |
 **8**| *Implement a page/facility to obtain a quote for car insurance.* | | |
 **9**| *Implement a car reviews/rating facility.* | | |
-**10** | *Implement a blog facility.* |[`Sprint2`](#sprint-2)|✅|`Stephan`
+**10** | *Implement a blog facility.* |[`Sprint2`](#sprint-2)|X|`Stephan`
 **11** | *Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* | | |
 **12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* || |
 **13** | *Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* |[`Sprint2`](#sprint-2)|✅|`Siobhan`
