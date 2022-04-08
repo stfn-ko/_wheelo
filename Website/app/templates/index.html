@@ -80,7 +80,7 @@ app_content %}
     </div>
 
 <!--BLOG HERE -->
-    <!--<div class="blog">
+    <div class="blog">
       <h1>Blog | <a href="{{ url_for('main.newPost') }}">New post</a></h1>
       <br />
       {%for p in posts %}
@@ -110,7 +110,7 @@ app_content %}
         <p class="norm-blog-info">{{ p.caption }}</p>
       </div>
       {% endfor %}
-    </div> -->
+    </div> 
 
 <!-- MOST POPULAR HERE -->
     <h3 style="text-align: center">CarSell's Most Popular</h3>
@@ -152,4 +152,5 @@ app_content %}
       <div class="tagembed-container rssFeed" style=" width:100%;height:100%;overflow: auto;"><div class="tagembed-socialwall" data-wall-id="35011" view-url="https://widget.tagembed.com/35011?view">  </div> <script src="//widget.tagembed.com/embed.min.js" type="text/javascript"></script></div>
     </div>
   </div>
+
 {% endblock %}
