@@ -23,6 +23,15 @@ html::-webkit-scrollbar-thumb {
 /* end of scroll bars */
 
 /*navbar*/
+.sidenav-logo #logo{
+  position: absolute;
+  margin-left: 3em;
+}
+.sidenav-logo #text{
+  position: absolute;
+  margin-left: 4.5em;
+  margin-top: 1.5em;
+}
 .sidenav{
     width: 100%;
     height: 3.5em;
@@ -35,7 +44,14 @@ html::-webkit-scrollbar-thumb {
 .sidenav img{
     vertical-align: middle;
     text-align: start;
-    
+}
+.index-upper{
+  text-align: center;
+}
+.index-upper #index_pic{
+  width: 90em;
+  height: fit-content;
+  margin-top: -4.5em;
 }
 .sidenav a{
     color: white;

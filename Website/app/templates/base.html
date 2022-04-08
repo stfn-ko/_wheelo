@@ -1,166 +1,160 @@
-{% extends "bootstrap/base.html" %} {% block title %} {{ title }} / CG
+{% extends "bootstrap/base.html" %} 
+{% block title %} {{ title }} / CarSell
 {%endblock %} {% block styles %} {{ super() }}
 <link
   href="{{url_for('static', filename='css/styles.css')}}"
   rel="stylesheet"
 />
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-{% endblock %}
-
-{% block navbar%}
-
-<nav class="sidenav">
-  <img src="..\static\logo_big.png" alt="logo" width="150" height="64">   
-    <a
-    href=" {{ url_for('main.index') }} "
-    id="index"
-    title="home"
-    >home
+<link
+  rel="shortcut icon"
+  href="{{ url_for('static', filename='favicon.ico') }}"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+  rel="stylesheet"
+  />
+  
+  {% endblock %} 
+  {% block navbar%}
+  
+  <a href=" {{ url_for('main.index') }}" class="sidenav-logo">
+    <img src="..\static\logo_nav.png" id="logo" height="70" width="70" />
+    <img src="..\static\text_logo.png" id="text" height="30" width="145" />
+  </a>
+  <nav class="sidenav">
+    <a href=" {{ url_for('main.index') }} " id="index" title="home">home</a>
+    
+    <a href="#allcars" id="popular" title="popular">cars</a>
+    
+    <a href="{{ url_for('main.contact') }}" id="contact" title="contact us"
+    >contact us
   </a>
   
-  <a href="#allcars" id="popular" title="popular">cars</a>
-  
-  
-  <a
-  href="{{ url_for('main.contact') }}"
-  id="contact"
-  title="contact us"
-  >contact us
-</a>
-
-<a
-href="{{ url_for('main.FAQs') }}"
-id="questions"
-title="FAQs"
->faq
-</a>
-{%if current_user.is_authenticated%} 
-{% if current_user.admin %}
-<a
-href="{{ url_for('auth.admin') }}"
-id="auth-complete"
-title="users list"
->admin
-</a>
-{% endif %} 
-<a
-href="{{ url_for('auth.logout') }}"
-id="logout"
-title="logout"
->logout
-</a>
-{% else %}
-<a
-href="{{ url_for('auth.login') }}"
-id="auth"
-title="login"
->login
+  <a href="{{ url_for('main.FAQs') }}" id="questions" title="FAQs">faq </a>
+  {%if current_user.is_authenticated%} {% if current_user.admin %}
+  <a href="{{ url_for('auth.admin') }}" id="auth-complete" title="users list"
+  >admin
 </a>
 {% endif %}
-
+<a href="{{ url_for('auth.logout') }}" id="logout" title="logout">logout </a>
+{% else %}
+<a href="{{ url_for('auth.login') }}" id="auth" title="login">login </a>
+{% endif %}
 </nav>
 
-{% endblock %} {% block content %}
+{% if request.url == 'http://localhost:5000/index' %}
+<div class="index-upper">
+  <img src="..\static\index_pic.png" id="index_pic">
+  
+</div>
+{% endif %}
+
+
+{% endblock %} 
+{% block content %}
 <div class="container">
   {% with messages = get_flashed_messages(with_categories=true) %} {% if
-    messages %} {% for category, message in messages %}
-    <div class="alert alert-{{ category }} text-center">
-      <a href="#" class="close" data-dismiss="alert" aria-label="close">
-        <span aria-hidden="true">&times;</span>
-      </a>
-      {{ message }}
-    </div>
-    {% endfor %} {% endif %} {% endwith %}
-
-    <div class="row">
-      {# application content needs to be provided in the app_content block #} {%
-      block app_content %}{% endblock %}
-    </div>
+  messages %} {% for category, message in messages %}
+  <div class="alert alert-{{ category }} text-center">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">
+      <span aria-hidden="true">&times;</span>
+    </a>
+    {{ message }}
   </div>
+  {% endfor %} {% endif %} {% endwith %}
 
-  <div id="footer" class="footer"> 
-    <p class="text-muted text-center">
-      &copy; <script>document.write(new Date().getFullYear())
-      </script>, CarSell
-    </p>
-
-    <a href="https://rva.org.uk/neighbourhood-newsletters/" class="text-muted fas fa-newspaper"> Reading Neighborhood Newsletters </a>
+  <div class="row">
+    {# application content needs to be provided in the app_content block #} {%
+    block app_content %}{% endblock %}
   </div>
+</div>
+
+<div id="footer" class="footer">
+  <p class="text-muted text-center">
+    &copy;
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    , CarSell
+  </p>
+
+  <a
+    href="https://rva.org.uk/neighbourhood-newsletters/"
+    class="text-muted fas fa-newspaper"
+  >
+    Reading Neighborhood Newsletters
+  </a>
+</div>
+
 {% endblock %} 
 
-{% block scripts %} 
-  {{ super() }}
+{% block scripts %} {{ super() }}
 
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Example Company",
+    "hasMap": "https://goo.gl/maps/K6HRevCC2m82QTbF8"
+  }
+</script>
 
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Example Company",
-      "hasMap": "https://goo.gl/maps/K6HRevCC2m82QTbF8"
-    }
-  </script>
+<script>
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
 
-  <script>
-    $(document).ready(function () {
-      $('[data-toggle="tooltip"]').tooltip();
+<script>
+  $(".carousel").swipe({
+    swipe: function (
+      event,
+      direction,
+      distance,
+      duration,
+      fingerCount,
+      fingerData
+    ) {
+      if (direction == "left") $(this).carousel("next");
+      if (direction == "right") $(this).carousel("prev");
+    },
+    allowPageScroll: "vertical",
+  });
+</script>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("pressed");
+      var rssFeed = this.nextElementSibling;
+      if (rssFeed.style.maxHeight) {
+        rssFeed.style.maxHeight = null;
+      } else {
+        rssFeed.style.maxHeight = rssFeed.scrollHeight + "px";
+      }
     });
-  </script>
+  }
+</script>
 
-  <script>
-    $(".carousel").swipe({
-      swipe: function (
-        event,
-        direction,
-        distance,
-        duration,
-        fingerCount,
-        fingerData
-      ) {
-        if (direction == "left") $(this).carousel("next");
-        if (direction == "right") $(this).carousel("prev");
-      },
-      allowPageScroll: "vertical",
+<script>
+  var coll = document.getElementsByClassName("collapsibleQ");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("pressedQ");
+      var questionCol = this.nextElementSibling;
+      if (questionCol.style.maxHeight) {
+        questionCol.style.maxHeight = null;
+      } else {
+        questionCol.style.maxHeight = questionCol.scrollHeight + "px";
+      }
     });
-  </script>
-
-  <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("pressed");
-        var rssFeed = this.nextElementSibling;
-        if (rssFeed.style.maxHeight){
-          rssFeed.style.maxHeight = null;
-        } else {
-          rssFeed.style.maxHeight = rssFeed.scrollHeight + "px";
-        }
-
-      });
-    }
-  </script>
-
-  <script>
-    var coll = document.getElementsByClassName("collapsibleQ");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("pressedQ");
-        var questionCol = this.nextElementSibling;
-        if (questionCol.style.maxHeight){
-          questionCol.style.maxHeight = null;
-        } else {
-          questionCol.style.maxHeight = questionCol.scrollHeight + "px";
-        }
-
-      });
-    }
-  </script>
+  }
+</script>
 {% endblock %}
