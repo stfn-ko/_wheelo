@@ -7,7 +7,9 @@ body {
 }
 .footer{
   border-top: 2px solid #00043C;
+  margin-top: 2em;
 }
+
 /* scroll bars */
 html::-webkit-scrollbar {
     width: 1px;
