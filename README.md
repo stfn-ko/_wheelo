@@ -24,26 +24,26 @@ The greatest project of all times presented by outstanding programmers:
 
 `Feature` | Product Backlog | `Sprint` | Status | `Dev`
 --- | --- | --- | --- | --- 
-**1** | *Implement a  "user-friendly" and "minimalist"  "used-car sales commercial aesthetically pleasing website".* | | |
+**1** | *Implement a  "user-friendly" and "minimalist"  "used-car sales commercial aesthetically pleasing website".* |`Sprint3`](#sprint-3)| |`Siobhan` `Stephan`
 **2** | *Implement a navigation menus.* |[`Sprint1`](#sprint-1)|✅|`Stephan`
 **3** | *Add a "unique name" plus  a "branding logo" for this site on every page.*  |[`Sprint1`](#sprint-1)|✅|`Stephan`
 **4** | *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* |[`Sprint2`](#sprint-2) |✅|`Siobhan`
 **5** | *Site visitors should be able to get back to the landing page quickly and easily.* |[`Sprint2`](#sprint-2) |✅|`Stephan`
-**6** | *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |||
-**7**| *Implement a page/facility to check vehicle history.* | | |
-**8**| *Implement a page/facility to obtain a quote for car insurance.* | | |
-**9**| *Implement a car reviews/rating facility.* | | |
+**6** | *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |[`Sprint3`](#sprint-3)||`Stephan`
+**7**| *Implement a page/facility to check vehicle history.* |[`Sprint3`](#sprint-3)||`Siobhan`
+**8**| *Implement a page/facility to obtain a quote for car insurance.* |[`Sprint3`](#sprint-3)| |`Stephan`
+**9**| *Implement a car reviews/rating facility.* |[`Sprint3`](#sprint-3)| |`Stephan`
 **10** | *Implement a blog facility.* |[`Sprint2`](#sprint-2)|X|`Stephan`
-**11** | *Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* | | |
-**12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* || |
+**11** | *Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* |[`Sprint3`](#sprint-3)| |`Stephan`
+**12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |[`Sprint3`](#sprint-3)||`Siobhan`
 **13** | *Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* |[`Sprint2`](#sprint-2)|✅|`Siobhan`
 **14** | *Implement a way for customers to suggest improvements or  email queries or fill out a query form.* |[`Sprint1`](#sprint-1)|✅|`Siobhan`
 **15** | *Site visitors should be able to create a "My account" for the site which allows them to access additional features.* |[`Sprint1`](#sprint-1)|✅|`Stephan`
 **16** | *Site visitors must be able to log in after they have created a "My account".* |[`Sprint1`](#sprint-1)|✅|`Stephan`
 **17** | *Implement a "Google Map" feature signposting customers to the business location.* |[`Sprint1`](#sprint-1)|✅|`Siobhan`
 **18** | *Site visitors should be able to locate all relevant contact information of the business.* |[`Sprint1`](#sprint-1)|✅|`Siobhan`
-**19** | *Site visitors should be able to see the list of the popular items on the landing page.* |||
-**20** | *Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* | | |
+**19** | *Site visitors should be able to see the list of the popular items on the landing page.* |[`Sprint3`](#sprint-3)||`Siobhan`
+**20** | *Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* |[`Sprint3`](#sprint-3)||`Siobhan`
 **21** | *Site administrator should be able to access the list of site visitors* |[`Sprint2`](#sprint-2)|✅|`Stephan`
 **22** | *Implement a "Frequently Asked Questions" facility in the site.* |[`Sprint2`](#sprint-2) |✅ |`Siobhan`
 **23** | *Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |[`Sprint2`](#sprint-2)|✅|`Stephan`
@@ -95,7 +95,7 @@ The greatest project of all times presented by outstanding programmers:
 *Implement a "Frequently Asked Questions" facility in the site.* | |`Siobhan`
 *Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |`add new edit and delete forms;` `add view all page;` `alter db with FAQ table;`|`Stephan`
 *Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* | |`Siobhan`
-## Sprint reveiw:
+
 <br/>
 
 ## <a name="sprint-2-review"></a> ⭐ Sprint reveiw:
@@ -110,8 +110,14 @@ The greatest project of all times presented by outstanding programmers:
 # <a name="sprint-3"></a> `Sprint3`
  Task | Subtasks | `Dev`
 --- | --- | --- 
-*Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |`Dependant dropdown (using ajax)`|
-## Sprint reveiw:
+*Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |`Dependant dropdown (using ajax)`| `Stephan`
+*Site visitors should be able to see the list of the popular items on the landing page.* | | `Siobhan`
+*Implement a car reviews/rating facility.* | |`Stephan`
+*Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* ||`Siobhan`
+*Implement a page/facility to obtain a quote for car insurance.* | |`Stephan`
+*Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* ||`Siobhan`
+*Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* ||`Stephan`
+
 <br/>
 
 ## <a name="sprint-3-review"></a> ⭐ Sprint reveiw:
