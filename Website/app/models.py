@@ -116,6 +116,7 @@ class Vehicle(db.Model):
     description = db.Column(db.Text)
     pictures = db.Column(db.Text)
     popular = db.Column(db.Text)
+    mileage = db.Column(db.Integer)
 
     def __repr__(self):
         return f'<Vehicle {self.name}>'
