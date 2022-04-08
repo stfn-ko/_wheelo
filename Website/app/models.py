@@ -33,7 +33,7 @@ class User(db.Model, TimestampMixin, UserMixin):
     first_name = db.Column(db.String(20), nullable=False)
     last_name = db.Column(db.String(20), nullable=False)
     posts = db.relationship('Post', backref='user', lazy='dynamic')
-    vehicles = db.relationship('Vehicle', backref='user', lazy='dynamic')
+    #vehicles = db.relationship('Vehicle', backref='user', lazy='dynamic')
 
     # print to console username created
     def __repr__(self):
@@ -65,24 +65,6 @@ class User(db.Model, TimestampMixin, UserMixin):
         return User.query.get(id)
 
 
-class Make(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(30), nullable=False, unique=True)
-    models = db.relationship('Model', backref='make', lazy='dynamic')
-    vehicles = db.relationship('Vehicle', backref='make', lazy='dynamic')
-
-    def __repr__(self):
-        return f'<Make {self.name}>'
-
-
-class Model(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(30), nullable=False, unique=True)
-    make_id = db.Column(db.Integer, db.ForeignKey('make.id'))
-
-    def __repr__(self):
-        return f'<Model {self.name}>'
-
 class Post(db.Model, TimestampMixin):
     id = db.Column(db.Integer, primary_key=True)
     caption = db.Column(db.Text)
@@ -90,23 +72,6 @@ class Post(db.Model, TimestampMixin):
     
     def __repr__(self):
         return f'<Post {self.name}>'
-
-class Vehicle(TimestampMixin, db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    description = db.Column(db.Text)
-    first_registration = db.Column(db.Date, nullable=False)
-    make_id = db.Column(db.Integer, db.ForeignKey('make.id'))
-    model_id = db.Column(db.Integer, db.ForeignKey('model.id'))
-    color = db.Column(db.String(80), default="not available")
-    license_plate = db.Column(db.String(100), nullable=True, unique=True)
-    vin = db.Column(db.String(17), nullable=True, unique=True)
-    mileage = db.Column(db.Integer, nullable=False)
-    image = db.Column(db.String(30))
-    price = db.Column(db.Float)
-
-    def __repr__(self):
-        return f'<Vehicle {self.title}>'
 
 
 class FAQ(db.Model):
@@ -118,3 +83,39 @@ class FAQ(db.Model):
 
     def __repr__(self):
         return f'<FAQ {self.title}>'
+
+
+
+class Make(db.Model):
+    make_id = db.Column(db.Integer, primary_key=True)
+    make_name = db.Column(db.Text, nullable=False)
+    children = db.relationship("Vehicle")
+
+    def __repr__(self):
+        return f'<Make {self.name}>'
+
+
+class Model(db.Model):
+    model_id = db.Column(db.Integer, primary_key=True)
+    model_name = db.Column(db.Text, nullable=False)
+    make_id = db.Column(db.Integer, db.ForeignKey('make.make_id'))
+    children = db.relationship("Vehicle")
+
+
+    def __repr__(self):
+        return f'<Model {self.name}>'
+
+
+class Vehicle(db.Model):
+    vehicle_id = db.Column(db.Integer, primary_key=True)
+    make_id = db.Column(db.Integer, db.ForeignKey('make.make_id'))
+    model_id = db.Column(db.Integer, db.ForeignKey('model.model_id'))
+    price = db.Column(db.Integer)
+    year = db.Column(db.Integer)
+    color = db.Column(db.Text)
+    description = db.Column(db.Text)
+    pictures = db.Column(db.Text)
+    popular = db.Column(db.Text)
+
+    def __repr__(self):
+        return f'<Vehicle {self.name}>'

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+<div class="row app-content">
+	<img src="{{ url_for('static', filename='car_pics/' + car.pictures + '.jpg') }}">
+</div>
+
+{% endblock %}
