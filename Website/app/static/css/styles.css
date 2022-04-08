@@ -184,6 +184,12 @@ iframe {
   display: flex;
   flex-flow: row;
 }
+.popular_items{
+  width:  75%;
+}
+.popular_text{
+  text-align: justify;
+}
 
 
 .collapsible, .collapsibleQ{
