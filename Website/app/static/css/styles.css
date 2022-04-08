@@ -12,6 +12,13 @@ body {
   margin-top: 90px;
 }
 
+.popular_items{
+  width: 75%;
+}
+.popular_text{
+  text-align: justify;
+}
+
 
 .navbar-custom{
   border-bottom: 2px solid #00043C;
@@ -100,7 +107,7 @@ iframe {
 
 .flex-container {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row;
 }
 
 

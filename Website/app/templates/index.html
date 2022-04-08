@@ -81,7 +81,7 @@
     </div>
 
 <!--BLOG HERE -->
-    <div class="blog">
+    <!--<div class="blog">
       <h1>Blog | <a href="{{ url_for('main.newPost') }}">New post</a></h1>
       <br />
       {%for p in posts %}
@@ -111,18 +111,34 @@
         <p class="norm-blog-info">{{ p.caption }}</p>
       </div>
       {% endfor %}
-    </div>
+    </div> -->
 
 <!-- MOST POPULAR HERE -->
-    <!-- 
-    <h1 style="text-align: center">Wheelo's Most Popular</h1>
+    <h3 style="text-align: center">CarSell's Most Popular</h3>
     <div class="container">
       <div class="flex-container">
-
+        <div>
+          <img class="popular_items" src="static/car_pics/C1_blue_08/1.jpg">
+          <p class="popular_text"> Citroen C1 </p>
+        </div>
+        <div>
+          <img class="popular_items" src="static/car_pics/Polo_black_09/1.jpg">
+          <p class="popular_text"> Volkswagon Polo </p>
+        </div>
+        <div>
+          <img class="popular_items" src="static/car_pics/Corsa_black_02/1.jpg">
+          <p class="popular_text"> Vauxhall Corsa </p>
+        </div>
+        <div>
+          <img class="popular_items" src="static/car_pics/Picanto_white_10/1.jpg">
+          <p class="popular_text"> Kia Picanto </p>
+        </div>
+        <div>
+          <img class="popular_items" src="static/car_pics/Fiesta_blue_04/1.jpg">
+          <p class="popular_text"> Ford Fiesta </p>
         </div>
       </div>
     </div>
-    -->
 
 <!--RSS FEED HERE -->
     <div class="collapsible-rss">
