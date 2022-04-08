@@ -71,7 +71,7 @@ html::-webkit-scrollbar-thumb {
 /*end of navbar*/
 
 .fade-in-content {
-  animation: fadeInAnimation ease 1s;
+  animation: fadeInAnimation ease 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
