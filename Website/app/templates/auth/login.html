@@ -2,7 +2,7 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-  <div class="row app-content">
+  <div class="row fade-in-content">
     <div class="col-md-4 col-md-offset-4">
       <h3 style="text-align:center;">Login</h3>
       <form class="form form-horizontal" method="post" role="form">
@@ -18,7 +18,7 @@
         {{ wtf.form_field(form.submit, class="btn btn-info btn-block") }}
       </form>
       <br>
-      <div style="border-top: 1px solid#888; padding-top:15px; font-size:90%" >
+      <div style="font-size:90%; border-top: 1px; padding-top:15px">
         Don't have an account? 
         <a href="{{ url_for('auth.register') }}">Register!</a>
       </div>

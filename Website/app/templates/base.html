@@ -1,90 +1,72 @@
-{% extends "bootstrap/base.html" %} 
-{% block title %} 
-  {{ title }} / CarSell
-{%endblock %} 
+{% extends "bootstrap/base.html" %} {% block title %} {{ title }} / CG
+{%endblock %} {% block styles %} {{ super() }}
+<link
+  href="{{url_for('static', filename='css/styles.css')}}"
+  rel="stylesheet"
+/>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-{% block styles %} 
-  {{ super() }}
-  <link
-    href="{{url_for('static', filename='css/styles.css')}}"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="//use.fontawesome.com/releases/v6.0.0/css/all.css"
-  />
-  <link 
-    rel="shortcut icon" 
-    href="{{url_for('static', filename='logos/2_transparent_icon2.ico')}}"
-  />
 {% endblock %}
 
 {% block navbar%}
 
-  <nav class="navbar navbar-custom navbar-fixed-top">
-    <a class="navbar-brand" href="{{url_for('main.index')}}">
-      <img src="static/logos/CarSell_logo_main3.3.png" width="60" height="60" alt="">
-    </a>
+<nav class="sidenav">
+  <img src="..\static\logo_big.png" alt="logo" width="150" height="64">   
     <a
-      href=" {{ url_for('main.index') }} "
-      id="index"
-      class="fas fa-home navbar-text"
-      title="home"
-    > Home
-    </a>
+    href=" {{ url_for('main.index') }} "
+    id="index"
+    title="home"
+    >home
+  </a>
+  
+  <a href="#allcars" id="popular" title="popular">cars</a>
+  
+  
+  <a
+  href="{{ url_for('main.contact') }}"
+  id="contact"
+  title="contact us"
+  >contact us
+</a>
 
-    <a href="#popular" id="popular" class="fas fa-car navbar-text" title="popular"> </a>
+<a
+href="{{ url_for('main.FAQs') }}"
+id="questions"
+title="FAQs"
+>faq
+</a>
+{%if current_user.is_authenticated%} 
+{% if current_user.admin %}
+<a
+href="{{ url_for('auth.admin') }}"
+id="auth-complete"
+title="users list"
+>admin
+</a>
+{% endif %} 
+<a
+href="{{ url_for('auth.logout') }}"
+id="logout"
+title="logout"
+>logout
+</a>
+{% else %}
+<a
+href="{{ url_for('auth.login') }}"
+id="auth"
+title="login"
+>login
+</a>
+{% endif %}
 
-    <a
-      href="{{ url_for('main.contact') }}"
-      id="contact"
-      class="fas fa-phone navbar-text"
-      title="contact us"
-    > Contact Us
-    </a>
+</nav>
 
-    <a
-      href="{{ url_for('main.FAQs') }}"
-      id="questions"
-      class="fas fa-question-circle navbar-text"
-      title="FAQs"
-    > FAQs
-    </a>
-
-    {%if current_user.is_authenticated%} {% if current_user.admin %}
-    <a
-      href="{{ url_for('auth.admin') }}"
-      id="auth-complete"
-      class="fa-solid fa-user-check navbar-text"
-      title="users list"
-    > Users List
-    </a>
-    {% endif %} {% else %}
-    <a
-      href="{{ url_for('auth.login') }}"
-      id="auth"
-      class="fas fa-user navbar-text"
-      title="login"
-    > Login
-    </a>
-    {% endif %}
-
-    {%if current_user.is_authenticated%}
-    <a
-      href="{{ url_for('auth.logout') }}"
-      id="logout"
-      class="fas fa-arrow-right-from-bracket navbar-text"
-      title="logout"
-    > Logout
-    </a>
-
-    {% endif %}
-  </nav>
-{% endblock %} 
-
-{% block content %}
-  <div class="container">
-    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+{% endblock %} {% block content %}
+<div class="container">
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
     messages %} {% for category, message in messages %}
     <div class="alert alert-{{ category }} text-center">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">
