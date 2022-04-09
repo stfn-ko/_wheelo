@@ -91,7 +91,7 @@ class FAQ(db.Model):
 class Make(db.Model):
     make_id = db.Column(db.Integer, primary_key=True)
     make_name = db.Column(db.Text, nullable=False)
-    children = db.relationship("Vehicle")
+    children = db.relationship("Vehicles")
 
     def __repr__(self):
         return f'<Make {self.name}>'
@@ -101,15 +101,15 @@ class Model(db.Model):
     model_id = db.Column(db.Integer, primary_key=True)
     model_name = db.Column(db.Text, nullable=False)
     make_id = db.Column(db.Integer, db.ForeignKey('make.make_id'))
-    children = db.relationship("Vehicle")
+    children = db.relationship("Vehicles")
 
 
     def __repr__(self):
         return f'<Model {self.name}>'
 
 
-class Vehicle(db.Model):
-    vehicle_id = db.Column(db.Integer, primary_key=True)
+class Vehicles(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
     make_id = db.Column(db.Integer, db.ForeignKey('make.make_id'))
     model_id = db.Column(db.Integer, db.ForeignKey('model.model_id'))
     price = db.Column(db.Integer)
@@ -119,6 +119,8 @@ class Vehicle(db.Model):
     pictures = db.Column(db.Text)
     popular = db.Column(db.Text)
     mileage = db.Column(db.Integer)
+    fuel_type = db.Column(db.Text)
+    gear_type = db.Column(db.Text)
 
     def __repr__(self):
-        return f'<Vehicle {self.name}>'
+        return f'<Vehicles {self.name}>'

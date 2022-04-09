@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import current_user, login_user, logout_user, login_required
 from app.main.forms import ContactForm, FAQForm, DeleteQuestionForm, \
     EditQuestionForm, PostForm, DeletePostForm, EditPostForm
-from app.models import User, FAQ, Post, Vehicle
+from app.models import User, FAQ, Post, Vehicles, Model, Make
 from sqlalchemy.sql import func, or_
 from app.funcs import save_picture
 from app import db
@@ -13,9 +13,11 @@ main = Blueprint('main', __name__)
 @main.route('/')
 @main.route('/index', methods=['GET', 'POST'])
 def index():
-    popular_for_render = Vehicle.query.order_by(Vehicle.vehicle_id.asc())
+    cars_for_render = Vehicles.query.order_by(Vehicles.id.asc())
+    makes_for_render = Make.query.order_by(Make.make_id.asc())
+    models_for_render = Model.query.order_by(Model.model_id.asc())
     posts_for_render = Post.query.order_by(Post.created_at.asc())
-    return render_template('index.html', posts=posts_for_render, popular_items=popular_for_render, title='Home')
+    return render_template('index.html', posts=posts_for_render, cars=cars_for_render, makes=makes_for_render, models=models_for_render, title='Home')
 
 
 @main.route('/ContactUs', methods=['GET', 'POST'])
@@ -157,3 +159,11 @@ def editPost(id):
         if form.cancel.data:
             return(redirect(url_for('main.index')))
     return render_template('blog/edit_post.html',  post=post, title='Edit Post', form=form)
+
+
+@main.route('/vehicle/<id>', methods=['GET', 'POST'])
+def vehicle(id):
+    vehicle_to_render = Vehicles.query.get(id)
+    makes_for_render = Make.query.order_by(Make.make_id.asc())
+    models_for_render = Model.query.order_by(Model.model_id.asc())
+    return render_template('vehicles/car_page.html', car=vehicle_to_render, makes=makes_for_render, models=models_for_render)

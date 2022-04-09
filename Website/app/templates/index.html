@@ -149,31 +149,27 @@
     <h3 style="text-align: center">CarSell's Most Popular</h3>
     <div class="container">
       <div class="flex-container">
-    <!--{% for car in popular_for_render %}
+        {% for car in cars %}
           {% if car.popular == "true" %}
-            <img src="{{ url_for('static', filename='car_pics/' + car.pictures + '.jpg') }}">
+            <div>
+              <a href="{{ url_for('main.vehicle', id=car.id) }}">
+                <img class="popular_item" src="{{ url_for('static', filename='car_pics/' + car.pictures + '/1.jpg') }}">
+                <p class="popular_text">
+                  {% for m in makes %}
+                    {% if m.make_id == car.make_id %}
+                      {{m.make_name}}
+                    {% endif %}
+                  {% endfor %}
+                  {% for mod in models %}
+                    {%if mod.model_id == car.model_id %}
+                      {{mod.model_name}}
+                    {% endif %}
+                  {% endfor %}
+                </p>
+              </a>
+            </div>
           {% endif %}
-        {% endfor %}-->
-        <div>
-          <img class="popular_items" src="static/car_pics/C1_blue_08.jpg">
-          <p class="popular_text"> Citroen C1 </p>
-        </div>
-        <div>
-          <img class="popular_items" src="static/car_pics/Polo_black_09.jpg">
-          <p class="popular_text"> Volkswagon Polo </p>
-        </div>
-        <div>
-          <img class="popular_items" src="static/car_pics/Corsa_black_02.jpg">
-          <p class="popular_text"> Vauxhall Corsa </p>
-        </div>
-        <div>
-          <img class="popular_items" src="static/car_pics/Picanto_white_10.jpg">
-          <p class="popular_text"> Kia Picanto </p>
-        </div>
-        <div>
-          <img class="popular_items" src="static/car_pics/Fiesta_blue_04.jpg">
-          <p class="popular_text"> Ford Fiesta </p>
-        </div>
+        {% endfor %}
       </div>
     </div>
 
@@ -186,4 +182,12 @@
     </div>
   </div>
 
+<!-- READING NEIGHBORHOOD NEWSLETTER -->
+    <div>
+      <a href="https://rva.org.uk/neighbourhood-newsletters/">
+        <img class="rnn" src="static/rva_logo.png">
+      </a>
+    </div>
+
+  </div>
 {% endblock %}
