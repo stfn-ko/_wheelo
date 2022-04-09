@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import current_user, login_user, logout_user, login_required
 from app.main.forms import ContactForm, FAQForm, DeleteQuestionForm, \
-    EditQuestionForm, PostForm, DeletePostForm, EditPostForm
+    EditQuestionForm, PostForm, EditPostForm
 from app.models import User, FAQ, Post, Vehicles, Model, Make
 from sqlalchemy.sql import func, or_
 from app.funcs import save_picture
@@ -125,20 +125,6 @@ def newPost():
     return render_template('blog/new_post.html', title='New Post', form=form)
 
 
-@main.route('/blog/delete_post/<id>', methods=['GET', 'POST'])
-@login_required
-def delPost(id):
-    post = Post.query.get_or_404(id)
-    form = DeletePostForm()
-    if request.method == 'POST' and form.delete.data:
-        db.session.delete(post)
-        db.session.commit()
-        return redirect(url_for('main.index'))
-    if form.cancel.data:
-        return redirect(url_for('main.index'))
-    return render_template('blog/delete_post.html', post=post, title="Delete Post", form=form)
-
-
 @main.route('/blog/edit_post/<id>', methods=['GET', 'POST'])
 @login_required
 def editPost(id):
@@ -156,6 +142,10 @@ def editPost(id):
                 post.picture = save_picture(form.picture.data)
             db.session.commit()
             return(redirect(url_for('main.index')))
+        if request.method == 'POST' and form.delete.data:
+            db.session.delete(post)
+            db.session.commit()
+            return redirect(url_for('main.index'))
         if form.cancel.data:
             return(redirect(url_for('main.index')))
     return render_template('blog/edit_post.html',  post=post, title='Edit Post', form=form)

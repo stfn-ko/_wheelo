@@ -51,12 +51,6 @@ class PostForm(FlaskForm):
     submit = SubmitField('Share')
     cancel = SubmitField('Cancel')
 
-
-class DeletePostForm(FlaskForm):
-    delete = SubmitField('Delete')
-    cancel = SubmitField('Cancel')
-
-
 class EditPostForm(FlaskForm):
     title = StringField('Name', validators=[
         DataRequired(), Length(min=5, max=50)])
@@ -66,4 +60,5 @@ class EditPostForm(FlaskForm):
         FileAllowed(['jpg', 'png'], 'Images only with extension .jpg or .png')]
     )
     update = SubmitField('Update')
+    delete = SubmitField('Delete')
     cancel = SubmitField('Cancel')

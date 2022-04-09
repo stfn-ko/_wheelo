@@ -10,7 +10,7 @@
                 <h3 class="panel-title">Edit Post</h3>
             </div>
             <div class="panel-body">
-                {{ wtf.quick_form(form, button_map={'update':'success', 'cancel' : 'default'}, extra_classes="text-muted") }}
+                {{ wtf.quick_form(form, button_map={'update':'success', 'delete':'danger', 'cancel' : 'default'}, extra_classes="text-muted") }}
             </div>
         </div>
     </div>

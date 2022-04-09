@@ -1,40 +1,7 @@
 {% extends "base.html" %} {% import 'bootstrap/wtf.html' as wtf %} {% block
   app_content %}
   <div class="row fade-in-content">
-    <!--BLOG HERE -->
-        <!--<div class="blog">
-          <h1>Blog {% if current_user.admin %} | <a href="{{ url_for('main.newPost') }}"> New post</a> {% endif %} </h1>
-          <br />
-          {%for p in posts %}
-          <div class="blog-post">
-            <p class="smaller-blog-info">
-              {{ p.created_at.strftime('%Y-%m-%d') }} {% if
-              current_user.id == p.user_id %} |
-              <a href="{{ url_for('main.editPost', id = p.id) }}" class="clickme">
-                edit
-              </a>
-              |
-              <a
-                href="{{ url_for('main.delPost', id = p.id) }}"
-                class="text-danger clickme"
-              >
-                delete
-              </a>
-              {% elif current_user.admin %} |
-              <a
-                href="{{ url_for('main.delPost', id = p.id) }}"
-                class="text-danger clickme"
-              >
-                delete
-              </a>
-              {% endif %}
-            </p>
-            <img src="{{ url_for('static', filename='post_pics/' + p.picture) }}">
-            <p class="norm-blog-info">{{ p.title }}</p>
-    
-          </div>
-          {% endfor %}
-        </div>  -->
+
         
       <div class="blog">
         {% if current_user.admin %}
@@ -43,6 +10,7 @@
           <h2 class="header-text" id="user">Blog</h2> 
         {% endif %}
         <a href="#allBlogs" id="more">...</a>
+
         <div class="blog-box">
           {%for p in posts %}
             <div class="story-box">
@@ -57,7 +25,7 @@
               {%if p.picture != 'default.jpg' %}
                 <div class="center-img">
                   <img class="blog-pic"
-                  src="{{ url_for('static', filename='post_pics/' + p.picture) }}">
+                  src="{{ url_for('static', filename='post_pics/ + p.picture') }}">
                 </div>
               {% endif %}
               
@@ -65,6 +33,7 @@
             </div>
           {% endfor %}
         </div>
+
       </div>
 
     <!-- INFORMATION CAROUSEL HERE -->
