@@ -1,4 +1,5 @@
 from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, BooleanField, SubmitField
 from wtforms import TextAreaField, FileField, DecimalField, IntegerField, SelectField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length, NumberRange
@@ -18,7 +19,8 @@ class ContactForm(FlaskForm):
 class FAQForm(FlaskForm):
     question = TextAreaField(
         'Question', validators=[DataRequired(), Length(min=10, max=400)])
-    name = StringField('Name', validators=[DataRequired(), Length(min=3, max=30)])
+    name = StringField('Name', validators=[
+                       DataRequired(), Length(min=3, max=30)])
     submit = SubmitField('Ask')
 
 
@@ -39,17 +41,29 @@ class DeleteQuestionForm(FlaskForm):
 
 
 class PostForm(FlaskForm):
+    title = StringField('Post Title:', validators=[
+                        DataRequired(), Length(min=1, max=50)])
+    picture = FileField('Add image', validators=[
+        FileAllowed(['jpg', 'png'], 'Images only with extension .jpg or .png')]
+    )
     caption = TextAreaField(
-        'Text', validators=[DataRequired(), Length(min=1, max=600)])
+        'Text', validators=[DataRequired(), Length(min=1, max=1500)])
     submit = SubmitField('Share')
     cancel = SubmitField('Cancel')
-    
+
+
 class DeletePostForm(FlaskForm):
     delete = SubmitField('Delete')
     cancel = SubmitField('Cancel')
-    
+
+
 class EditPostForm(FlaskForm):
+    title = StringField('Name', validators=[
+        DataRequired(), Length(min=5, max=50)])
     caption = TextAreaField(
-        'Text', validators=[DataRequired(), Length(min=1, max=600)])
+        'Text', validators=[DataRequired(), Length(min=1, max=1500)])
+    picture = FileField('Update image', validators=[
+        FileAllowed(['jpg', 'png'], 'Images only with extension .jpg or .png')]
+    )
     update = SubmitField('Update')
     cancel = SubmitField('Cancel')

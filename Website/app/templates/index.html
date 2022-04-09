@@ -1,8 +1,73 @@
 {% extends "base.html" %} {% import 'bootstrap/wtf.html' as wtf %} {% block
-app_content %}
-<div class="row fade-in-content">
+  app_content %}
+  <div class="row fade-in-content">
+    <!--BLOG HERE -->
+        <!--<div class="blog">
+          <h1>Blog {% if current_user.admin %} | <a href="{{ url_for('main.newPost') }}"> New post</a> {% endif %} </h1>
+          <br />
+          {%for p in posts %}
+          <div class="blog-post">
+            <p class="smaller-blog-info">
+              {{ p.created_at.strftime('%Y-%m-%d') }} {% if
+              current_user.id == p.user_id %} |
+              <a href="{{ url_for('main.editPost', id = p.id) }}" class="clickme">
+                edit
+              </a>
+              |
+              <a
+                href="{{ url_for('main.delPost', id = p.id) }}"
+                class="text-danger clickme"
+              >
+                delete
+              </a>
+              {% elif current_user.admin %} |
+              <a
+                href="{{ url_for('main.delPost', id = p.id) }}"
+                class="text-danger clickme"
+              >
+                delete
+              </a>
+              {% endif %}
+            </p>
+            <img src="{{ url_for('static', filename='post_pics/' + p.picture) }}">
+            <p class="norm-blog-info">{{ p.title }}</p>
+    
+          </div>
+          {% endfor %}
+        </div>  -->
+        
+      <div class="blog">
+        {% if current_user.admin %}
+          <h2 class="header-text" id="admin">Blog<a href="{{ url_for('main.newPost') }}" id="admin-new">"new"</a></h2> 
+        {% else %}
+          <h2 class="header-text" id="user">Blog</h2> 
+        {% endif %}
+        <a href="#allBlogs" id="more">...</a>
+        <div class="blog-box">
+          {%for p in posts %}
+            <div class="story-box">
+              
+              {% if current_user.admin %}
+                <a href="{{ url_for('main.editPost', id = p.id) }}" 
+                class="box-edit">edit</a>
+              {% else %}
+                <a class="box-user">edit</a>
+              {% endif %}
 
-<!-- INFORMATION CAROUSEL HERE -->
+              {%if p.picture != 'default.jpg' %}
+                <div class="center-img">
+                  <img class="blog-pic"
+                  src="{{ url_for('static', filename='post_pics/' + p.picture) }}">
+                </div>
+              {% endif %}
+              
+              <p class="blog-title">{{ p.title }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    <!-- INFORMATION CAROUSEL HERE -->
     <div class="container">
       <div id="information_carousel" class="carousel " data-bs-ride="carousel">
         <!-- Indicators -->
@@ -79,38 +144,6 @@ app_content %}
       <br />
     </div>
 
-<!--BLOG HERE -->
-    <div class="blog">
-      <h1>Blog | <a href="{{ url_for('main.newPost') }}">New post</a></h1>
-      <br />
-      {%for p in posts %}
-      <div class="blog-post">
-        <p class="smaller-blog-info">
-          @{{ p.user.username }} {{ p.created_at.strftime('%Y-%m-%d') }} {% if
-          current_user.id == p.user_id %} |
-          <a href="{{ url_for('main.editPost', id = p.id) }}" class="clickme">
-            edit
-          </a>
-          |
-          <a
-            href="{{ url_for('main.delPost', id = p.id) }}"
-            class="text-danger clickme"
-          >
-            delete
-          </a>
-          {% elif current_user.admin %} |
-          <a
-            href="{{ url_for('main.delPost', id = p.id) }}"
-            class="text-danger clickme"
-          >
-            delete
-          </a>
-          {% endif %}
-        </p>
-        <p class="norm-blog-info">{{ p.caption }}</p>
-      </div>
-      {% endfor %}
-    </div> 
 
 <!-- MOST POPULAR HERE -->
     <h3 style="text-align: center">CarSell's Most Popular</h3>

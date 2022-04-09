@@ -67,7 +67,9 @@ class User(db.Model, TimestampMixin, UserMixin):
 
 class Post(db.Model, TimestampMixin):
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(50), nullable=False)
     caption = db.Column(db.Text)
+    picture = db.Column(db.String(30))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     
     def __repr__(self):

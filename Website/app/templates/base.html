@@ -20,8 +20,8 @@
   {% block navbar%}
   
   <a href=" {{ url_for('main.index') }}" class="sidenav-logo">
-    <img src="..\static\logo_nav.png" id="logo" height="70" width="70" />
-    <img src="..\static\text_logo.png" id="text" height="30" width="145" />
+    <img src="{{ url_for('static', filename='logo_nav.png') }}" id="logo" height="70" width="70" />
+    <img src="{{ url_for('static', filename='text_logo.png') }}" id="text" height="30" width="145" />
   </a>
   <nav class="sidenav">
     <a href=" {{ url_for('main.index') }} " id="index" title="home">home</a>
@@ -46,7 +46,7 @@
 
 {% if request.url == 'http://localhost:5000/index' %}
 <div class="index-upper">
-  <img src="..\static\index_pic.png" id="index_pic">
+  <img src="{{ url_for('static', filename='index_pic.png') }}" id="index_pic">
   
 </div>
 {% endif %}

@@ -3,10 +3,12 @@ app_content %}
 <div class="row fade-in-content">
   <div class="col-md-4 col-md-offset-4">
     <h2 class="form-signin-heading" style="text-align: center">New Post</h2>
-    <form class="form form-horizontal" method="post" role="form" style="text-align: center">
+    <form class="form form-horizontal" method="post" role="form" style="text-align: center; align-content: center">
       {{ form.hidden_tag() }} 
       {{ wtf.form_errors(form, hiddens="only") }} 
+      {{ wtf.form_field(form.title) }} 
       {{ wtf.form_field(form.caption) }} 
+      {{ wtf.form_field(form.picture) }} 
       {{ wtf.form_field(form.submit, class="btn btn-info btn-block") }}
       {{ wtf.form_field(form.cancel, class="btn btn-block") }}
     </form>

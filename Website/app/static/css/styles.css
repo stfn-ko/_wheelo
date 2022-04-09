@@ -42,6 +42,7 @@ html::-webkit-scrollbar-thumb {
     margin-bottom: 3em;
     padding-right: 3em;
     background-color: #3F69FF;
+    box-shadow: 0px 3px 13px 3px grey;
 }
 .sidenav img{
     vertical-align: middle;
@@ -88,15 +89,6 @@ html::-webkit-scrollbar-thumb {
 .btn {
   width: 100px;
 }
-.smaller-blog-info {
-  font-size: smaller;
-  font-style: italic;
-  color: #cccdd4;
-}
-.norm-blog-info {
-  text-align: left;
-  color: #ffffff;
-}
 .clickme {
   cursor: pointer;
 }
@@ -127,22 +119,6 @@ html::-webkit-scrollbar-thumb {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-.blog {
-  padding: 15px;
-  border-radius: 25px;
-  background-color: #979797;
-  margin-left: 0;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-.blog-post {
-  margin-bottom: 30px;
-  border: 2px solid rgb(95, 95, 95);
-  background-color: #555;
-  padding: 10px;
-  border-radius: 15px;
-}
-
 .container {
   align-items: center;
 }
@@ -176,12 +152,16 @@ iframe {
   color: white;
   background-color: rbg(0, 0, 0);
 }
-
+input[type=file] {
+  display: block;
+  margin-top: 1.4em;
+  margin-left: 4vw;
+  margin-bottom: 2em;
+}
 .column {
   flex: 25%;
   padding: 5px;
 }
-
 .flex-container {
   display: flex;
   flex-flow: row;
@@ -193,6 +173,130 @@ iframe {
   text-align: justify;
 }
 
+/*blog*/
+.blog{
+  width: 70em;
+  height: 31em;
+  margin: auto;
+  margin-top: 3em;
+  margin-bottom: 6em;
+  color: white;
+  border-radius: 70px;
+  background: #3F69FF;
+  box-shadow: 0px 0px 20px 1px grey;
+}
+.blog a{
+  text-decoration: none;
+}
+.header-text{
+  font-size: 4em;
+  cursor: default;
+  margin-left: 0.7em;
+  margin-top: 0.6em;
+  margin-right: 11.435em;
+  display: inline;
+  font-weight: bold;
+  padding-bottom: 0.1em;
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+#admin-new{
+  cursor: default;
+  display: inline;
+  transition: 0.5s;
+  color: transparent;
+  margin-left: 0.5em;
+  font-size: xx-small;
+  text-decoration: none;
+}
+.header-text:hover{
+  margin-right: 9.7em;
+  background-color: #0057FF;
+}
+#user:hover{
+  margin-right: 11.435em;
+  background-color: #0057FF;
+}
+.header-text:hover #admin-new{
+  color: white;
+  cursor: pointer;
+  font-size: smaller;
+}
+.blog #more {
+  color: white;
+  font-size: 6em;
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+}
+.blog-box{
+  display: inline-flex;
+}
+.story-box{
+  margin: 4em;
+  color: black;
+  cursor: default;
+  margin-top: 2em;
+  padding-top: 1.6em;
+  font-weight: bold;
+  padding-left: 4em;
+  margin-bottom: 3em;
+  padding-right: 4em;
+  text-align: center;
+  padding-bottom: 1em;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0px 2px 15px 2px #002f8e;
+}
+.box-edit{
+  color: black;
+  padding: 0.5em;
+  margin-top: 1em;
+  padding-top: 0.7em;
+  margin-right: -10em;
+  border-radius: 60px;
+  padding-bottom: 0.7em;
+  transition: 0.5s;
+}
+.box-user{
+  padding: 0.5em;
+  cursor: default;
+  margin-top: 1em;
+  color: transparent;
+  padding-top: 0.7em;
+  margin-right: -10em;
+  border-radius: 60px;
+  padding-bottom: 0.7em;
+}
+.box-user:hover{
+  cursor: default;
+  color: transparent;
+}
+.box-edit:hover{
+  color: black;
+  box-shadow: 0px 0px 3px 1px #7f7f7f;
+}
+.blog-title{
+  cursor: pointer;
+  padding-top: 6px;
+  border-top-style: solid;
+}
+.center-img{
+  display: flex;
+  justify-content: center;
+  height: 130px;
+  align-items: center;
+}
+.blog-pic{
+  display: block;
+  cursor: pointer;
+  max-width: 100px;
+  max-height: 100px;
+  position: absolute;
+}
+/*end of blog*/
 
 .collapsible, .collapsibleQ{
   border-radius: 25px;

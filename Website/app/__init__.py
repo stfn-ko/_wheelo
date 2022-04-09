@@ -1,3 +1,4 @@
+import os
 import logging
 from flask import Flask
 from config import Config
@@ -11,16 +12,17 @@ from logging.handlers import SMTPHandler, RotatingFileHandler
 mail = Mail()
 db = SQLAlchemy()
 migrate = Migrate()
-login = LoginManager() 
+login = LoginManager()
 bootstrap = Bootstrap()
 login.login_view = 'auth.login'
 login.login_message_category = "info"
 
 # define the name of your app below
-APP_NAME = 'Template - Name'
+APP_NAME = 'CarSell'
+app = Flask(__name__)
+
 
 def create_app(config_class=Config):
-    app = Flask(__name__)
     app.config.from_object(config_class)
 
     db.init_app(app)
@@ -38,7 +40,7 @@ def create_app(config_class=Config):
     app.register_blueprint(auth)
     app.register_blueprint(main)
     app.register_blueprint(errors)
-    
+
     if not app.debug and not app.testing:
         if app.config['MAIL_SERVER']:
             auth = None
