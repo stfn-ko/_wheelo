@@ -99,6 +99,6 @@ class CheckoutDetailsForm(FlaskForm):
     city = StringField('City', validators=[DataRequired()])
     postcode = StringField('Postcode', validators=[DataRequired()])
     cardNum = IntegerField('Card Number', validators=[DataRequired()])
-    expDate = DateField('Expiry Date', format='%d/%m/%Y', validators=[DataRequired()])
-    csv = IntegerField('CSV number', validators=[DataRequired(), Length(3)])
+    expDate = DateField('Expiry Date', format='%d/%m/%Y')
+    csv = IntegerField('CSV number', validators=[DataRequired()])
     submit = SubmitField('Submit')

@@ -3,7 +3,7 @@
 
 {% block app_content %}
 	<div class="container">
-		<div class="checkout">
+		<form class="checkout form form-horizontal" method="post" role="form">
 			<h2 style="text-align:center;"> Checkout </h2>
 
 			<div class="personal-details">
@@ -23,13 +23,12 @@
 			</div>
 			<div class="card-details">
 				<br>
-				<h3> Total to pay: £{{car.price}} 
-					{% for t in trade %}
-						{% if t.user_id == current_user.get_id %}
-							- £{{trade.trade_amount}} 
-						{% endif %}
-					{% endfor %}
-				</h3>
+				{% for t in trading %}
+					{% if t.user_id == current_user.id %}
+							<h3> Total to pay: £{{car.price}} - £{{t.trade_amount}} </h3>
+					{% endif %}
+				{% endfor %}
+		
 				<h4> Please enter payment details </h4>
 				{{wtf.form_field(form.cardNum)}}
 				{{wtf.form_field(form.expDate)}}
@@ -38,6 +37,6 @@
 
 			{{wtf.form_field(form.submit, class="btn btn-info btn-block")}}
 
-		</div>
+		</form>
 	</div>
 {% endblock %}
