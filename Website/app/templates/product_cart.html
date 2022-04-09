@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+	<div class="container">
+		<div class="order-overview">
+			<h2 style="text-align:center;"> Order Overview </h2>
+			<img class="thumbnail" src="{{ url_for('static', filename='car_pics/' + car.pictures + '/1.jpg') }}" >
+			<p>{{car.year}} <span>&#8226;</span>
+				{% for m in makes %}
+				    {% if m.make_id == car.make_id %}
+				      	{{m.make_name}}
+				    {% endif %}
+				{% endfor %}
+				{% for mod in models %}
+				    {%if mod.model_id == car.model_id %}
+				        {{mod.model_name}}
+				    {% endif %}
+				{% endfor %}
+			</p>
+			<p> {{car.mileage}} miles <span>&#8226;</span> {{car.fuel_type}} <span>&#8226;</span> {{car.gear_type}} </p>
+		</div>
+		<div class="one-row">
+			<h3>Price of car</h3>
+			<h3> £{{car.price}} </h3>
+		</div>
+		{% for t in trade %}
+			{% if t.user_id == current_user.get_id %}
+				<div class="one-row">
+					<h3>Trading Amount</h3>
+					<p> {{t.trade_amount}}
+				</p>
+			{% endif %}
+		{% endfor %}
+
+
+		<div class="cart-button">
+			<a  href="{{ url_for('main.checkout', id=car.id) }}"><button> Checkout </button>
+		</div>
+
+
+	</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, BooleanField, SubmitField
-from wtforms import TextAreaField, FileField, DecimalField, IntegerField, SelectField
+from wtforms import TextAreaField, FileField, DecimalField, IntegerField, SelectField, DateField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length, NumberRange
 
 
@@ -62,3 +62,43 @@ class EditPostForm(FlaskForm):
     update = SubmitField('Update')
     delete = SubmitField('Delete')
     cancel = SubmitField('Cancel')
+
+
+
+class TradeInForm(FlaskForm):
+    #make = SelectField('make', choices=[])
+    #model = SelectField('model', choices=[])
+    make = StringField('make', validators=[DataRequired(), Length(min=3, max=200)])
+    model = StringField('model', validators=[DataRequired(), Length(min=3, max=200)])
+    color = StringField('color', validators=[
+                       DataRequired(), Length(min=3, max=20)])
+    year = IntegerField('year made', validators=[DataRequired(), Length(4)])
+    description = StringField('Description')
+    picture_one = FileField('Picture One')
+    picture_two = FileField('Picture Two')
+    picture_three = FileField('Picture Three')
+    mileage = IntegerField('total mileage', validators=[DataRequired()])
+    fuel_type = SelectField('fuel type', choices=[('petrol'), ('diesel')])
+    gear_type = SelectField('gear type', choices=[('manual'), ('automatic')])
+    reg = StringField('car registration number', validators=[Length(7)])
+    trade = SubmitField('Trade-In')
+    sell = SubmitField('Sell')
+
+class SellDetailsForm(FlaskForm):
+    name = StringField('Name on the card', validators=[DataRequired()])
+    sortCode = IntegerField('Sort Code', validators=[DataRequired(), Length(6)])
+    accountNum = IntegerField('Account Number', validators=[DataRequired(), Length(8)])
+    submit = SubmitField('Submit')
+
+
+class CheckoutDetailsForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    address_one = StringField('Address Line One', validators=[DataRequired()])
+    address_two = StringField('Address Line Two')
+    city = StringField('City', validators=[DataRequired()])
+    postcode = StringField('Postcode', validators=[DataRequired()])
+    cardNum = IntegerField('Card Number', validators=[DataRequired()])
+    expDate = DateField('Expiry Date', format='%d/%m/%Y', validators=[DataRequired()])
+    csv = IntegerField('CSV number', validators=[DataRequired(), Length(3)])
+    submit = SubmitField('Submit')

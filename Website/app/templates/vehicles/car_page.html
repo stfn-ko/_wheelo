@@ -5,7 +5,7 @@
 
 <div class="container">
 	<div class="car-header">
-		<div class="car-title">
+		<div class="car-title one-row">
 			<h2> 
 				{% for m in makes %}
 			        {% if m.make_id == car.make_id %}
@@ -20,7 +20,7 @@
 			</h2>
 			<h2 style="color: red;" align="right"> £{{car.price}} </h2>
 		</div>
-	    <p>{{car.year}} <span>&#8226;</span> {{car.mileage}} Miles <span>&#8226;</span> {{car.fuel_type}} <span>&#8226;</span> {{car.gear_type}} </p>
+	    <p>{{car.year}} <span>&#8226;</span> {{car.mileage}} miles <span>&#8226;</span> {{car.fuel_type}} <span>&#8226;</span> {{car.gear_type}} </p>
 	</div>
 	<div class="flex-container">
 		<img class="thumbnail" src="{{ url_for('static', filename='car_pics/' + car.pictures + '/1.jpg') }}" >
@@ -34,7 +34,7 @@
 		<br>
 		<!-- Add to cart button here -->
 		<div class="cart-button">
-			<button type="button" class="add-to-cart">Add to cart</button>
+			<a  href="{{ url_for('main.overview', id=car.id) }}"><button> Buy Now </button>
 		</div>
 		<br>
 		<h4> Reviews and Ratings for this model: </h5>

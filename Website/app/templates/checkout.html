@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+	<div class="container">
+		<div class="checkout">
+			<h2 style="text-align:center;"> Checkout </h2>
+
+			<div class="personal-details">
+				{% if current_user.is_authenticated == False %}
+					<h3> Contact Details </h3>
+					{{wtf.form_field(form.name)}}
+					{{wtf.form_field(form.email)}}
+
+				{% endif %}
+
+				<br>
+				<h3> Address </h3>
+				{{wtf.form_field(form.address_one)}}
+				{{wtf.form_field(form.address_two)}}
+				{{wtf.form_field(form.city)}}
+				{{wtf.form_field(form.postcode)}}
+			</div>
+			<div class="card-details">
+				<br>
+				<h3> Total to pay: £{{car.price}} 
+					{% for t in trade %}
+						{% if t.user_id == current_user.get_id %}
+							- £{{trade.trade_amount}} 
+						{% endif %}
+					{% endfor %}
+				</h3>
+				<h4> Please enter payment details </h4>
+				{{wtf.form_field(form.cardNum)}}
+				{{wtf.form_field(form.expDate)}}
+				{{wtf.form_field(form.csv)}}
+			</div>
+
+			{{wtf.form_field(form.submit, class="btn btn-info btn-block")}}
+
+		</div>
+	</div>
+{% endblock %}

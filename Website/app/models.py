@@ -94,7 +94,7 @@ class Make(db.Model):
     children = db.relationship("Vehicles")
 
     def __repr__(self):
-        return f'<Make {self.name}>'
+        return f'{self.make_name}'
 
 
 class Model(db.Model):
@@ -105,7 +105,7 @@ class Model(db.Model):
 
 
     def __repr__(self):
-        return f'<Model {self.name}>'
+        return f'{self.model_name}'
 
 
 class Vehicles(db.Model):
@@ -122,5 +122,14 @@ class Vehicles(db.Model):
     fuel_type = db.Column(db.Text)
     gear_type = db.Column(db.Text)
 
+    #def __repr__(self):
+     #   return f'<Vehicles {self.name}>'
+
+
+class Trade(db.Model):
+    trade_id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    trade_amount = db.Column(db.Integer, nullable=False)
+
     def __repr__(self):
-        return f'<Vehicles {self.name}>'
+        return f'<Trade {self.name}>'

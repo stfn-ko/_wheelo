@@ -364,10 +364,13 @@ input[type=file] {
   width: 33%;
 }
 
-.car-title{
+.one-row{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #000;
+}
+.order-overview{
   border-bottom: 1px solid #000;
 }
 
@@ -384,4 +387,11 @@ input[type=file] {
 
 .rnn{
   width: 30%;
+}
+
+.payment_v{
+  height: 30px;
+}
+.payment_p{
+  height: 65px;
 }

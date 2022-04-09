@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+<div class="row fade-in-content">
+	{%if current_user.is_authenticated == False %}
+
+		<h4> Please login or create an account to access our trade-in / sell feature </h4>
+
+	{% else %}
+
+		<div class="col-md-4 col-md-offset-4">
+		
+			<form class="form form-horizontal" method="post" role="form">
+				{{ form.hidden_tag() }}
+				{{ wtf.form_errors(form, hiddens="only") }}
+				<h3 style="text-align:center;"> Trade-In / Sell your car </h3>
+				{{ wtf.form_field(form.make) }}
+				{{ wtf.form_field(form.model) }}
+				{{ wtf.form_field(form.color) }}
+				{{ wtf.form_field(form.year) }}
+				{{ wtf.form_field(form.description) }}
+				{{ wtf.form_field(form.picture_one) }}
+				{{ wtf.form_field(form.picture_two) }}
+				{{ wtf.form_field(form.picture_three) }}
+				{{ wtf.form_field(form.mileage) }}
+				{{ wtf.form_field(form.fuel_type) }}
+				{{ wtf.form_field(form.gear_type) }}
+				{{ wtf.form_field(form.reg) }}
+				{{ wtf.form_field(form.trade, class="btn btn-info btn-block") }}
+				{{ wtf.form_field(form.sell, class="btn btn-info btn-block") }}
+
+			</form>
+		</div>
+
+	{% endif %}
+</div>
+
+
+{% endblock %}
+

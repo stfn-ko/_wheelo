@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import current_user, login_user, logout_user, login_required
 from app.main.forms import ContactForm, FAQForm, DeleteQuestionForm, \
-    EditQuestionForm, PostForm, EditPostForm
-from app.models import User, FAQ, Post, Vehicles, Model, Make
+    EditQuestionForm, PostForm, EditPostForm, TradeInForm, SellDetailsForm, CheckoutDetailsForm
+from app.models import User, FAQ, Post, Vehicles, Model, Make, Trade
 from sqlalchemy.sql import func, or_
 from app.funcs import save_picture
 from app import db
@@ -155,3 +155,107 @@ def vehicle(id):
     makes_for_render = Make.query.order_by(Make.make_id.asc())
     models_for_render = Model.query.order_by(Model.model_id.asc())
     return render_template('vehicles/car_page.html', car=vehicle_to_render, makes=makes_for_render, models=models_for_render)
+
+
+@main.route('/trade-in', methods=['GET', 'POST'])
+def trade_in():
+    form = TradeInForm()
+    #form.make.choices = Make.query.order_by(Make.make_id.asc())
+    #form.model.choices = Model.query.order_by(Model.model_id.asc())
+    if form.validate_on_submit():
+
+        price = 1000; #use valuation to get price?
+
+        make_exist = Make.query.filter_by(Make.make_name == form.make.data)
+        if not make_exist:
+            make_new = Make(
+                make_name=form.make.data,
+            )
+            db.session.add(make_new)
+            db.commit()
+
+        makeId = Make.query.filter_by(Make.make_name == form.make.data)
+
+        model_exist = Model.query.filter_by(Model.model_name == form.model.data)
+        if not model_exist:
+            model_new = Model(
+                model_name=form.model.data,
+            )
+            db.session.add(model_new)
+            db.commit()
+        
+        modId = Model.query.filter_by(Model.model_name == form.model.data)
+
+        picture_folder = form.model.data + '_' + form.color.data + '_' + form.year.data
+        form.picture_one.data.save('app/static/car_pics' + picture_folder + '/1.jpg')
+        form.picture_two.data.save('app/static/car_pics' + picture_folder + '/2.jpg')
+        form.picture_three.data.save('app/static/car_pics' + picture_folder + '/3.jpg')
+
+
+
+        car = Vehicles(
+            make_id=makeId,
+            model_id=modelId,
+            price=price,
+            year=form.year.data,
+            color=form.color.data,
+            description=form.description.data ,
+            pictures= picture_folder,
+            mileage=form.mileage.data,
+            fuel_type=form.fuel_type.data,
+            gear_type=form.gear_type.data,
+        )
+        db.session.add(car)
+        db.commit()
+
+        vehicle = Vehicles.query.filter_by(Vehicles.make_id == makeId and Vehicles.model_id == modId and Vehicles.year == form.year.data and Vehicles.color == form.color.data)
+        if form.trade.data:
+            trade = Trade (
+                    user_id=current_user.get_id,
+                    trade_amount=price,
+                )
+            db.session.add(trade)
+            db.commit()
+            return redirect('main.trade_in')
+
+
+        if form.sell.data:
+            return redirect(url_for('main.sell'))
+
+        return redirect(url_for('main.trade_in'))
+    return render_template('vehicles/trade_in.html', form=form)
+
+
+
+@main.route('/sell', methods=['GET', 'POST'])
+def sell():
+    form=SellDetailsForm()
+
+    if form.validate_on_submit():
+        flash('Your payment has been processed', 'success')
+        return redirect(url_for('main.trade_in'))
+
+    return render_template('vehicles/sell_car.html', form=form)
+
+
+@main.route('/overview/<id>', methods=['GET', 'POST'])
+def overview(id):
+    vehicle_to_render = Vehicles.query.get(id)
+    makes_for_render = Make.query.order_by(Make.make_id.asc())
+    models_for_render = Model.query.order_by(Model.model_id.asc())
+    trading = Trade.query.order_by(Trade.trade_id.asc())
+    return render_template('product_cart.html', car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trade=trading)
+
+@main.route('/checkout/<id>', methods=['GET', 'POST'])
+def checkout(id):
+    form = CheckoutDetailsForm()
+    vehicle_to_render = Vehicles.query.get(id)
+    makes_for_render = Make.query.order_by(Make.make_id.asc())
+    models_for_render = Model.query.order_by(Model.model_id.asc())
+    trading = Trade.query.order_by(Trade.trade_id.asc())
+
+    if form.validate_on_submit():
+        flash('Your purchase was successful', 'success')
+        return redirect(url_for('main.index'))
+
+    return render_template('checkout.html', form=form, car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trade=trading)
