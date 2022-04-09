@@ -2,9 +2,7 @@ body {
   font-family: 'Poppins', sans-serif;
   color: black;
 }
-.app-content{
-  margin-top: 90px;
-}
+
 .footer{
   border-top: 2px solid #00043C;
   margin-top: 4em;
@@ -186,7 +184,7 @@ iframe {
   display: flex;
   flex-flow: row;
 }
-.popular_items{
+.popular_item{
   width:  75%;
 }
 .popular_text{
@@ -245,5 +243,30 @@ iframe {
 .opening-times{
   display:inline-block;
   vertical-align: middle;
-  margin-left: 30px;
+}
+
+.thumbnail{
+  width: 33%;
+}
+
+.car-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+}
+
+.cart-button{
+  text-align: center;
+}
+.add-to-cart{
+  background-color: #3F69FF;
+  color: white;
+  width: 25%;
+  height: 25%;
+}
+
+
+.rnn{
+  width: 30%;
 }

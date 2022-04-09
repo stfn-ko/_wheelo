@@ -3,8 +3,43 @@
 
 {% block app_content %}
 
-<div class="row app-content">
-	<img src="{{ url_for('static', filename='car_pics/' + car.pictures + '.jpg') }}">
+<div class="container">
+	<div class="car-header">
+		<div class="car-title">
+			<h2> 
+				{% for m in makes %}
+			        {% if m.make_id == car.make_id %}
+			           	{{m.make_name}}
+			      	{% endif %}
+			    {% endfor %}
+			    {% for mod in models %}
+			        {%if mod.model_id == car.model_id %}
+			            {{mod.model_name}}
+			        {% endif %}
+			    {% endfor %}
+			</h2>
+			<h2 style="color: red;" align="right"> £{{car.price}} </h2>
+		</div>
+	    <p>{{car.year}} <span>&#8226;</span> {{car.mileage}} Miles <span>&#8226;</span> {{car.fuel_type}} <span>&#8226;</span> {{car.gear_type}} </p>
+	</div>
+	<div class="flex-container">
+		<img class="thumbnail" src="{{ url_for('static', filename='car_pics/' + car.pictures + '/1.jpg') }}" >
+		<img class="thumbnail" src="{{ url_for('static', filename='car_pics/' + car.pictures + '/2.jpg') }}" >
+		<img class="thumbnail" src="{{ url_for('static', filename='car_pics/' + car.pictures + '/3.jpg') }}" >
+	</div>
+
+	<div class="car-content">
+		<h4> Description: </h5>
+		<p> {{car.description}} </p>
+		<br>
+		<!-- Add to cart button here -->
+		<div class="cart-button">
+			<button type="button" class="add-to-cart">Add to cart</button>
+		</div>
+		<br>
+		<h4> Reviews and Ratings for this model: </h5>
+
+	</div>
 </div>
 
 {% endblock %}
