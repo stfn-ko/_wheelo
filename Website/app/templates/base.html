@@ -29,8 +29,9 @@
     <a href="#allcars" id="popular" title="popular">cars</a>
     
     <a href="{{ url_for('main.contact') }}" id="contact" title="contact us"
-    >contact us
-  </a>
+    >contact us </a>
+
+    <a href="{{ url_for('main.trade_in') }}" title="trade in"> trade in </a>
   
   <a href="{{ url_for('main.FAQs') }}" id="questions" title="FAQs">faq </a>
   {%if current_user.is_authenticated%} {% if current_user.admin %}

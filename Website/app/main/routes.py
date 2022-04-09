@@ -166,36 +166,46 @@ def trade_in():
 
         price = 1000; #use valuation to get price?
 
-        make_exist = Make.query.filter_by(Make.make_name == form.make.data)
+        make_exist = Make.query.filter(Make.make_name == form.make.data).first()
         if not make_exist:
             make_new = Make(
                 make_name=form.make.data,
             )
             db.session.add(make_new)
-            db.commit()
+            db.session.commit()
 
-        makeId = Make.query.filter_by(Make.make_name == form.make.data)
+        newMake = Make.query.filter(Make.make_name == form.make.data).first()
+        makeId = newMake.make_id
 
-        model_exist = Model.query.filter_by(Model.model_name == form.model.data)
+        model_exist = Model.query.filter(Model.model_name == form.model.data).first()
         if not model_exist:
             model_new = Model(
                 model_name=form.model.data,
+                make_id=makeId
             )
             db.session.add(model_new)
-            db.commit()
+            db.session.commit()
         
-        modId = Model.query.filter_by(Model.model_name == form.model.data)
+        newModel = Model.query.filter(Model.model_name == form.model.data).first()
+        modId = newModel.model_id
 
-        picture_folder = form.model.data + '_' + form.color.data + '_' + form.year.data
-        form.picture_one.data.save('app/static/car_pics' + picture_folder + '/1.jpg')
-        form.picture_two.data.save('app/static/car_pics' + picture_folder + '/2.jpg')
-        form.picture_three.data.save('app/static/car_pics' + picture_folder + '/3.jpg')
+        picture_folder = form.model.data + '_' + form.color.data + '_' + str(form.year.data)
+        #filename_one = secure_filename(form.picture_one.data)
+        #filename_two = secure_filename(form.picture_two.data)
+        #filename_three = secure_filename(form.picture_three.data)
+        #form.picture_one.data.save('app/static/car_pics/' + filename_one)
+        #form.picture_two.data.save('app/static/car_pics/' + filename_two)
+        #form.picture_three.data.save('app/static/car_pics/' + filename_three)
 
+        #f = form.picture_one.data
+        #f.save(secure_filename(f.filename))
 
+        if form.picture_one.data:
+            image_file_one = save_picture(form.picture_one.data)
 
         car = Vehicles(
             make_id=makeId,
-            model_id=modelId,
+            model_id=modId,
             price=price,
             year=form.year.data,
             color=form.color.data,
@@ -204,18 +214,19 @@ def trade_in():
             mileage=form.mileage.data,
             fuel_type=form.fuel_type.data,
             gear_type=form.gear_type.data,
+            popular="false",
         )
         db.session.add(car)
-        db.commit()
+        db.session.commit()
 
-        vehicle = Vehicles.query.filter_by(Vehicles.make_id == makeId and Vehicles.model_id == modId and Vehicles.year == form.year.data and Vehicles.color == form.color.data)
+        vehicle = Vehicles.query.filter(Vehicles.make_id == makeId and Vehicles.model_id == modId and Vehicles.year == form.year.data and Vehicles.color == form.color.data)
         if form.trade.data:
             trade = Trade (
                     user_id=current_user.get_id,
                     trade_amount=price,
                 )
             db.session.add(trade)
-            db.commit()
+            db.session.commit()
             return redirect('main.trade_in')
 
 
