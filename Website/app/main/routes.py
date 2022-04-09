@@ -275,15 +275,12 @@ def checkout(id):
         trade_delete = Trade.query.filter(Trade.user_id == current_user.id)
         try:
             db.session.delete(trade_delete)
+            db.session.commit()
             flash('Your purchase was successful!', 'success')
-            return redirect(url_for('main.index'))
 
         except:
             flash('Trading error! Your purchase should have been successful but we may be in contact over the trade details.')
-            return redirect(url_for('main.index'))
-
         
         return redirect(url_for('main.index'))
 
     return render_template('checkout.html', form=form, car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trading=trading)
-
