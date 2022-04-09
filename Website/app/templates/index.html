@@ -12,25 +12,29 @@
         <a href="#allBlogs" id="more">...</a>
 
         <div class="blog-box">
-          {%for p in posts %}
-            <div class="story-box">
-              
-              {% if current_user.admin %}
-                <a href="{{ url_for('main.editPost', id = p.id) }}" 
-                class="box-edit">edit</a>
-              {% else %}
-                <a class="box-user">edit</a>
-              {% endif %}
+          {%for p in posts%}
+            {% if p.id <= 5 %}
+              <div class="story-box">
+                
+                {% if current_user.admin %}
+                  <a href="{{ url_for('main.editPost', id = p.id) }}" 
+                  class="box-edit">edit</a>
+                {% else %}
+                  <a class="box-user">edit</a>
+                {% endif %}
 
-              {%if p.picture != 'default.jpg' %}
-                <div class="center-img">
-                  <img class="blog-pic"
-                  src="{{ url_for('static', filename='post_pics/ + p.picture') }}">
-                </div>
-              {% endif %}
-              
-              <p class="blog-title">{{ p.title }}</p>
-            </div>
+                {%if p.picture != 'default.jpg' %}
+                  <div class="center-img">
+                    <img class="blog-pic"
+                    src="{{ url_for('static', filename='post_pics/' + p.picture) }}">
+                  </div>
+                  <p class="blog-title">{{ p.title }}</p>
+                {% else %}
+                  <p class="blog-title-solo">{{ p.title }}</p>
+                {% endif %}
+                
+              </div>
+            {% endif %}
           {% endfor %}
         </div>
 

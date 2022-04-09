@@ -47,7 +47,7 @@ class PostForm(FlaskForm):
         FileAllowed(['jpg', 'png'], 'Images only with extension .jpg or .png')]
     )
     caption = TextAreaField(
-        'Text', validators=[DataRequired(), Length(min=1, max=1500)])
+        'Text', validators=[DataRequired(), Length(min=1, max=6000)])
     submit = SubmitField('Share')
     cancel = SubmitField('Cancel')
 
@@ -55,7 +55,7 @@ class EditPostForm(FlaskForm):
     title = StringField('Name', validators=[
         DataRequired(), Length(min=5, max=50)])
     caption = TextAreaField(
-        'Text', validators=[DataRequired(), Length(min=1, max=1500)])
+        'Text', validators=[DataRequired(), Length(min=1, max=6000)])
     picture = FileField('Update image', validators=[
         FileAllowed(['jpg', 'png'], 'Images only with extension .jpg or .png')]
     )

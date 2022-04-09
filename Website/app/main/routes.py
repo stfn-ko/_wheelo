@@ -105,19 +105,17 @@ def editQuestion(id):
 @login_required
 def newPost():
     form = PostForm()
-    if form.submit.data and form.validate_on_submit():
-        image_file = 'default.jpg'
+    if form.validate_on_submit():
+        picture = 'default.jpg'
         if form.picture.data:
-            image_file = save_picture(form.picture.data)
-
+            picture = save_picture(form.picture.data)
         p = Post(
             title=form.title.data,
             caption=form.caption.data,
-            picture=image_file,
+            picture=picture,
             user_id=current_user.get_id()
         )
         db.session.add(p)
-        db.session.flush()
         db.session.commit()
         return redirect(url_for('main.index'))
     if form.cancel.data:
