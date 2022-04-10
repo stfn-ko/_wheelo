@@ -87,14 +87,14 @@ The greatest project of all times presented by outstanding programmers:
 # <a name="sprint-2"></a> `Sprint2`
  Task | Subtasks | `Dev`
 --- | --- | --- 
-*Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* | |`Siobhan`
+*Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* | `find images and content for carousel` |`Siobhan`
 *Site visitors should be able to get back to the landing page quickly and easily.* |`Add link to homepage in the navbar`|`Stephan`
 *Implement a blog facility.* |`New HTML, form and model;` `add new edit and delete forms;` `add view all page;` `alter db with post table;`|`Stephan`
-*Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* | |`Siobhan`
+*Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* | `research rss feed` `find site to get rss from` `generate rss link` |`Siobhan`
 *Site administrator should be able to access the list of site visitors* |`New HTML, form and model`|`Stephan`
-*Implement a "Frequently Asked Questions" facility in the site.* | |`Siobhan`
+*Implement a "Frequently Asked Questions" facility in the site.* | `create database table to store questions` `add questions to database` |`Siobhan`
 *Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |`add new edit and delete forms;` `add view all page;` `alter db with FAQ table;`|`Stephan`
-*Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* | |`Siobhan`
+*Implements  "Follow Us" options/links to the businesses' Facebook and Twitter accounts.* | `find logos` `add links to contact page` |`Siobhan`
 
 <br/>
 
