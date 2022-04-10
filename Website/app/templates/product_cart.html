@@ -24,16 +24,16 @@
 			<h3>Price of car</h3>
 			<h3> £{{car.price}} </h3>
 		</div>
-		{% for t in trade %}
-			{% if t.user_id == current_user.get_id %}
+		{% for t in trading %}
+			{% if t.user_id == current_user.id %}
 				<div class="one-row">
-					<h3>Trading Amount</h3>
-					<p> {{t.trade_amount}}
-				</p>
+					<h3>Trading Deduction</h3>
+					<h3> £{{t.trade_amount}}</h3>
+				</div>
 			{% endif %}
 		{% endfor %}
 
-
+		<br>
 		<div class="cart-button">
 			<a  href="{{ url_for('main.checkout', id=car.id) }}"><button> Checkout </button>
 		</div>

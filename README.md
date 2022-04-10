@@ -33,7 +33,7 @@ The greatest project of all times presented by outstanding programmers:
 **7**| *Implement a page/facility to check vehicle history.* |[`Sprint3`](#sprint-3)||`Siobhan`
 **8**| *Implement a page/facility to obtain a quote for car insurance.* |[`Sprint3`](#sprint-3)| |`Stephan`
 **9**| *Implement a car reviews/rating facility.* |[`Sprint3`](#sprint-3)| |`Stephan`
-**10** | *Implement a blog facility.* |[`Sprint2`](#sprint-2)|X|`Stephan`
+**10** | *Implement a blog facility.* |[`Sprint3`](#sprint-3)| |`Stephan`
 **11** | *Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* |[`Sprint3`](#sprint-3)| |`Stephan`
 **12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |[`Sprint3`](#sprint-3)||`Siobhan`
 **13** | *Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* |[`Sprint2`](#sprint-2)|✅|`Siobhan`
@@ -113,6 +113,7 @@ The greatest project of all times presented by outstanding programmers:
 *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* ||`Stephan`
 *Site visitors should be able to see the list of the popular items on the landing page.* | | `Siobhan`
 *Implement a car reviews/rating facility.* | |`Stephan`
+*Implement a blog facility.* | |`Stephan`
 *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* ||`Siobhan`
 *Implement a page/facility to obtain a quote for car insurance.* | |`Stephan`
 *Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* ||`Siobhan`

@@ -69,10 +69,10 @@ class TradeInForm(FlaskForm):
     #make = SelectField('make', choices=[])
     #model = SelectField('model', choices=[])
     make = StringField('make', validators=[DataRequired(), Length(min=3, max=200)])
-    model = StringField('model', validators=[DataRequired(), Length(min=3, max=200)])
+    model = StringField('model', validators=[DataRequired(), Length(max=200)])
     color = StringField('color', validators=[
                        DataRequired(), Length(min=3, max=20)])
-    year = IntegerField('year made', validators=[DataRequired(), Length(4)])
+    year = IntegerField('year made', validators=[DataRequired()])
     description = StringField('Description')
     picture_one = FileField('Picture One')
     picture_two = FileField('Picture Two')
@@ -80,14 +80,14 @@ class TradeInForm(FlaskForm):
     mileage = IntegerField('total mileage', validators=[DataRequired()])
     fuel_type = SelectField('fuel type', choices=[('petrol'), ('diesel')])
     gear_type = SelectField('gear type', choices=[('manual'), ('automatic')])
-    reg = StringField('car registration number', validators=[Length(7)])
+    reg = StringField('car registration number')
     trade = SubmitField('Trade-In')
     sell = SubmitField('Sell')
 
 class SellDetailsForm(FlaskForm):
     name = StringField('Name on the card', validators=[DataRequired()])
-    sortCode = IntegerField('Sort Code', validators=[DataRequired(), Length(6)])
-    accountNum = IntegerField('Account Number', validators=[DataRequired(), Length(8)])
+    sortCode = IntegerField('Sort Code', validators=[DataRequired()])
+    accountNum = IntegerField('Account Number', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 
@@ -99,6 +99,6 @@ class CheckoutDetailsForm(FlaskForm):
     city = StringField('City', validators=[DataRequired()])
     postcode = StringField('Postcode', validators=[DataRequired()])
     cardNum = IntegerField('Card Number', validators=[DataRequired()])
-    expDate = DateField('Expiry Date', format='%d/%m/%Y', validators=[DataRequired()])
-    csv = IntegerField('CSV number', validators=[DataRequired(), Length(3)])
+    expDate = DateField('Expiry Date', format='%d/%m/%Y')
+    csv = IntegerField('CSV number', validators=[DataRequired()])
     submit = SubmitField('Submit')
