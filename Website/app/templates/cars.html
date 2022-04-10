@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% import 'bootstrap/wtf.html' as wtf %} 
+{% block app_content %}
+    <div class="row fade-in-content">
+        {% for car in cars %}
+        <div class="car-box">
+            <img class="car-pic"
+            src="{{ url_for('static', filename='car_pics/' + car.pictures + '/1.jpg') }}">
+            <p>{{car.make_id}}</p>
+            <p>{{car.model_id}}</p>
+            <p>{{car.price}}</p>
+            <p>{{car.year}}</p>
+            <p>{{car.mileage}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

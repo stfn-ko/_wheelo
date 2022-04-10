@@ -169,6 +169,12 @@ def vehicle(id):
     return render_template('vehicles/car_page.html', car=vehicle_to_render, makes=makes_for_render, models=models_for_render)
 
 
+@main.route('/cars/all', methods=['GET', 'POST'])
+def viewAllCars():
+    cars = Vehicles.query.order_by(Vehicles.id.asc())
+    return render_template('cars.html', cars=cars)
+
+
 @main.route('/trade-in', methods=['GET', 'POST'])
 def trade_in():
     form = TradeInForm()
@@ -178,7 +184,8 @@ def trade_in():
 
         price = 1000  # use valuation to get price?
 
-        make_exist = Make.query.filter(Make.make_name == form.make.data).first()
+        make_exist = Make.query.filter(
+            Make.make_name == form.make.data).first()
         if not make_exist:
             make_new = Make(
                 make_name=form.make.data,
@@ -189,7 +196,8 @@ def trade_in():
         newMake = Make.query.filter(Make.make_name == form.make.data).first()
         makeId = newMake.make_id
 
-        model_exist = Model.query.filter(Model.model_name == form.model.data).first()
+        model_exist = Model.query.filter(
+            Model.model_name == form.model.data).first()
         if not model_exist:
             model_new = Model(
                 model_name=form.model.data,
@@ -197,11 +205,13 @@ def trade_in():
             )
             db.session.add(model_new)
             db.session.commit()
-        
-        newModel = Model.query.filter(Model.model_name == form.model.data).first()
+
+        newModel = Model.query.filter(
+            Model.model_name == form.model.data).first()
         modId = newModel.model_id
 
-        picture_folder = str(form.model.data + '_' + form.color.data + '_' + str(form.year.data))
+        picture_folder = str(form.model.data + '_' +
+                             form.color.data + '_' + str(form.year.data))
         #filename_one = secure_filename(form.picture_one.data)
         #filename_two = secure_filename(form.picture_two.data)
         #filename_three = secure_filename(form.picture_three.data)
@@ -210,7 +220,7 @@ def trade_in():
         #form.picture_three.data.save('app/static/car_pics/' + filename_three)
 
         #f = form.picture_one.data
-        #f.save(secure_filename(f.filename))
+        # f.save(secure_filename(f.filename))
 
         if form.picture_one.data:
             image_file_one = save_picture(form.picture_one.data)
@@ -228,7 +238,7 @@ def trade_in():
             year=int(form.year.data),
             color=str(form.color.data),
             description=str(form.description.data),
-            pictures= str(picture_folder),
+            pictures=str(picture_folder),
             mileage=int(form.mileage.data),
             fuel_type=str(form.fuel_type.data),
             gear_type=str(form.gear_type.data),
@@ -237,12 +247,13 @@ def trade_in():
         db.session.add(car)
         db.session.commit()
 
-        vehicle = Vehicles.query.filter(Vehicles.make_id == makeId and Vehicles.model_id == modId and Vehicles.year == form.year.data and Vehicles.color == form.color.data)
+        vehicle = Vehicles.query.filter(Vehicles.make_id == makeId and Vehicles.model_id ==
+                                        modId and Vehicles.year == form.year.data and Vehicles.color == form.color.data)
         if form.trade.data:
-            trade = Trade (
-                    user_id=int(current_user.get_id()),
-                    trade_amount=int(price),
-                )
+            trade = Trade(
+                user_id=int(current_user.get_id()),
+                trade_amount=int(price),
+            )
             db.session.add(trade)
             db.session.commit()
             return redirect(url_for('main.trade_in'))
@@ -291,7 +302,7 @@ def checkout(id):
 
         except:
             flash('Trading error! Your purchase should have been successful but we may be in contact over the trade details.')
-        
+
         return redirect(url_for('main.index'))
 
     return render_template('checkout.html', form=form, car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trading=trading)

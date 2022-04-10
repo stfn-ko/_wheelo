@@ -15,25 +15,37 @@
   rel="stylesheet"
 />
 
-{% endblock %} 
+{% endblock %} {% block navbar%}
 
-  {% block navbar%}
-  
-  <a href=" {{ url_for('main.index') }}" class="sidenav-logo">
-    <img src="{{ url_for('static', filename='logo_nav.png') }}" id="logo" height="70" width="70" />
-    <img src="{{ url_for('static', filename='text_logo.png') }}" id="text" height="30" width="145" />
-  </a>
-  <nav class="sidenav">
-    <a href=" {{ url_for('main.index') }} " id="index" title="home">home</a>
-    
-    <a href="#allcars" id="popular" title="popular">cars</a>
-    
-    <a href="{{ url_for('main.contact') }}" id="contact" title="contact us"
-    >contact us </a>
+<a href=" {{ url_for('main.index') }}" class="sidenav-logo">
+  <img
+    src="{{ url_for('static', filename='logo_nav.png') }}"
+    id="logo"
+    height="70"
+    width="70"
+  />
+  <img
+    src="{{ url_for('static', filename='text_logo.png') }}"
+    id="text"
+    height="30"
+    width="145"
+  />
+</a>
+<nav class="sidenav">
+  <a href=" {{ url_for('main.index') }} " id="index" title="home">home</a>
 
-    <a href="{{ url_for('main.trade_in') }}" title="trade in"> trade in </a>
-  
+  <a href="{{ url_for('main.viewAllCars') }}" id="cars" title="cars">cars</a>
+
+  <a href="{{ url_for('main.trade_in') }}" title="trade in"> trade in </a>
+
   <a href="{{ url_for('main.FAQs') }}" id="questions" title="FAQs">faq </a>
+
+  <a href="#car_reviews" title="car reviews"> car reviews </a>
+
+  <a href="{{ url_for('main.contact') }}" id="contact" title="contact us"
+    >contact us
+  </a>
+
   {%if current_user.is_authenticated%} {% if current_user.admin %}
   <a href="{{ url_for('auth.admin') }}" id="auth-complete" title="users list"
     >admin
@@ -45,7 +57,7 @@
   {% endif %}
 </nav>
 
-{% if request.url == 'http://localhost:5000/index' or 'http://localhost:5000'%}
+{% if request.url == 'http://localhost:5000/index' or request.url =='http://localhost:5000/'%}
 <div class="row fade-in-content">
   <div class="index-upper">
     <img
@@ -77,30 +89,29 @@
         <h1 id="model-text">Model</h1>
 
         <div class="select-model-box">
-            <label for="model-ch"></label>
-            <input type="text" id="model-ch" name="model">
+          <label for="model-ch"></label>
+          <input type="text" id="model-ch" name="model" />
         </div>
-
       </div>
       <div class="search-field" id="color">
         <h1 id="color-text">Color</h1>
         <label for="color-ch"></label>
-            <input type="text" id="color-ch" name="color">
+        <input type="text" id="color-ch" name="color" />
       </div>
       <div class="search-field" id="registration">
         <h1 id="registration-text">Registration</h1>
-        <input type="date" id="from-reg-ch" name="from-reg">
-        <input type="date" id="to-reg-ch" name="to-reg">
+        <input type="date" id="from-reg-ch" name="from-reg" />
+        <input type="date" id="to-reg-ch" name="to-reg" />
       </div>
       <div class="search-field" id="price">
         <h1 id="price-text">Price</h1>
-        <input type="text" id="from-price-ch" name="from-price">
-        <input type="text" id="to-price-ch" name="to-price">
+        <input type="text" id="from-price-ch" name="from-price" />
+        <input type="text" id="to-price-ch" name="to-price" />
       </div>
       <div class="search-field" id="mileage">
         <h1 id="mileage-text">Mileage</h1>
-        <input type="text" id="from-mileage-ch" name="from-mileage">
-        <input type="text" id="to-mileage-ch" name="to-mileage">
+        <input type="text" id="from-mileage-ch" name="from-mileage" />
+        <input type="text" id="to-mileage-ch" name="to-mileage" />
       </div>
     </div>
     <div class="search-btn">
