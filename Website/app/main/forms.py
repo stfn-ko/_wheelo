@@ -91,6 +91,12 @@ class SellDetailsForm(FlaskForm):
     name = StringField('Name on the card', validators=[DataRequired()])
     sortCode = IntegerField('Sort Code', validators=[DataRequired()])
     accountNum = IntegerField('Account Number', validators=[DataRequired()])
+    name = StringField('Name', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    address_one = StringField('Address Line One', validators=[DataRequired()])
+    address_two = StringField('Address Line Two')
+    city = StringField('City', validators=[DataRequired()])
+    postcode = StringField('Postcode', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
 

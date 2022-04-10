@@ -261,9 +261,11 @@ def trade_in():
             )
             db.session.add(trade)
             db.session.commit()
+            flash('You have successfuly selected to trade in your vehicle, your trade will automatically be applied to your purchase', 'success')
             return redirect(url_for('main.trade_in'))
 
         if form.sell.data:
+            flash('You have successfuly selected to sell your vehicle. The amount we will offer you is: ' + price, 'success')
             return redirect(url_for('main.sell'))
 
         return redirect(url_for('main.trade_in'))
