@@ -71,7 +71,7 @@ class Post(db.Model, TimestampMixin):
     caption = db.Column(db.Text)
     picture = db.Column(db.String(30))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    
+
     def __repr__(self):
         return f'<Post {self.name}>'
 
@@ -85,7 +85,6 @@ class FAQ(db.Model):
 
     def __repr__(self):
         return f'<FAQ {self.title}>'
-
 
 
 class Make(db.Model):
@@ -102,7 +101,6 @@ class Model(db.Model):
     model_name = db.Column(db.Text, nullable=False)
     make_id = db.Column(db.Integer, db.ForeignKey('make.make_id'))
     children = db.relationship("Vehicles")
-
 
     def __repr__(self):
         return f'{self.model_name}'
@@ -122,8 +120,8 @@ class Vehicles(db.Model):
     fuel_type = db.Column(db.Text)
     gear_type = db.Column(db.Text)
 
-    #def __repr__(self):
-     #   return f'<Vehicles {self.name}>'
+    # def __repr__(self):
+    #   return f'<Vehicles {self.name}>'
 
 
 class Trade(db.Model):
@@ -133,3 +131,49 @@ class Trade(db.Model):
 
     def __repr__(self):
         return f'<Trade {self.name}>'
+
+
+class CarReview(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    make_id = db.Column(db.Integer, db.ForeignKey('make.make_id'))
+    title = db.Column(db.Text)
+    caption = db.Column(db.Text)
+    image = db.Column(db.Text)
+    category = db.Column(db.Text)
+    preview_text = db.Column(db.Text)
+
+    def __repr__(self):
+        return f'<CarReview {self.name}>'
+
+
+class Insurance(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    fname = db.Column(db.Text, nullable=False)
+    lname = db.Column(db.Text, nullable=False)
+    bdate = db.Column(db.DateTime, nullable=False)
+    ref_by = db.Column(db.Text)
+    property_status = db.Column(db.Text, nullable=False)
+    spouse_fname = db.Column(db.Text)
+    spouse_lname = db.Column(db.Text)
+    spouse_bdate = db.Column(db.DateTime)
+    street_address = db.Column(db.Text, nullable=False)
+    street_address_l2 = db.Column(db.Text)
+    city = db.Column(db.Text)
+    state_prov = db.Column(db.Text)
+    postal = db.Column(db.Text)
+    country = db.Column(db.Text)
+    email = db.Column(db.Text, nullable=False)
+    ph_num = db.Column(db.Integer, nullable=False)
+    hh_ld_amt = db.Column(db.Integer)
+    hh_info = db.Column(db.Text)
+    health_insurance = db.Column(db.Integer, nullable=False)
+    health_insurance_cov = db.Column(db.Integer, nullable=False)
+    health_insurance_carr = db.Column(db.Text, nullable=False)
+    vehicle_info = db.Column(db.Text, nullable=False)
+    vehicle_full_cov = db.Column(db.Integer, nullable=False)
+    vehicle_additional = db.Column(db.Text)
+    additional_info = db.Column(db.Text)
+    insurance_img = db.Column(db.Text)
+
+    def __repr__(self):
+        return f'<CarReview {self.name}>'

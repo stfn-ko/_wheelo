@@ -35,25 +35,23 @@
   <a href=" {{ url_for('main.index') }} " id="index" title="home">home</a>
 
   <a href="{{ url_for('main.viewAllCars') }}" id="cars" title="cars">cars</a>
+  
+  <a href="#car_reviews" title="car reviews">car reviews</a>
+  
+  <a href="#car_insurance" title="car insurance">car insurance</a>
 
-  <a href="{{ url_for('main.trade_in') }}" title="trade in"> trade in </a>
+  <a href="{{ url_for('main.trade_in') }}" title="trade in">trade in</a>
 
-  <a href="{{ url_for('main.FAQs') }}" id="questions" title="FAQs">faq </a>
+  <a href="{{ url_for('main.FAQs') }}" id="questions" title="FAQs">faq</a>
 
-  <a href="#car_reviews" title="car reviews"> car reviews </a>
-
-  <a href="{{ url_for('main.contact') }}" id="contact" title="contact us"
-    >contact us
-  </a>
+  <a href="{{ url_for('main.contact') }}" id="contact" title="contact us">contact us</a>
 
   {%if current_user.is_authenticated%} {% if current_user.admin %}
-  <a href="{{ url_for('auth.admin') }}" id="auth-complete" title="users list"
-    >admin
-  </a>
+  <a href="{{ url_for('auth.admin') }}" id="auth-complete" title="users list">admin</a>
   {% endif %}
-  <a href="{{ url_for('auth.logout') }}" id="logout" title="logout">logout </a>
+  <a href="{{ url_for('auth.logout') }}" id="logout" title="logout">logout</a>
   {% else %}
-  <a href="{{ url_for('auth.login') }}" id="auth" title="login">login </a>
+  <a href="{{ url_for('auth.login') }}" id="auth" title="login">login</a>
   {% endif %}
 </nav>
 

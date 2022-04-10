@@ -51,6 +51,7 @@ class PostForm(FlaskForm):
     submit = SubmitField('Share')
     cancel = SubmitField('Cancel')
 
+
 class EditPostForm(FlaskForm):
     title = StringField('Name', validators=[
         DataRequired(), Length(min=5, max=50)])
@@ -64,14 +65,14 @@ class EditPostForm(FlaskForm):
     cancel = SubmitField('Cancel')
 
 
-
 class TradeInForm(FlaskForm):
     #make = SelectField('make', choices=[])
     #model = SelectField('model', choices=[])
-    make = StringField('make', validators=[DataRequired(), Length(min=3, max=200)])
+    make = StringField('make', validators=[
+                       DataRequired(), Length(min=3, max=200)])
     model = StringField('model', validators=[DataRequired(), Length(max=200)])
     color = StringField('color', validators=[
-                       DataRequired(), Length(min=3, max=20)])
+        DataRequired(), Length(min=3, max=20)])
     year = IntegerField('year made', validators=[DataRequired()])
     description = StringField('Description')
     picture_one = FileField('Picture One')
@@ -83,6 +84,7 @@ class TradeInForm(FlaskForm):
     reg = StringField('car registration number')
     trade = SubmitField('Trade-In')
     sell = SubmitField('Sell')
+
 
 class SellDetailsForm(FlaskForm):
     name = StringField('Name on the card', validators=[DataRequired()])
@@ -102,3 +104,43 @@ class CheckoutDetailsForm(FlaskForm):
     expDate = DateField('Expiry Date', format='%d/%m/%Y')
     csv = IntegerField('CSV number', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+
+class InsuranceForm(FlaskForm):
+    fname = StringField('First Name', validators=[DataRequired()])
+    lname = StringField('Last Name', validators=[DataRequired()])
+    bdate = DateField('Date of Birth', validators=[DataRequired()])
+    ref_by = StringField('Who were you referred by?')
+    property_status = StringField(
+        'Do you own the home you live in or do you rent?', validators=[DataRequired()])
+    spouse_fname = StringField(
+        'Spouse\'s First Name (if single- please leave blank)')
+    spouse_lname = StringField('Spouse\'s Last Name')
+    spouse_bdate = DateField('Spouse\'s Date of Birth')
+    street_address = StringField('Street Address', validators=[DataRequired()])
+    street_address_l2 = StringField('Street Address Line Two')
+    city = StringField('City', validators=[DataRequired()])
+    state_prov = StringField('State/Province', validators=[DataRequired()])
+    postal = StringField('Zip Code/Postal', validators=[DataRequired()])
+    country = StringField('Country', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    ph_num = IntegerField('Phone Number', validators=[DataRequired()])
+    # br
+    hh_ld_amt = IntegerField('How many licensed drivers in the home?')
+    hh_info = StringField('Please list all occupants names and date of births')
+    health_insurance = BooleanField(
+        'Do you have health insurance?', nullable=False)
+    health_insurance_cov = BooleanField(
+        'Is everyone in your home covered under the same health insurance?', nullable=False)
+    health_insurance_carr = StringField(
+        'Who is your health insurance carrier?', validators=[DataRequired()])
+    vehicle_info = StringField(
+        'Vehicle Info: Year, Make, Model (optional: Vin #)', validators=[DataRequired()])
+    vehicle_full_cov = BooleanField(
+        'Do you want full coverage on your Vehicle?', nullable=False)
+    vehicle_additional = StringField(
+        'IF you have more then 1 vehicle then please list them here')
+    additional_info = StringField(
+        'Anything else you would want the agent to know regarding the auto insurance?')
+    insurance_img = FileField('Add image', validators=[FileAllowed(
+        ['jpg', 'png'], 'Images only with extension .jpg or .png')])

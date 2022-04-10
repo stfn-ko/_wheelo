@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+<div class="row fade-in-content">
+    <br>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Insurance Form</h3>
+            </div>
+            <div class="panel-body">
+                {{ wtf.quick_form(form, button_map={'update':'success'}, extra_classes="text-muted") }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

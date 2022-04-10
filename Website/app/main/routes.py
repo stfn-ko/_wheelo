@@ -174,7 +174,7 @@ def viewAllCars():
     cars = Vehicles.query.order_by(Vehicles.id.asc())
     make = Make.query.order_by(Make.make_id.asc())
     model = Model.query.order_by(Model.model_id.asc())
-    return render_template('cars.html', cars=cars, make=make, model=model)
+    return render_template('vehicles/all_cars.html', cars=cars, make=make, model=model)
 
 
 @main.route('/trade-in', methods=['GET', 'POST'])
