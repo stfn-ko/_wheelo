@@ -144,3 +144,4 @@ class InsuranceForm(FlaskForm):
         'Anything else you would want the agent to know regarding the auto insurance?')
     insurance_img = FileField('Add image', validators=[FileAllowed(
         ['jpg', 'png'], 'Images only with extension .jpg or .png')])
+    submit = SubmitField('Submit')
