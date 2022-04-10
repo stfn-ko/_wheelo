@@ -476,7 +476,7 @@ html::-webkit-scrollbar-thumb {
 }
 /*end of blog*/
 
-.collapsible, .collapsibleQ{
+.collapsible{
   border-radius: 25px;
   background-color: #00043C;
   color: #ffffff;
@@ -488,7 +488,7 @@ html::-webkit-scrollbar-thumb {
   outline: none;
   font-size: 15px;
 }
-.rssFeed, .questionCol {
+.collapsibleBody {
   padding: 0 18px;
   max-height: 0;
   overflow: hidden;
@@ -497,7 +497,7 @@ html::-webkit-scrollbar-thumb {
 .rssFeed{
   margin-bottom: 20px;
 }
-.collapsible:after, .collapsibleQ:after {
+.collapsible:after {
   font-family: "Font Awesome 5 Free";
   content: "\02795"; /* Unicode character for "plus" sign (+) */
   float: right;
@@ -505,7 +505,7 @@ html::-webkit-scrollbar-thumb {
   color: #DA8AFF;
   font-weight: 900;
 }
-.pressed:after, .pressedQ:after {
+.pressed:after {
   font-family: "Font Awesome 5 Free";
   content: "\2796"; /* Unicode character for "minus" sign (-) */
   float: right;

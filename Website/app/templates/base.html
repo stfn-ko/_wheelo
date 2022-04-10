@@ -125,32 +125,16 @@
   for (i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function () {
       this.classList.toggle("pressed");
-      var rssFeed = this.nextElementSibling;
-      if (rssFeed.style.maxHeight) {
-        rssFeed.style.maxHeight = null;
+      var collapsibleBody = this.nextElementSibling;
+      if (collapsibleBody.style.maxHeight) {
+        collapsibleBody.style.maxHeight = null;
       } else {
-        rssFeed.style.maxHeight = rssFeed.scrollHeight + "px";
+        collapsibleBody.style.maxHeight = collapsibleBody.scrollHeight + "px";
       }
     });
   }
 </script>
 
-<script>
-  var coll = document.getElementsByClassName("collapsibleQ");
-  var i;
-
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function () {
-      this.classList.toggle("pressedQ");
-      var questionCol = this.nextElementSibling;
-      if (questionCol.style.maxHeight) {
-        questionCol.style.maxHeight = null;
-      } else {
-        questionCol.style.maxHeight = questionCol.scrollHeight + "px";
-      }
-    });
-  }
-</script>
 
 <script>
   const selected = document.querySelector(".selected");

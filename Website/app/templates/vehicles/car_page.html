@@ -28,16 +28,29 @@
 		<img class="thumbnail" src="{{ url_for('static', filename='car_pics/' + car.pictures + '/3.jpg') }}" >
 	</div>
 
-	<div class="car-content">
-		<h4> Description: </h5>
+	<div class="car-description">
+		<h4> Description: </h4>
 		<p> {{car.description}} </p>
 		<br>
-		<!-- Add to cart button here -->
-		<div class="cart-button">
-			<a  href="{{ url_for('main.overview', id=car.id) }}"><button> Buy Now </button>
-		</div>
-		<br>
-		<h4> Reviews and Ratings for this model: </h5>
+	</div>
+
+	<!-- Add to cart button here -->
+	<div class="cart-button">
+		<a  href="{{ url_for('main.overview', id=car.id) }}"><button> Buy Now </button> </a>
+	</div>
+	<br>
+	
+	<div class="car-ratings">
+		<h4> Reviews and Ratings for this model: </h4>
+	</div>
+
+	<button type="button" class="collapsible">
+		<h4> Car History Check </h4>
+		<p> Status: all checks passed </p>
+	</button>
+	<div class="collapsibleBody">
+		<p> check here </p>
+	</div>
 
 	</div>
 </div>
