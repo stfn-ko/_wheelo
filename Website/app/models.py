@@ -123,6 +123,22 @@ class Vehicles(db.Model):
     # def __repr__(self):
     #   return f'<Vehicles {self.name}>'
 
+class History(db.Model):
+    history_id = db.Column(db.Integer, primary_key=True)
+    vehicle_id = db.Column(db.Integer, db.ForeignKey('vehicles.id'))
+    stolen = db.Column(db.Integer, default="false")
+    scrapped = db.Column(db.Integer, default="false")
+    write_off = db.Column(db.Integer, default="false")
+    mileage_disc = db.Column(db.Integer, default="false")
+    color_change = db.Column(db.Integer, default="false")
+    finance = db.Column(db.Integer, default="false")
+
+    def __repr__(self):
+        return f'<History {self.name}>'
+
+
+
+
 
 class Trade(db.Model):
     trade_id = db.Column(db.Integer, primary_key=True)

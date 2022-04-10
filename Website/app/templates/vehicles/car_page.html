@@ -49,7 +49,19 @@
 		<p> Status: all checks passed </p>
 	</button>
 	<div class="collapsibleBody">
-		<p> check here </p>
+		{% for h in history %}
+			{% if h.vehicle_id == car.id %}
+				<h3> Recorded as stolen:   {{h.stolen}} </h3>
+				<h3> Recorded as scrapped: {{h.scrapped}} </h3>
+				<h3> Insurance write off: {{h.write_off}}</h3>
+				<h3> Mileage discrepancies: {{h.mileage_disc}}</h3>
+				<h3> Color Change: {{h.color_change}} </h3>
+				<h3> Outstanding finance: {{h.finance}} </h3>
+			{% endif %}
+		{% endfor %}
+		<h3> <a href="https://www.autocheck.co.uk/">
+			Click here to buy a full history check
+		</a></h3>
 	</div>
 
 	</div>

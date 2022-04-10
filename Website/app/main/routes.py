@@ -3,7 +3,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.main.forms import ContactForm, FAQForm, DeleteQuestionForm, \
     EditQuestionForm, PostForm, EditPostForm, TradeInForm, SellDetailsForm, \
     CheckoutDetailsForm, InsuranceForm, ReviewForm
-from app.models import User, FAQ, Post, Vehicles, Model, Make, Trade, Insurance, CarReview
+from app.models import User, FAQ, Post, Vehicles, Model, Make, Trade, Insurance, CarReview, History
 from sqlalchemy.sql import func, or_
 from app.funcs import save_picture
 from app import db
@@ -167,7 +167,8 @@ def vehicle(id):
     vehicle_to_render = Vehicles.query.get(id)
     makes_for_render = Make.query.order_by(Make.make_id.asc())
     models_for_render = Model.query.order_by(Model.model_id.asc())
-    return render_template('vehicles/car_page.html', car=vehicle_to_render, makes=makes_for_render, models=models_for_render)
+    history_for_render = History.query.order_by(History.history_id.asc())
+    return render_template('vehicles/car_page.html', car=vehicle_to_render, makes=makes_for_render, models=models_for_render, history=history_for_render)
 
 
 @main.route('/cars/all', methods=['GET', 'POST'])
