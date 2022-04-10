@@ -301,6 +301,7 @@ def checkout(id):
         trade_delete = Trade.query.filter(Trade.user_id == current_user.id)
         try:
             db.session.delete(trade_delete)
+            db.session.delete(vehicle_to_render)
             db.session.commit()
             flash('Your purchase was successful!', 'success')
 
@@ -377,3 +378,8 @@ def addReview():
         db.session.commit()
         return redirect(url_for('main.allReviews'))
     return render_template('vehicles/add_review.html', form=form)
+
+
+@main.route('/history')
+def history():
+    return render_template('vehicles/history.html')

@@ -133,12 +133,8 @@ html::-webkit-scrollbar-thumb {
     transition: 0s;
   }
   .carousel-text {
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    background-color: rbg(0, 0, 0);
+   color: white;
+   text-decoration: none;
   }
   input[type=file] {
     display: block;
@@ -478,8 +474,8 @@ html::-webkit-scrollbar-thumb {
 
 .collapsible{
   border-radius: 25px;
-  background-color: #00043C;
-  color: #ffffff;
+  background-color: #9DB3FF;
+  color: black;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -492,8 +488,9 @@ html::-webkit-scrollbar-thumb {
   padding: 0 18px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  transition: max-height 0.5s ease-out;
 }
+
 .rssFeed{
   margin-bottom: 20px;
 }
@@ -556,4 +553,24 @@ html::-webkit-scrollbar-thumb {
 
 .rnn{
   width: 30%;
+}
+
+.car_img{
+  height:250px;
+  align-items: center;
+}
+
+
+.gallery{
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 335px;
+}
+.gallery:hover{
+  border: 1px solid #777;
+}
+.desc{
+  padding: 5px;
+  text-align: center;
 }
