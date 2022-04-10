@@ -178,60 +178,74 @@ def trade_in():
 
         price = 1000  # use valuation to get price?
 
-        make_exist = Make.query.filter_by(Make.make_name == form.make.data)
+        make_exist = Make.query.filter(Make.make_name == form.make.data).first()
         if not make_exist:
             make_new = Make(
                 make_name=form.make.data,
             )
             db.session.add(make_new)
-            db.commit()
+            db.session.commit()
 
-        makeId = Make.query.filter_by(Make.make_name == form.make.data)
+        newMake = Make.query.filter(Make.make_name == form.make.data).first()
+        makeId = newMake.make_id
 
-        model_exist = Model.query.filter_by(
-            Model.model_name == form.model.data)
+        model_exist = Model.query.filter(Model.model_name == form.model.data).first()
         if not model_exist:
             model_new = Model(
                 model_name=form.model.data,
+                make_id=makeId
             )
             db.session.add(model_new)
-            db.commit()
+            db.session.commit()
+        
+        newModel = Model.query.filter(Model.model_name == form.model.data).first()
+        modId = newModel.model_id
 
-        modId = Model.query.filter_by(Model.model_name == form.model.data)
+        picture_folder = str(form.model.data + '_' + form.color.data + '_' + str(form.year.data))
+        #filename_one = secure_filename(form.picture_one.data)
+        #filename_two = secure_filename(form.picture_two.data)
+        #filename_three = secure_filename(form.picture_three.data)
+        #form.picture_one.data.save('app/static/car_pics/' + filename_one)
+        #form.picture_two.data.save('app/static/car_pics/' + filename_two)
+        #form.picture_three.data.save('app/static/car_pics/' + filename_three)
 
-        picture_folder = form.model.data + '_' + form.color.data + '_' + form.year.data
-        form.picture_one.data.save(
-            'app/static/car_pics' + picture_folder + '/1.jpg')
-        form.picture_two.data.save(
-            'app/static/car_pics' + picture_folder + '/2.jpg')
-        form.picture_three.data.save(
-            'app/static/car_pics' + picture_folder + '/3.jpg')
+        #f = form.picture_one.data
+        #f.save(secure_filename(f.filename))
+
+        if form.picture_one.data:
+            image_file_one = save_picture(form.picture_one.data)
+
+        if form.picture_two.data:
+            image_file_two = save_picture(form.picture_two.data)
+
+        if form.picture_three.data:
+            image_file_three = save_picture(form.picture.data)
 
         car = Vehicles(
-            make_id=makeId,
-            model_id=modelId,
-            price=price,
-            year=form.year.data,
-            color=form.color.data,
-            description=form.description.data,
-            pictures=picture_folder,
-            mileage=form.mileage.data,
-            fuel_type=form.fuel_type.data,
-            gear_type=form.gear_type.data,
+            make_id=int(makeId),
+            model_id=int(modId),
+            price=int(price),
+            year=int(form.year.data),
+            color=str(form.color.data),
+            description=str(form.description.data),
+            pictures= str(picture_folder),
+            mileage=int(form.mileage.data),
+            fuel_type=str(form.fuel_type.data),
+            gear_type=str(form.gear_type.data),
+            popular=str("false"),
         )
         db.session.add(car)
-        db.commit()
+        db.session.commit()
 
-        vehicle = Vehicles.query.filter_by(Vehicles.make_id == makeId and Vehicles.model_id ==
-                                           modId and Vehicles.year == form.year.data and Vehicles.color == form.color.data)
+        vehicle = Vehicles.query.filter(Vehicles.make_id == makeId and Vehicles.model_id == modId and Vehicles.year == form.year.data and Vehicles.color == form.color.data)
         if form.trade.data:
-            trade = Trade(
-                user_id=current_user.get_id,
-                trade_amount=price,
-            )
+            trade = Trade (
+                    user_id=int(current_user.get_id()),
+                    trade_amount=int(price),
+                )
             db.session.add(trade)
-            db.commit()
-            return redirect('main.trade_in')
+            db.session.commit()
+            return redirect(url_for('main.trade_in'))
 
         if form.sell.data:
             return redirect(url_for('main.sell'))
@@ -257,7 +271,7 @@ def overview(id):
     makes_for_render = Make.query.order_by(Make.make_id.asc())
     models_for_render = Model.query.order_by(Model.model_id.asc())
     trading = Trade.query.order_by(Trade.trade_id.asc())
-    return render_template('product_cart.html', car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trade=trading)
+    return render_template('product_cart.html', car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trading=trading)
 
 
 @main.route('/checkout/<id>', methods=['GET', 'POST'])
@@ -269,7 +283,15 @@ def checkout(id):
     trading = Trade.query.order_by(Trade.trade_id.asc())
 
     if form.validate_on_submit():
-        flash('Your purchase was successful', 'success')
+        trade_delete = Trade.query.filter(Trade.user_id == current_user.id)
+        try:
+            db.session.delete(trade_delete)
+            db.session.commit()
+            flash('Your purchase was successful!', 'success')
+
+        except:
+            flash('Trading error! Your purchase should have been successful but we may be in contact over the trade details.')
+        
         return redirect(url_for('main.index'))
 
-    return render_template('checkout.html', form=form, car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trade=trading)
+    return render_template('checkout.html', form=form, car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trading=trading)
