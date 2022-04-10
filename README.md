@@ -110,14 +110,14 @@ The greatest project of all times presented by outstanding programmers:
 # <a name="sprint-3"></a> `Sprint3`
  Task | Subtasks | `Dev`
 --- | --- | --- 
-*Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* ||`Stephan`
-*Site visitors should be able to see the list of the popular items on the landing page.* | | `Siobhan`
-*Implement a car reviews/rating facility.* | |`Stephan`
-*Implement a blog facility.* | |`Stephan`
-*Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* ||`Siobhan`
-*Implement a page/facility to obtain a quote for car insurance.* | |`Stephan`
-*Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* ||`Siobhan`
+*Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |add css to the rest of the inputs, create flask-html form|`Stephan`
 *Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* ||`Stephan`
+*Implement a car reviews/rating facility.* |add html with searchbar and all reviews, add route|`Stephan`
+*Implement a blog facility.* |add css to post page; add css to all psots page|`Stephan`
+*Implement a page/facility to obtain a quote for car insurance.* |add html, route for auth users|`Stephan`
+*Site visitors should be able to see the list of the popular items on the landing page.* | | `Siobhan`
+*Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* ||`Siobhan`
+*Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* ||`Siobhan`
 *Implement a page/facility to check vehicle history.* ||`Siobhan`
 
 <br/>
