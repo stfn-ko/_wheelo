@@ -1,4 +1,5 @@
 import os
+from app.models import Make
 from app import app
 import binascii
 from PIL import Image

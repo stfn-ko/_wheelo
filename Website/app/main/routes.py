@@ -2,8 +2,8 @@ from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import current_user, login_user, logout_user, login_required
 from app.main.forms import ContactForm, FAQForm, DeleteQuestionForm, \
     EditQuestionForm, PostForm, EditPostForm, TradeInForm, SellDetailsForm, \
-    CheckoutDetailsForm, InsuranceForm
-from app.models import User, FAQ, Post, Vehicles, Model, Make, Trade, Insurance
+    CheckoutDetailsForm, InsuranceForm, ReviewForm
+from app.models import User, FAQ, Post, Vehicles, Model, Make, Trade, Insurance, CarReview
 from sqlalchemy.sql import func, or_
 from app.funcs import save_picture
 from app import db
@@ -349,3 +349,29 @@ def insurance():
         db.session.commit()
         return redirect(url_for('main.index'))
     return render_template('vehicles/car_insurance.html', form=form)
+
+
+@main.route('/car_reviews', methods=['GET', 'POST'])
+def allReviews():
+    rev = CarReview.query.order_by(CarReview.id.asc())
+    return render_template('vehicles/car_reviews.html', rev=rev)
+
+
+@main.route('/car_reviews/add', methods=['GET', 'POST'])
+def addReview():
+    form = ReviewForm()
+    if form.validate_on_submit():
+        img = 'default.jpg'
+        if form.image.data:
+            img = save_picture(form.image.data)
+        r = CarReview(
+            title=form.title.data,
+            caption=form.caption.data,
+            image=img,
+            category=form.category.data,
+            preview_text=form.preview_text.data
+        )
+        db.session.add(r)
+        db.session.commit()
+        return redirect(url_for('main.allReviews'))
+    return render_template('vehicles/add_review.html', form=form)

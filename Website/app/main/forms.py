@@ -107,6 +107,16 @@ class CheckoutDetailsForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
+class ReviewForm(FlaskForm):
+    category = StringField('category')
+    title = StringField('title')
+    preview_text = StringField('prev text')
+    caption = TextAreaField('caption')
+    image = FileField('Add image', validators=[FileAllowed(
+        ['jpg', 'png'], 'Images only with extension .jpg or .png')])
+    submit = SubmitField('Submit')
+
+
 class InsuranceForm(FlaskForm):
     fname = StringField('First Name*', validators=[DataRequired()])
     lname = StringField('Last Name*', validators=[DataRequired()])

@@ -135,7 +135,6 @@ class Trade(db.Model):
 
 class CarReview(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    make_id = db.Column(db.Integer, db.ForeignKey('make.make_id'))
     title = db.Column(db.Text)
     caption = db.Column(db.Text)
     image = db.Column(db.Text)
