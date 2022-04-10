@@ -70,8 +70,8 @@ class TradeInForm(FlaskForm):
     #make = SelectField('make', choices=[])
     #model = SelectField('model', choices=[])
     make = StringField('make', validators=[
-                       DataRequired(), Length(min=3, max=200)])
-    model = StringField('model', validators=[DataRequired(), Length(max=200)])
+                       DataRequired(), Length(min=3, max=100)])
+    model = StringField('model', validators=[DataRequired(), Length(max=100)])
     color = StringField('color', validators=[
         DataRequired(), Length(min=3, max=20)])
     year = IntegerField('year made', validators=[DataRequired()])
