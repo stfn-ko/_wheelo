@@ -108,6 +108,7 @@ class CheckoutDetailsForm(FlaskForm):
 
 
 class ReviewForm(FlaskForm):
+    id = IntegerField('id')
     category = StringField('category')
     title = StringField('title')
     preview_text = StringField('prev text')

@@ -21,9 +21,8 @@ def load_user(id):  # new code entry
     # new code entry --- # slightly modified such that the user is loaded based on the id in the db
     return User.query.get(int(id))
 
+
 # user class
-
-
 class User(db.Model, TimestampMixin, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), nullable=False, unique=True)
