@@ -180,6 +180,7 @@ def viewAllCars():
 
 
 @main.route('/trade-in', methods=['GET', 'POST'])
+@login_required
 def trade_in():
     form = TradeInForm()
     #form.make.choices = Make.query.order_by(Make.make_id.asc())
