@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import current_user, login_user, logout_user, login_required
 from app.main.forms import ContactForm, FAQForm, DeleteQuestionForm, \
-    EditQuestionForm, PostForm, EditPostForm, TradeInForm, SellDetailsForm, CheckoutDetailsForm
-from app.models import User, FAQ, Post, Vehicles, Model, Make, Trade
+    EditQuestionForm, PostForm, EditPostForm, TradeInForm, SellDetailsForm, \
+    CheckoutDetailsForm, InsuranceForm
+from app.models import User, FAQ, Post, Vehicles, Model, Make, Trade, Insurance
 from sqlalchemy.sql import func, or_
 from app.funcs import save_picture
 from app import db
@@ -308,3 +309,43 @@ def checkout(id):
         return redirect(url_for('main.index'))
 
     return render_template('checkout.html', form=form, car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trading=trading)
+
+
+@main.route('/car/insurance', methods=['GET', 'POST'])
+@login_required
+def insurance():
+    form = InsuranceForm()
+    if form.validate_on_submit():
+        img = 'default.jpg'
+        if form.insurance_img.data:
+            img = save_picture(form.insurance_img.data)
+        insurance = Insurance(
+            fname=form.fname.data,
+            lname=form.lname.data,
+            bdate=form.bdate.data,
+            ref_by=form.ref_by.data,
+            property_status=form.property_status.data,
+            street_address=form.street_address.data,
+            street_address_l2=form.street_address_l2.data,
+            city=form.city.data,
+            state_prov=form.state_prov.data,
+            postal=form.postal.data,
+            country=form.country.data,
+            email=form.email.data,
+            ph_num=form.ph_num.data,
+            # br
+            hh_ld_amt=form.hh_ld_amt.data,
+            hh_info=form.hh_info.data,
+            health_insurance=form.health_insurance.data,
+            health_insurance_cov=form.health_insurance_cov.data,
+            health_insurance_carr=form.health_insurance_carr.data,
+            vehicle_info=form.vehicle_info.data,
+            vehicle_full_cov=form.vehicle_full_cov.data,
+            vehicle_additional=form.vehicle_additional.data,
+            additional_info=form.additional_info.data,
+            insurance_img=img
+        )
+        db.session.add(insurance)
+        db.session.commit()
+        return redirect(url_for('main.index'))
+    return render_template('vehicles/car_insurance.html', form=form)

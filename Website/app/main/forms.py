@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, BooleanField, SubmitField
-from wtforms import TextAreaField, FileField, DecimalField, IntegerField, SelectField, DateField
+from wtforms.fields.html5 import DateField
+from wtforms import TextAreaField, FileField, DecimalField, IntegerField, SelectField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length, NumberRange
 
 
@@ -107,40 +108,39 @@ class CheckoutDetailsForm(FlaskForm):
 
 
 class InsuranceForm(FlaskForm):
-    fname = StringField('First Name', validators=[DataRequired()])
-    lname = StringField('Last Name', validators=[DataRequired()])
-    bdate = DateField('Date of Birth', validators=[DataRequired()])
+    fname = StringField('First Name*', validators=[DataRequired()])
+    lname = StringField('Last Name*', validators=[DataRequired()])
+    bdate = DateField('Date of Birth*', format='%Y-%m-%d',
+                      validators=[DataRequired()])
     ref_by = StringField('Who were you referred by?')
     property_status = StringField(
-        'Do you own the home you live in or do you rent?', validators=[DataRequired()])
-    spouse_fname = StringField(
-        'Spouse\'s First Name (if single- please leave blank)')
-    spouse_lname = StringField('Spouse\'s Last Name')
-    spouse_bdate = DateField('Spouse\'s Date of Birth')
-    street_address = StringField('Street Address', validators=[DataRequired()])
+        'Do you own the home you live in or do you rent?*', validators=[DataRequired()])
+    street_address = StringField(
+        'Street Address*', validators=[DataRequired()])
     street_address_l2 = StringField('Street Address Line Two')
-    city = StringField('City', validators=[DataRequired()])
-    state_prov = StringField('State/Province', validators=[DataRequired()])
-    postal = StringField('Zip Code/Postal', validators=[DataRequired()])
-    country = StringField('Country', validators=[DataRequired()])
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    ph_num = IntegerField('Phone Number', validators=[DataRequired()])
+    city = StringField('City*', validators=[DataRequired()])
+    state_prov = StringField('State/Province*', validators=[DataRequired()])
+    postal = StringField('Zip Code/Postal*', validators=[DataRequired()])
+    country = StringField('Country*', validators=[DataRequired()])
+    email = StringField('Email*', validators=[DataRequired(), Email()])
+    ph_num = IntegerField('Phone Number*', validators=[DataRequired()])
     # br
-    hh_ld_amt = IntegerField('How many licensed drivers in the home?')
-    hh_info = StringField('Please list all occupants names and date of births')
+    hh_ld_amt = IntegerField('How many licensed drivers in the home?*')
+    hh_info = TextAreaField(
+        'Please list all occupants names and date of births')
     health_insurance = BooleanField(
-        'Do you have health insurance?', nullable=False)
+        'Do you have health insurance?(check if true)')
     health_insurance_cov = BooleanField(
-        'Is everyone in your home covered under the same health insurance?', nullable=False)
+        'Is everyone in your home covered under the same health insurance?(check if true)')
     health_insurance_carr = StringField(
-        'Who is your health insurance carrier?', validators=[DataRequired()])
+        'Who is your health insurance carrier?*', validators=[DataRequired()])
     vehicle_info = StringField(
-        'Vehicle Info: Year, Make, Model (optional: Vin #)', validators=[DataRequired()])
+        'Vehicle Info: Year, Make, Model (optional: Vin #)*', validators=[DataRequired()])
     vehicle_full_cov = BooleanField(
-        'Do you want full coverage on your Vehicle?', nullable=False)
-    vehicle_additional = StringField(
-        'IF you have more then 1 vehicle then please list them here')
-    additional_info = StringField(
+        'Do you want full coverage on your Vehicle?(check if true)')
+    vehicle_additional = TextAreaField(
+        'If you have more then 1 vehicle then please list them here')
+    additional_info = TextAreaField(
         'Anything else you would want the agent to know regarding the auto insurance?')
     insurance_img = FileField('Add image', validators=[FileAllowed(
         ['jpg', 'png'], 'Images only with extension .jpg or .png')])
