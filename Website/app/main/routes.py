@@ -121,7 +121,7 @@ def newPost():
     if form.validate_on_submit():
         picture = 'default.jpg'
         if form.picture.data:
-            picture = save_picture(form.picture.data)
+            picture = save_picture(form.picture.data, 'static/post_pics')
         p = Post(
             title=form.title.data,
             caption=form.caption.data,
@@ -150,7 +150,7 @@ def editPost(id):
             post.title = request.form['title']
             post.caption = request.form['caption']
             if form.picture.data:
-                post.picture = save_picture(form.picture.data)
+                post.picture = save_picture(form.picture.data, 'static/post_pics')
             db.session.commit()
             return(redirect(url_for('main.index')))
         if request.method == 'POST' and form.delete.data:
@@ -226,13 +226,13 @@ def trade_in():
         # f.save(secure_filename(f.filename))
 
         if form.picture_one.data:
-            image_file_one = save_picture(form.picture_one.data)
+            image_file_one = save_picture(form.picture_one.data, 'static/car_pics')
 
         if form.picture_two.data:
-            image_file_two = save_picture(form.picture_two.data)
+            image_file_two = save_picture(form.picture_two.data, 'static/car_pics')
 
         if form.picture_three.data:
-            image_file_three = save_picture(form.picture.data)
+            image_file_three = save_picture(form.picture.data, 'static/car_pics')
 
         car = Vehicles(
             make_id=int(makeId),
@@ -318,7 +318,7 @@ def insurance():
     if form.validate_on_submit():
         img = 'default.jpg'
         if form.insurance_img.data:
-            img = save_picture(form.insurance_img.data)
+            img = save_picture(form.insurance_img.data, 'static/insurace_pics')
         insurance = Insurance(
             fname=form.fname.data,
             lname=form.lname.data,
@@ -363,8 +363,9 @@ def addReview():
     if form.validate_on_submit():
         img = 'default.jpg'
         if form.image.data:
-            img = save_picture(form.image.data)
+            img = save_picture(form.image.data, 'static/car_review_pics')
         r = CarReview(
+            id=form.id.data,
             title=form.title.data,
             caption=form.caption.data,
             image=img,
