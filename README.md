@@ -30,20 +30,20 @@ The greatest project of all times presented by outstanding programmers:
 **4** | *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* |[`Sprint2`](#sprint-2) |✅|`Siobhan`
 **5** | *Site visitors should be able to get back to the landing page quickly and easily.* |[`Sprint2`](#sprint-2) |✅|`Stephan`
 **6** | *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |[`Sprint3`](#sprint-3)||`Stephan`
-**7**| *Implement a page/facility to check vehicle history.* |[`Sprint3`](#sprint-3)||`Siobhan`
+**7**| *Implement a page/facility to check vehicle history.* |[`Sprint3`](#sprint-3)|✅|`Siobhan`
 **8**| *Implement a page/facility to obtain a quote for car insurance.* |[`Sprint3`](#sprint-3)| |`Stephan`
 **9**| *Implement a car reviews/rating facility.* |[`Sprint3`](#sprint-3)| |`Stephan`
 **10** | *Implement a blog facility.* |[`Sprint3`](#sprint-3)| |`Stephan`
 **11** | *Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* |[`Sprint3`](#sprint-3)| |`Stephan`
-**12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |[`Sprint3`](#sprint-3)||`Siobhan`
+**12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |[`Sprint3`](#sprint-3)|✅|`Siobhan`
 **13** | *Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* |[`Sprint2`](#sprint-2)|✅|`Siobhan`
 **14** | *Implement a way for customers to suggest improvements or  email queries or fill out a query form.* |[`Sprint1`](#sprint-1)|✅|`Siobhan`
 **15** | *Site visitors should be able to create a "My account" for the site which allows them to access additional features.* |[`Sprint1`](#sprint-1)|✅|`Stephan`
 **16** | *Site visitors must be able to log in after they have created a "My account".* |[`Sprint1`](#sprint-1)|✅|`Stephan`
 **17** | *Implement a "Google Map" feature signposting customers to the business location.* |[`Sprint1`](#sprint-1)|✅|`Siobhan`
 **18** | *Site visitors should be able to locate all relevant contact information of the business.* |[`Sprint1`](#sprint-1)|✅|`Siobhan`
-**19** | *Site visitors should be able to see the list of the popular items on the landing page.* |[`Sprint3`](#sprint-3)||`Siobhan`
-**20** | *Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* |[`Sprint3`](#sprint-3)||`Siobhan`
+**19** | *Site visitors should be able to see the list of the popular items on the landing page.* |[`Sprint3`](#sprint-3)|✅|`Siobhan`
+**20** | *Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* |[`Sprint3`](#sprint-3)|✅|`Siobhan`
 **21** | *Site administrator should be able to access the list of site visitors* |[`Sprint2`](#sprint-2)|✅|`Stephan`
 **22** | *Implement a "Frequently Asked Questions" facility in the site.* |[`Sprint2`](#sprint-2) |✅ |`Siobhan`
 **23** | *Only the site Administrator can and should be able to maintain/update the "Frequently Asked Questions" facility.* |[`Sprint2`](#sprint-2)|✅|`Stephan`
@@ -115,10 +115,10 @@ The greatest project of all times presented by outstanding programmers:
 *Implement a car reviews/rating facility.* |add html with searchbar; add css|`Stephan`
 *Implement a blog facility.* |add css to post page; add css to all psots page|`Stephan`
 *Implement a page/facility to obtain a quote for car insurance.* ||`Stephan`
-*Site visitors should be able to see the list of the popular items on the landing page.* | | `Siobhan`
-*Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* ||`Siobhan`
-*Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* ||`Siobhan`
-*Implement a page/facility to check vehicle history.* ||`Siobhan`
+*Site visitors should be able to see the list of the popular items on the landing page.* |`populate database with cars` `find images for cars` `create detail page for each car` `add popular cars to landing page in flexbox` | `Siobhan`
+*Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* | `if logged in allow user to enter car details` `use the car valuation feature to get how much the trade is worth` |`Siobhan`
+*Implement a "Product Cart"/Checkout System" so a customer can initiate/process a car purchase process.* | `create overview page` `checkout page to take personal details` `check for trade` `delete from trade table in database what was traded, if traded` `delete vehicle sold from database`|`Siobhan`
+*Implement a page/facility to check vehicle history.* |`show basic history report on each car page` `links to experian car history check and gov.uk mot check for more detailed history` `add a link to history page with links to experian and gov.uk to carousel` |`Siobhan`
 
 <br/>
 
