@@ -1,5 +1,4 @@
-{% extends "bootstrap/base.html" %} 
-{% block title %} {{ title }} / CarSell
+{% extends "bootstrap/base.html" %} {% block title %} {{ title }} / CarSell
 {%endblock %} {% block styles %} {{ super() }}
 <link
   href="{{url_for('static', filename='css/styles.css')}}"
@@ -14,46 +13,109 @@
 <link
   href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
   rel="stylesheet"
+/>
+
+{% endblock %} {% block navbar%}
+
+<a href=" {{ url_for('main.index') }}" class="sidenav-logo">
+  <img
+    src="{{ url_for('static', filename='logo_nav.png') }}"
+    id="logo"
+    height="70"
+    width="70"
   />
-  
-  {% endblock %} 
-  {% block navbar%}
-  
-  <a href=" {{ url_for('main.index') }}" class="sidenav-logo">
-    <img src="{{ url_for('static', filename='logo_nav.png') }}" id="logo" height="70" width="70" />
-    <img src="{{ url_for('static', filename='text_logo.png') }}" id="text" height="30" width="145" />
-  </a>
-  <nav class="sidenav">
-    <a href=" {{ url_for('main.index') }} " id="index" title="home">home</a>
-    
-    <a href="#allcars" id="popular" title="popular">cars</a>
-    
-    <a href="{{ url_for('main.contact') }}" id="contact" title="contact us"
+  <img
+    src="{{ url_for('static', filename='text_logo.png') }}"
+    id="text"
+    height="30"
+    width="145"
+  />
+</a>
+<nav class="sidenav">
+  <a href=" {{ url_for('main.index') }} " id="index" title="home">home</a>
+
+  <a href="#allcars" id="popular" title="popular">cars</a>
+
+  <a href="{{ url_for('main.contact') }}" id="contact" title="contact us"
     >contact us
   </a>
-  
+
   <a href="{{ url_for('main.FAQs') }}" id="questions" title="FAQs">faq </a>
   {%if current_user.is_authenticated%} {% if current_user.admin %}
   <a href="{{ url_for('auth.admin') }}" id="auth-complete" title="users list"
-  >admin
-</a>
-{% endif %}
-<a href="{{ url_for('auth.logout') }}" id="logout" title="logout">logout </a>
-{% else %}
-<a href="{{ url_for('auth.login') }}" id="auth" title="login">login </a>
-{% endif %}
+    >admin
+  </a>
+  {% endif %}
+  <a href="{{ url_for('auth.logout') }}" id="logout" title="logout">logout </a>
+  {% else %}
+  <a href="{{ url_for('auth.login') }}" id="auth" title="login">login </a>
+  {% endif %}
 </nav>
 
-{% if request.url == 'http://localhost:5000/index' %}
-<div class="index-upper">
-  <img src="{{ url_for('static', filename='index_pic.png') }}" id="index_pic">
-  
+{% if request.url == 'http://localhost:5000/index' or 'http://localhost:5000'%}
+<div class="row fade-in-content">
+  <div class="index-upper">
+    <img
+      src="{{ url_for('static', filename='index_pic.png') }}"
+      id="index_pic"
+    />
+    <div class="search-box">
+      <div class="search-field" id="make">
+        <h1 id="make-text">Make</h1>
+        <div class="select-make-box">
+          <div class="options-container">
+            {% for get in makes %}
+            <div class="option">
+              <input
+                type="vehicle"
+                class="vehicle"
+                id="make-ch"
+                name="category"
+              />
+              <label for="make-ch">{{get.make_name}}</label>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="selected">any</div>
+        </div>
+      </div>
+
+      <div class="search-field" id="model">
+        <h1 id="model-text">Model</h1>
+
+        <div class="select-model-box">
+            <label for="model-ch"></label>
+            <input type="text" id="model-ch" name="model">
+        </div>
+
+      </div>
+      <div class="search-field" id="color">
+        <h1 id="color-text">Color</h1>
+        <label for="color-ch"></label>
+            <input type="text" id="color-ch" name="color">
+      </div>
+      <div class="search-field" id="registration">
+        <h1 id="registration-text">Registration</h1>
+        <input type="date" id="from-reg-ch" name="from-reg">
+        <input type="date" id="to-reg-ch" name="to-reg">
+      </div>
+      <div class="search-field" id="price">
+        <h1 id="price-text">Price</h1>
+        <input type="text" id="from-price-ch" name="from-price">
+        <input type="text" id="to-price-ch" name="to-price">
+      </div>
+      <div class="search-field" id="mileage">
+        <h1 id="mileage-text">Mileage</h1>
+        <input type="text" id="from-mileage-ch" name="from-mileage">
+        <input type="text" id="to-mileage-ch" name="to-mileage">
+      </div>
+    </div>
+    <div class="search-btn">
+      <button type="submit" class="btn">Search</button>
+    </div>
+  </div>
 </div>
-{% endif %}
-
-
-{% endblock %} 
-{% block content %}
+{% endif %} {% endblock %} {% block content %}
 <div class="container">
   {% with messages = get_flashed_messages(with_categories=true) %} {% if
   messages %} {% for category, message in messages %}
@@ -81,9 +143,7 @@
   </p>
 </div>
 
-{% endblock %} 
-
-{% block scripts %} {{ super() }}
+{% endblock %} {% block scripts %} {{ super() }}
 
 <script type="application/ld+json">
   {
@@ -149,5 +209,22 @@
       }
     });
   }
+</script>
+
+<script>
+  const selected = document.querySelector(".selected");
+  const optionsContainer = document.querySelector(".options-container");
+  const optionsList = document.querySelectorAll(".option");
+
+  selected.addEventListener("click", () => {
+    optionsContainer.classList.toggle("active");
+  });
+
+  optionsList.forEach((o) => {
+    o.addEventListener("click", () => {
+      selected.innerHTML = o.querySelector("label").innerHTML;
+      optionsContainer.classList.remove("active");
+    });
+  });
 </script>
 {% endblock %}

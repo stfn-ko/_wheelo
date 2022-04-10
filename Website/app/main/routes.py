@@ -101,6 +101,18 @@ def editQuestion(id):
     return render_template('FAQ/edit_question.html',  question=question, title='Edit Question', form=form)
 
 
+@main.route('/all_posts', methods=['GET', 'POST'])
+def Blog():
+    posts = Post.query.order_by(Post.id.asc())
+    return render_template('blog/all_posts.html', posts=posts)
+
+
+@main.route('/blog/post_page/<id>', methods=['GET', 'POST'])
+def getPost(id):
+    post = Post.query.get_or_404(id)
+    return render_template('blog/post_page.html', post=post)
+
+
 @main.route('/blog/new_post', methods=['GET', 'POST'])
 @login_required
 def newPost():
@@ -164,7 +176,7 @@ def trade_in():
     #form.model.choices = Model.query.order_by(Model.model_id.asc())
     if form.validate_on_submit():
 
-        price = 1000; #use valuation to get price?
+        price = 1000  # use valuation to get price?
 
         make_exist = Make.query.filter_by(Make.make_name == form.make.data)
         if not make_exist:
@@ -176,22 +188,24 @@ def trade_in():
 
         makeId = Make.query.filter_by(Make.make_name == form.make.data)
 
-        model_exist = Model.query.filter_by(Model.model_name == form.model.data)
+        model_exist = Model.query.filter_by(
+            Model.model_name == form.model.data)
         if not model_exist:
             model_new = Model(
                 model_name=form.model.data,
             )
             db.session.add(model_new)
             db.commit()
-        
+
         modId = Model.query.filter_by(Model.model_name == form.model.data)
 
         picture_folder = form.model.data + '_' + form.color.data + '_' + form.year.data
-        form.picture_one.data.save('app/static/car_pics' + picture_folder + '/1.jpg')
-        form.picture_two.data.save('app/static/car_pics' + picture_folder + '/2.jpg')
-        form.picture_three.data.save('app/static/car_pics' + picture_folder + '/3.jpg')
-
-
+        form.picture_one.data.save(
+            'app/static/car_pics' + picture_folder + '/1.jpg')
+        form.picture_two.data.save(
+            'app/static/car_pics' + picture_folder + '/2.jpg')
+        form.picture_three.data.save(
+            'app/static/car_pics' + picture_folder + '/3.jpg')
 
         car = Vehicles(
             make_id=makeId,
@@ -199,8 +213,8 @@ def trade_in():
             price=price,
             year=form.year.data,
             color=form.color.data,
-            description=form.description.data ,
-            pictures= picture_folder,
+            description=form.description.data,
+            pictures=picture_folder,
             mileage=form.mileage.data,
             fuel_type=form.fuel_type.data,
             gear_type=form.gear_type.data,
@@ -208,16 +222,16 @@ def trade_in():
         db.session.add(car)
         db.commit()
 
-        vehicle = Vehicles.query.filter_by(Vehicles.make_id == makeId and Vehicles.model_id == modId and Vehicles.year == form.year.data and Vehicles.color == form.color.data)
+        vehicle = Vehicles.query.filter_by(Vehicles.make_id == makeId and Vehicles.model_id ==
+                                           modId and Vehicles.year == form.year.data and Vehicles.color == form.color.data)
         if form.trade.data:
-            trade = Trade (
-                    user_id=current_user.get_id,
-                    trade_amount=price,
-                )
+            trade = Trade(
+                user_id=current_user.get_id,
+                trade_amount=price,
+            )
             db.session.add(trade)
             db.commit()
             return redirect('main.trade_in')
-
 
         if form.sell.data:
             return redirect(url_for('main.sell'))
@@ -226,10 +240,9 @@ def trade_in():
     return render_template('vehicles/trade_in.html', form=form)
 
 
-
 @main.route('/sell', methods=['GET', 'POST'])
 def sell():
-    form=SellDetailsForm()
+    form = SellDetailsForm()
 
     if form.validate_on_submit():
         flash('Your payment has been processed', 'success')
@@ -245,6 +258,7 @@ def overview(id):
     models_for_render = Model.query.order_by(Model.model_id.asc())
     trading = Trade.query.order_by(Trade.trade_id.asc())
     return render_template('product_cart.html', car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trade=trading)
+
 
 @main.route('/checkout/<id>', methods=['GET', 'POST'])
 def checkout(id):

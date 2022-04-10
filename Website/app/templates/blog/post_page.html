@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+{% import 'bootstrap/wtf.html' as wtf %} 
+{% block app_content %}
+
+<div class="row fade-in-content">
+    <h1>{{post.title}}</h1>
+
+    {%if post.picture != 'default.jpg' %}
+        <img src="{{ url_for('static', filename='post_pics/' + post.picture) }}">
+        <p>{{ post.caption }}</p>
+    
+    {% else %}
+        <p>{{ post.caption }}</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}

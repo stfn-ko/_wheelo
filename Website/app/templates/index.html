@@ -9,7 +9,7 @@
         {% else %}
           <h2 class="header-text" id="user">Blog</h2> 
         {% endif %}
-        <a href="#allBlogs" id="more">...</a>
+        <a href="{{ url_for('main.Blog') }}" id="more" title="more">...</a>
 
         <div class="blog-box">
           {%for p in posts%}
@@ -18,19 +18,21 @@
                 
                 {% if current_user.admin %}
                   <a href="{{ url_for('main.editPost', id = p.id) }}" 
-                  class="box-edit">edit</a>
+                  class="box-edit" id="non-btn">edit</a>
                 {% else %}
-                  <a class="box-user">edit</a>
+                  <a class="box-user" id="non-btn">edit</a>
                 {% endif %}
 
                 {%if p.picture != 'default.jpg' %}
-                  <div class="center-img">
-                    <img class="blog-pic"
-                    src="{{ url_for('static', filename='post_pics/' + p.picture) }}">
+                  <div >
+                    <a class="center-img" href="{{ url_for('main.getPost', id = p.id) }}">
+                      <img class="blog-pic"
+                      src="{{ url_for('static', filename='post_pics/' + p.picture) }}">
+                    </a>
                   </div>
-                  <p class="blog-title">{{ p.title }}</p>
+                  <a href="{{ url_for('main.getPost', id = p.id) }}" class="blog-title" id="non-btn">{{ p.title }}</a>
                 {% else %}
-                  <p class="blog-title-solo">{{ p.title }}</p>
+                  <a href="{{ url_for('main.getPost', id = p.id) }}" class="blog-title-solo" id="non-btn">{{ p.title }}</a>
                 {% endif %}
                 
               </div>
