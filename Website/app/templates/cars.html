@@ -5,11 +5,11 @@
         <div class="car-box">
             <img class="car-pic"
             src="{{ url_for('static', filename='car_pics/' + car.pictures + '/1.jpg') }}">
-            <p>{{car.make_id}}</p>
-            <p>{{car.model_id}}</p>
-            <p>{{car.price}}</p>
-            <p>{{car.year}}</p>
-            <p>{{car.mileage}}</p>
+            <p>Make: {{make.get(car.make_id)}}</p>
+            <p>Model: {{model.get(car.model_id)}}</p>
+            <p>Reg. year: {{car.year}}</p>
+            <p>Mileage: {{car.mileage}}</p>
+            <p>Price: £{{car.price}}</p>
         </div>
         {% endfor %}
     </div>

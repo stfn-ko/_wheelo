@@ -1,7 +1,66 @@
 {% extends "base.html" %} {% import 'bootstrap/wtf.html' as wtf %} {% block
   app_content %}
   <div class="row fade-in-content">
-
+      <div class="index-upper">
+        <img
+          src="{{ url_for('static', filename='index_pic.png') }}"
+          id="index_pic"
+        />
+        <div class="search-box">
+          <div class="search-field" id="make">
+            <h1 id="make-text">Make</h1>
+            <div class="select-make-box">
+              <div class="options-container">
+                {% for get in makes %}
+                <div class="option">
+                  <input
+                    type="vehicle"
+                    class="vehicle"
+                    id="make-ch"
+                    name="category"
+                  />
+                  <label for="make-ch">{{get.make_name}}</label>
+                </div>
+                {% endfor %}
+              </div>
+              <div class="selected">any</div>
+            </div>
+          </div>
+    
+          <div class="search-field" id="model">
+            <h1 id="model-text">Model</h1>
+    
+            <div class="select-model-box">
+              <label for="model-ch"></label>
+              <input type="text" id="model-ch" name="model" />
+            </div>
+          </div>
+          <div class="search-field" id="color">
+            <h1 id="color-text">Color</h1>
+            <label for="color-ch"></label>
+            <input type="text" id="color-ch" name="color" />
+          </div>
+          <div class="search-field" id="registration">
+            <h1 id="registration-text">Registration</h1>
+            <input type="date" id="from-reg-ch" name="from-reg" />
+            <input type="date" id="to-reg-ch" name="to-reg" />
+          </div>
+          <div class="search-field" id="price">
+            <h1 id="price-text">Price</h1>
+            <input type="text" id="from-price-ch" name="from-price" />
+            <input type="text" id="to-price-ch" name="to-price" />
+          </div>
+          <div class="search-field" id="mileage">
+            <h1 id="mileage-text">Mileage</h1>
+            <input type="text" id="from-mileage-ch" name="from-mileage" />
+            <input type="text" id="to-mileage-ch" name="to-mileage" />
+          </div>
+        </div>
+        <div class="search-btn">
+          <button type="submit" class="btn">Search</button>
+        </div>
+      </div>
+    
         
       <div class="blog">
         {% if current_user.admin %}
