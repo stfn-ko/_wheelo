@@ -118,6 +118,7 @@ class Vehicles(db.Model):
     mileage = db.Column(db.Integer)
     fuel_type = db.Column(db.Text)
     gear_type = db.Column(db.Text)
+    children = db.relationship("History")
 
     # def __repr__(self):
     #   return f'<Vehicles {self.name}>'
