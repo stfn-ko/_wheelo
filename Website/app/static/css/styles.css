@@ -456,20 +456,22 @@ html::-webkit-scrollbar-thumb {
   width: 30%;
 }
 
+
 .car_img{
   height:250px;
   align-items: center;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
-
-
 .gallery{
+  border-radius: 25px;
   margin: 5px;
-  border: 1px solid #ccc;
+  border: 2px solid #9DB3FF;
   float: left;
-  width: 335px;
+  width: 337px;
 }
 .gallery:hover{
-  border: 1px solid #777;
+  border: 2px solid #3F69FF;
 }
 .desc{
   padding: 5px;
