@@ -9,8 +9,10 @@ app_content %}
       {{ wtf.form_field(form.title) }} 
       {{ wtf.form_field(form.caption) }} 
       {{ wtf.form_field(form.picture) }} 
-      {{ wtf.form_field(form.submit, class="btn btn-info btn-block") }}
-      {{ wtf.form_field(form.cancel, class="btn btn-block") }}
+      <div class="rounded_btn_div">
+        {{ wtf.form_field(form.submit, class="rounded_btn") }}
+        {{ wtf.form_field(form.cancel, class="rounded_btn") }}
+      </div>
     </form>
   </div>
 </div>

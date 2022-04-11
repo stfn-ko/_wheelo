@@ -11,19 +11,20 @@
 			
 			<!-- if the user isnt logged in -->
 			{% if current_user.is_authenticated == False %}
-			<h2 style="text-align: center;">Hello User!</h2>
+				<h2 style="text-align: center;">Hello User!</h2>
+			{% else %}
+				<h2 style="text-align: center;">Hi, @{{ current_user.username }}!</h2>
+			{% endif %}
 			<p style="text-align: center;">Please fill in the form below to contact us</p>
+			
 			{{wtf.form_field(form.name)}}
 			{{wtf.form_field(form.email)}}
 			{{wtf.form_field(form.contactNumber)}}
-
-			<!-- if the user is logged in -->
-			{% else %}
-			<h2 style="text-align: center;">Hi, @{{ current_user.username }}!</h2>
-			<p style="text-align: center;">Enter your message below to contact us</p>
-			{% endif %}
 			{{wtf.form_field(form.message)}}
-			{{wtf.form_field(form.submit, class="btn btn-info btn-block")}}
+			
+			<div class="rounded_btn_div">
+				{{wtf.form_field(form.submit, class="rounded_btn")}}
+			</div>
 		</form>
 
 		<br>

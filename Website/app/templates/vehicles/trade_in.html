@@ -21,8 +21,12 @@
 			{{ wtf.form_field(form.fuel_type) }}
 			{{ wtf.form_field(form.gear_type) }}
 			{{ wtf.form_field(form.reg) }}
-			{{ wtf.form_field(form.trade, class="btn btn-info btn-block") }}
-			{{ wtf.form_field(form.sell, class="btn btn-info btn-block") }}
+			<div class="rounded_btn_div">
+				{{ wtf.form_field(form.trade, class="rounded_btn") }}
+				<br>
+				<br>
+				{{ wtf.form_field(form.sell, class="rounded_btn") }}
+			</div>
 		</form>
 	</div>
 </div>

@@ -34,37 +34,39 @@
 		<br>
 	</div>
 
-	<!-- Add to cart button here -->
-	<div class="cart-button">
-		<a  href="{{ url_for('main.overview', id=car.id) }}"><button> Buy Now </button> </a>
+	<!-- buy now button here -->
+	<div class="rounded_btn_div">
+		<a  href="{{ url_for('main.overview', id=car.id) }}"><button class="rounded_btn"> Buy Now </button> </a>
 	</div>
 	<br>
+	<br>
 	
-	<div class="car-ratings">
+	<!-- car ratings here -->
+	<!-- <div class="car-ratings">
 		<h4> Reviews and Ratings for this model: </h4>
-	</div>
+	</div> --> 
 
-	<button type="button" class="collapsible">
-		<h4> Car History Check </h4>
-		<p> Status: all checks passed </p>
+	<!-- car history here -->
+	<button type="button" class="collapsible" style="font-size: 17px;">
+		Car History Check
 	</button>
 	<div class="collapsibleBody">
 		{% for h in history %}
 			{% if h.vehicle_id == car.id %}
-				<h3> Recorded as stolen:   {{h.stolen}} </h3>
-				<h3> Recorded as scrapped: {{h.scrapped}} </h3>
-				<h3> Insurance write off: {{h.write_off}}</h3>
-				<h3> Mileage discrepancies: {{h.mileage_disc}}</h3>
-				<h3> Color Change: {{h.color_change}} </h3>
-				<h3> Outstanding finance: {{h.finance}} </h3>
+				<h4> Recorded as stolen:   {{h.stolen}} </h4>
+				<h4> Recorded as scrapped: {{h.scrapped}} </h4>
+				<h4> Insurance write off: {{h.write_off}}</h4>
+				<h4> Mileage discrepancies: {{h.mileage_disc}}</h4>
+				<h4> Color Change: {{h.color_change}} </h4>
+				<h4> Outstanding finance: {{h.finance}} </h4>
 			{% endif %}
 		{% endfor %}
-		<h3> <a href="https://www.autocheck.co.uk/">
+		<h4> <a href="https://www.autocheck.co.uk/">
 			Click here to buy a full history check
-		</a></h3>
-		<h3> <a href="https://www.gov.uk/check-mot-history">
+		</a></h4>
+		<h4> <a href="https://www.gov.uk/check-mot-history">
 			Click here for an MOT check
-		</a></h3>
+		</a></h4>
 	</div>
 
 	</div>

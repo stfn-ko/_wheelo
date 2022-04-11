@@ -8,7 +8,7 @@ from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Le
 
 class ContactForm(FlaskForm):
     name = StringField('Name', validators=[
-                       DataRequired(), Length(min=5, max=100)])
+                                DataRequired(), Length(min=5, max=100)])
     email = StringField('Email', validators=[DataRequired(), Email()])
     contactNumber = StringField('Contact Number', validators=[
                                 DataRequired(), Length(min=11, max=11)])
@@ -103,12 +103,14 @@ class SellDetailsForm(FlaskForm):
 class CheckoutDetailsForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])
+    contactNumber = StringField('Contact Number', validators=[
+                                    DataRequired(), Length(min=11, max=11)])
     address_one = StringField('Address Line One', validators=[DataRequired()])
     address_two = StringField('Address Line Two')
     city = StringField('City', validators=[DataRequired()])
     postcode = StringField('Postcode', validators=[DataRequired()])
     cardNum = IntegerField('Card Number', validators=[DataRequired()])
-    expDate = DateField('Expiry Date', format='%d/%m/%Y')
+    expDate = DateField('Expiry Date')
     csv = IntegerField('CSV number', validators=[DataRequired()])
     submit = SubmitField('Submit')
 

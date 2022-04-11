@@ -204,22 +204,22 @@
       <div class="flex-container">
         {% for car in cars %}
           {% if car.popular == "true" %}
-            <div>
+            <div class="popular_box">
               <a href="{{ url_for('main.vehicle', id=car.id) }}">
                 <img class="popular_item" src="{{ url_for('static', filename='car_pics/' + car.pictures + '/1.jpg') }}">
-                <p class="popular_text">
-                  {% for m in makes %}
-                    {% if m.make_id == car.make_id %}
-                      {{m.make_name}}
-                    {% endif %}
-                  {% endfor %}
-                  {% for mod in models %}
-                    {%if mod.model_id == car.model_id %}
-                      {{mod.model_name}}
-                    {% endif %}
-                  {% endfor %}
-                </p>
               </a>
+              <p class="popular_text">
+                {% for m in makes %}
+                  {% if m.make_id == car.make_id %}
+                    {{m.make_name}}
+                  {% endif %}
+                {% endfor %}
+                {% for mod in models %}
+                  {%if mod.model_id == car.model_id %}
+                    {{mod.model_name}}
+                  {% endif %}
+                {% endfor %}
+              </p>
             </div>
           {% endif %}
         {% endfor %}

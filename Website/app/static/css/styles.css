@@ -111,62 +111,43 @@ html::-webkit-scrollbar-thumb {
     align-items: center;
   }
   
-  .socialMediaLink {
-    width: 50px;
-    height: 50px;
-  }
+
+.socialMediaLink {
+  width: 50px;
+  height: 50px;
+}
   
-  iframe {
-    margin: auto;
-    display: block;
-    text-align: center;
-    border: 0;
-  }
-  
-  .carousel{
-    width:  75%;
-    height: 75%;
-    margin: auto;
-  }
-  .carousel-inner {
-    background-color: rgb(75, 75, 75);
-    transition: 0s;
-  }
-  .carousel-text {
-   color: white;
-   text-decoration: none;
-  }
-  input[type=file] {
-    display: block;
-    margin-top: 1.4em;
-    margin-left: 4vw;
-    margin-bottom: 2em;
-  }
-  .column {
-    flex: 25%;
-    padding: 5px;
-  }
-  .flex-container {
-    display: flex;
-    flex-flow: row;
-  }
-  .popular_item{
-    width:  75%;
-  }
-  .popular_text{
-    text-align: justify;
-  }
-  
-  /*index search box*/
-.index-upper{
+iframe {
+  margin: auto;
+  display: block;
   text-align: center;
-  position: relative;
+  border: 0;
 }
-.index-upper #index_pic{
-  width: 90em;
-  height: fit-content;
-  margin-top: -4.5em;
+  
+.carousel{
+  width:  75%;
+  height: 75%;
+  margin: auto;
 }
+.carousel-inner {
+  background-color: rgb(75, 75, 75);
+  transition: 0s;
+}
+.carousel-text {
+  color: white;
+  text-decoration: none;
+}
+input[type=file] {
+  display: block;
+  margin-top: 1.4em;
+  margin-left: 4vw;
+  margin-bottom: 2em;
+}
+.column {
+  flex: 25%;
+  padding: 5px;
+}
+
 
 /*end of index search box*/
 
@@ -441,22 +422,13 @@ html::-webkit-scrollbar-thumb {
   border-bottom: 1px solid #000;
 }
 
-.cart-button{
-  text-align: center;
-}
-.add-to-cart{
-  background-color: #3F69FF;
-  color: white;
-  width: 25%;
-  height: 25%;
-}
-
 
 .rnn{
   width: 30%;
 }
 
 
+/* Popular car and all cars images */
 .car_img{
   height:250px;
   align-items: center;
@@ -470,10 +442,55 @@ html::-webkit-scrollbar-thumb {
   float: left;
   width: 337px;
 }
-.gallery:hover{
+.gallery:hover, .popular_box:hover{
   border: 2px solid #3F69FF;
 }
-.desc{
+.desc, .popular_text{
   padding: 5px;
   text-align: center;
+}
+.flex-container {
+  display: flex;
+  flex-flow: row;
+}
+.popular_box{
+  border-radius: 25px;
+  margin: 5px;
+  border: 2px solid #9DB3FF;
+  float: left;
+  width: 204px;
+}
+.popular_item{
+  height: 150px;
+  align-items: center;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+  
+  /*index search box*/
+.index-upper{
+  text-align: center;
+  position: relative;
+}
+.index-upper #index_pic{
+  width: 90em;
+  height: fit-content;
+  margin-top: -4.5em;
+}
+
+.rounded_btn_div{
+  text-align: center;
+}
+.rounded_btn{
+  background-color:#9DB3FF; 
+  color: black; 
+  border: 1px solid #9DB3FF;
+  border-radius: 25px; 
+  min-width: 150px; 
+  height: 50px; 
+  font-size: 20px;
+}
+.rounded_btn:hover{
+  border-color: black;
 }
