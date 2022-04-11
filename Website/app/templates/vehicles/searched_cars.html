@@ -1,8 +1,9 @@
 {% extends "base.html" %} {% import 'bootstrap/wtf.html' as wtf %} {% block
 app_content %}
+
 <div class="row fade-in-content">
-  <div align="center">
-    {% for car in cars %}
+  <div>
+    {% for car in fcars %}
     <div class="car-box gallery">
       <a href="{{ url_for('main.vehicle', id=car.id) }}">
         <img
@@ -11,10 +12,7 @@ app_content %}
         />
       </a>
       <div class="desc">
-        <p>
-          Make: {{make.get(car.make_id)}} <span>&#8226;</span> Model:
-          {{model.get(car.model_id)}}
-        </p>
+        <p>Make: {{make}} <span>&#8226;</span> Model: {{model}}</p>
         <p>
           Reg. year: {{car.year}} <span>&#8226;</span> Mileage: {{car.mileage}}
           <span>&#8226;</span> Price: £{{car.price}}

@@ -172,14 +172,6 @@ def vehicle(id):
     return render_template('vehicles/car_page.html', car=vehicle_to_render, makes=makes_for_render, models=models_for_render, history=history_for_render)
 
 
-@main.route('/cars/all', methods=['GET', 'POST'])
-def viewAllCars():
-    cars = Vehicles.query.order_by(Vehicles.id.asc())
-    make = Make.query.order_by(Make.make_id.asc())
-    model = Model.query.order_by(Model.model_id.asc())
-    return render_template('vehicles/all_cars.html', cars=cars, make=make, model=model)
-
-
 @main.route('/trade-in', methods=['GET', 'POST'])
 @login_required
 def trade_in():
@@ -366,6 +358,12 @@ def allReviews():
     return render_template('vehicles/all_car_reviews.html', rev=rev)
 
 
+@main.route('/car_reviews/<id>', methods=['GET', 'POST'])
+def review(id):
+    rev = CarReview.query.get_or_404(id)
+    return render_template('vehicles/car_review_page.html', rev=rev)
+
+
 @main.route('/car_reviews/add', methods=['GET', 'POST'])
 def addReview():
     form = ReviewForm()
@@ -406,6 +404,37 @@ def catReviews():
         search_msg = f'{len(ctrev)} review(s) found'
 
     return render_template('vehicles/categorized_car_reviews.html', ctrev=ctrev, rev=rev, smg=search_msg)
+
+
+@main.route('/cars/all', methods=['GET', 'POST'])
+def viewAllCars():
+    cars = Vehicles.query.order_by(Vehicles.id.asc())
+    make = Make.query.order_by(Make.make_id.asc())
+    model = Model.query.order_by(Model.model_id.asc())
+    return render_template('vehicles/all_cars.html', cars=cars, make=make, model=model)
+
+
+@main.route('/cars/search', methods=['GET', 'POST'])
+def viewSearchedCars():
+    fcars = Vehicles.query.order_by(Vehicles.id.asc())
+    fmake = Make.query.order_by(Make.make_id.asc())
+    fmodel = Model.query.order_by(Model.model_id.asc())
+
+    t_make = request.form['make']
+    t_model = request.form['model']
+    t_color = request.form['color']
+    t_registration_1 = request.form['registration_1']
+    t_registration_2 = request.form['registration_2']
+    t_price_1 = request.form['price_1']
+    t_price_2 = request.form['price_2']
+    t_mileage_1 = request.form['mileage_1']
+    t_mileage_2 = request.form['mileage_2']
+
+    return render_template('vehicles/searched_cars.html',
+                           fcars=fcars, make=t_make, model=t_model, color=t_color,
+                           registration_1=t_registration_1, registration_2=t_registration_2,
+                           price_1=t_price_1, price_2=t_price_2, mileage_1=t_mileage_1,
+                           mileage_2=t_mileage_2)
 
 
 @main.route('/history')
