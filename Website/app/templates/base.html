@@ -118,6 +118,23 @@
 </script>
 
 <script>
+  var coll = document.getElementByClassName("collapsible");
+  var i;
+
+  for (i=0; i < coll.length; i++){
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("pressed");
+      var collapsibleBody = this.nextElementSibling;
+      if (collapsibleBody.style.maxHeight) {
+        collapsibleBody.style.maxHeight = null;
+      } else {
+        collapsibleBody.style.maxHeight = collapsibleBody.scrollHeight + "px";
+      }
+    });
+  }
+</script>
+
+<script>
   const selected = document.querySelector(".selected");
   const optionsContainer = document.querySelector(".options-container");
   const optionsList = document.querySelectorAll(".option");
