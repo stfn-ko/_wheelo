@@ -4,6 +4,9 @@
 {% block app_content %}
 	<div class="container">
 		<form class="checkout form form-horizontal" method="post" role="form">
+			{{ form.hidden_tag() }}
+			{{ wtf.form_errors(form, hiddens="only") }}
+
 			<h2 style="text-align:center;"> Checkout </h2>
 
 			<div class="personal-details">
@@ -13,7 +16,7 @@
 				{{wtf.form_field(form.contactNumber)}}
 
 				<br>
-				
+
 				<h3> Address </h3>
 				{{wtf.form_field(form.address_one)}}
 				{{wtf.form_field(form.address_two)}}

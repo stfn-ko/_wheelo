@@ -248,8 +248,6 @@ def trade_in():
         db.session.add(car)
         db.session.commit()
 
-        vehicle = Vehicles.query.filter(Vehicles.make_id == makeId and Vehicles.model_id ==
-                                        modId and Vehicles.year == form.year.data and Vehicles.color == form.color.data)
         if form.trade.data:
             trade = Trade(
                 user_id=int(current_user.get_id()),
@@ -297,17 +295,15 @@ def checkout(id):
     trading = Trade.query.order_by(Trade.trade_id.asc())
 
     if form.validate_on_submit():
-        trade_delete = Trade.query.filter(Trade.user_id == current_user.id)
-        try:
+        if current_user.get_id():
+            trade_delete = Trade.query.filter(Trade.user_id == current_user.get_id()).first()
             db.session.delete(trade_delete)
-            db.session.delete(vehicle_to_render)
-            db.session.commit()
-            flash('Your purchase was successful!', 'success')
+            
+        db.session.delete(vehicle_to_render)
+        db.session.commit()
+        flash('Your purchase was successful!', 'success')
 
-        except:
-            flash('Trading error! Your purchase should have been successful but we may be in contact over the trade details.')
-
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.viewAllCars'))
 
     return render_template('checkout.html', form=form, car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trading=trading)
 
