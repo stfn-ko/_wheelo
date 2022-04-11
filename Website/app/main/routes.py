@@ -412,9 +412,13 @@ def viewAllCars():
 
 @main.route('/cars/search', methods=['GET', 'POST'])
 def viewSearchedCars():
-    fcars = Vehicles.query.order_by(Vehicles.id.asc())
-    fmake = Make.query.order_by(Make.make_id.asc())
+    def intersection(lst1, lst2):
+        lst3 = [value for value in lst1 if value in lst2]
+        return lst3
+
+    result = Vehicles.query.order_by(Vehicles.id.asc())
     fmodel = Model.query.order_by(Model.model_id.asc())
+    fmake = Make.query.order_by(Make.make_id.asc())
 
     t_make = request.form['make']
     t_model = request.form['model']
@@ -426,11 +430,60 @@ def viewSearchedCars():
     t_mileage_1 = request.form['mileage_1']
     t_mileage_2 = request.form['mileage_2']
 
-    return render_template('vehicles/searched_cars.html',
-                           fcars=fcars, make=t_make, model=t_model, color=t_color,
-                           registration_1=t_registration_1, registration_2=t_registration_2,
-                           price_1=t_price_1, price_2=t_price_2, mileage_1=t_mileage_1,
-                           mileage_2=t_mileage_2)
+    if t_price_1 == '':
+        t_price_1 = 0
+    if t_registration_1 == '':
+        t_registration_1 = 0
+    if t_mileage_1 == '':
+        t_mileage_1 = 0
+
+    if t_price_2 == '':
+        t_price_2 = 9999999999
+    elif int(t_price_2) > 9999999999:
+        t_price_2 = 9999999999
+    if t_registration_2 == '':
+        t_registration_2 = 9999999999
+    elif int(t_registration_2) > 9999999999:
+        t_registration_2 = 9999999999
+    if t_mileage_2 == '':
+        t_mileage_2 = 9999999999
+    elif t_mileage_2 > 9999999999:
+        t_mileage_2 = 9999999999
+
+    make_filter = Make.query.filter_by(make_name=t_make).first()
+    model_filter = Model.query.filter_by(
+        model_name=t_model.capitalize()).first()
+    color_filter = Vehicles.query.filter_by(color=t_color.lower()).all()
+    registration_filter = intersection(Vehicles.query.filter(Vehicles.year > t_registration_1).all(),
+                                       Vehicles.query.filter(Vehicles.year < t_registration_2).all())
+    price_filter = intersection(Vehicles.query.filter(Vehicles.price > t_price_1).all(),
+                                Vehicles.query.filter(Vehicles.price < t_price_2).all())
+    mileage_filter = intersection(Vehicles.query.filter(Vehicles.mileage > t_mileage_1).all(),
+                                  Vehicles.query.filter(Vehicles.mileage < t_mileage_2).all())
+    if int(t_price_1) < int(t_price_2):
+        if int(t_registration_1) < int(t_registration_2):
+            if int(t_mileage_1) < int(t_mileage_2):
+
+                if t_make != 'any':
+                    result = Vehicles.query.filter_by(
+                        make_id=make_filter.make_id).all()
+                    if t_model != '' and model_filter is not None:
+                        result = Vehicles.query.filter_by(
+                            model_id=model_filter.model_id, make_id=make_filter.make_id)
+
+                if t_color != '' and color_filter is not None:
+                    result = intersection(color_filter, result)
+
+                if price_filter is not None:
+                    result = intersection(price_filter, result)
+
+                if registration_filter is not None:
+                    result = intersection(registration_filter, result)
+
+                if mileage_filter is not None:
+                    result = intersection(mileage_filter, result)
+
+    return render_template('vehicles/searched_cars.html', result=result, model=fmodel, make=fmake)
 
 
 @main.route('/history')

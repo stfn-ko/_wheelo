@@ -15,7 +15,7 @@
             <select class="select-make-box" name="make" id="make">
               <option class="option" name="any">any</option>
               {% for get in makes %}
-                <option class="option" name="{{get.make_name}}">{{get.make_name}}</option>
+                <option class="option" name="{{get.make_name}}"> {{get.make_name}}</option>
               {% endfor %}
             </select>
           </div>
@@ -58,8 +58,8 @@
           <label for="price_1"><h1 id="price-text">Price</h1></label>
           <label for="price_2"></label>
           <div class="select-price-box">
-            <input type="text" id="price_1" name="price_1" />
-            <input type="text" id="price_2" name="price_2" />
+            <input type="number" step="100" id="price_1" name="price_1" min="0"/>
+            <input type="number" step="100" id="price_2" name="price_2" />
           </div>
         </div>
         
@@ -67,8 +67,8 @@
           <label for="mileage_1"><h1 id="mileage-text">Mileage</h1></label>
           <label for="mileage_2"></label>
         <div class="select-mileage-box">
-          <input type="text" id="mileage_1" name="mileage_1" />
-          <input type="text" id="mileage_2" name="mileage_2" />
+          <input type="number" step="1000" id="mileage_1" name="mileage_1" min="0"/>
+          <input type="number" step="1000" id="mileage_2" name="mileage_2" />
         </div>
         </div>
         
@@ -95,7 +95,7 @@
                   <a href="{{ url_for('main.editPost', id = p.id) }}" 
                   class="box-edit" id="non-btn">edit</a>
                 {% else %}
-                  <a class="box-user" id="non-btn">edit</a>
+                  <a class="box-user" id="non-btn-hide">edit</a>
                 {% endif %}
 
                 {%if p.picture != 'default.jpg' %}

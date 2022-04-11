@@ -2,25 +2,26 @@
 app_content %}
 
 <div class="row fade-in-content">
-  <div>
-    {% for car in fcars %}
-    <div class="car-box gallery">
-      <a href="{{ url_for('main.vehicle', id=car.id) }}">
-        <img
-          class="car_img"
-          src="{{ url_for('static', filename='car_pics/' + car.pictures + '/1.jpg') }}"
-        />
-      </a>
-      <div class="desc">
-        <p>Make: {{make}} <span>&#8226;</span> Model: {{model}}</p>
-        <p>
-          Reg. year: {{car.year}} <span>&#8226;</span> Mileage: {{car.mileage}}
-          <span>&#8226;</span> Price: £{{car.price}}
-        </p>
-      </div>
+  {% for r in result %}
+  <div class="car-box gallery">
+    <a href="{{ url_for('main.vehicle', id=r.id) }}">
+      <img
+        class="car_img"
+        src="{{ url_for('static', filename='car_pics/' + r.pictures + '/1.jpg') }}"
+      />
+    </a>
+    <div class="desc">
+      <p>
+        Make: {{make.get(r.make_id)}} <span>&#8226;</span> Model:
+        {{model.get(r.model_id)}}
+      </p>
+      <p>
+        Reg. year: {{r.year}} <span>&#8226;</span> Mileage: {{r.mileage}}
+        <span>&#8226;</span> Price: £{{r.price}}
+      </p>
     </div>
-    {% endfor %}
   </div>
+  {% endfor %}
 </div>
 
 {% endblock %}

@@ -220,7 +220,7 @@ input[type=file] {
 /*blog*/
 .blog{
   width: 70em;
-  height: 31em;
+  height: 33em;
   margin: auto;
   margin-top: 3em;
   margin-bottom: 6em;
@@ -232,8 +232,14 @@ input[type=file] {
 #non-btn{
   text-decoration: none;
 }
+#non-btn-hide{
+  text-decoration: none;
+}
 #non-btn:hover{
   color: inherit;
+}
+#non-btn-hide{
+  color: transparent;
 }
 .header-text{
   font-size: 4em;
