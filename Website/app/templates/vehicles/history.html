@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% import 'bootstrap/wtf.html' as wtf %} 
+{% block app_content %}
+    <div class="row fade-in-content">
+        <h2 style="text-align: center;"> Vehicle History Checks </h2>
+        <br>
+        <h3> Full history checks: </h3>
+        <a href="https://www.autocheck.co.uk/"> 
+            <img class="history_img" src="static/experian_logo.png">
+        </a>
+        <br>
+        <br>
+        <h3> MOT checks: </h3>
+        <a href="https://www.gov.uk/check-mot-history">
+            <img class="history_img" src="static/gov_logo.png">
+        </a>
+    </div>
+
+{% endblock %}

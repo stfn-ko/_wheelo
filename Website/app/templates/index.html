@@ -112,6 +112,10 @@
             class="active"
           ></li>
           <li data-target="#information_carousel" data-slide-to="1"></li>
+          <li data-target="#information_carousel" data-slide-to="2"></li>
+          <li data-target="#information_carousel" data-slide-to="3"></li>
+
+
         </ol>
 
         <!-- Wrapper for slides -->
@@ -123,10 +127,28 @@
             </div>
           </div>
           <div class="item">
-            <img src="static/information_slide_pics/slide_two.png" />
-            <div class="carousel-caption d-none d-md-block">
-              <h4>trade in your car for money off a new one</h4>
-            </div>
+            <a class="carousel-text" href="{{ url_for('main.trade_in') }}">
+              <img src="static/information_slide_pics/slide_two.png" />
+              <div class="carousel-caption d-none d-md-block">
+                <h4>trade in your car for money off a new one</h4> 
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a class="carousel-text" href="{{ url_for('main.history') }}">
+              <img src="static/information_slide_pics/slide_three.png" />
+              <div class="carousel-caption d-none d-md-block">
+                <h4>check vehicle history</h4>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a class="carousel-text" href="{{ url_for('main.FAQs') }}">
+              <img src="static/information_slide_pics/slide_four.png" />
+              <div class="carousel-caption d-none d-md-block">
+                <h4 style="color: black;">get all your questions answered</h4>
+              </div>
+            </a>
           </div>
         </div>
 

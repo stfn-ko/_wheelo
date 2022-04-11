@@ -8,10 +8,21 @@
 		<form class="form form-horizontal" method="post" role="form">
 			{{ form.hidden_tag() }}
 			{{ wtf.form_errors(form, hiddens="only") }}
-			<h3 style="text-align:center;"> Please enter your details </h3>
+			<h3 style="text-align:center;"> Please enter your payment details </h3>
 			{{wtf.form_field(form.name)}}
 			{{wtf.form_field(form.sortCode)}}
 			{{wtf.form_field(form.accountNum)}}
+
+			<br>
+
+			<h3 style="text-align: center;"> Please enter the address we can collect the car from </h3>
+			{{wtf.form_field(form.address_one)}}
+			{{wtf.form_field(form.address_two)}}
+			{{wtf.form_field(form.city)}}
+			{{wtf.form_field(form.postcode)}}
+
+			<br>
+
 			{{wtf.form_field(form.submit, class="btn btn-info btn-block")}}
 		</form>
 
