@@ -32,29 +32,28 @@
   />
 </a>
 <nav class="sidenav">
-  <a href=" {{ url_for('main.index') }} " id="index" title="home">home</a>
+  <a href=" {{ url_for('main.index') }}">home</a>
 
-  <a href="{{ url_for('main.viewAllCars') }}" id="cars" title="cars">cars</a>
-  
-  <a href="{{ url_for('main.allReviews') }}" title="car reviews">car reviews</a>
-  
-  <a href="{{ url_for('main.insurance') }}" title="car insurance">car insurance</a>
+  <a href="{{ url_for('main.viewAllCars') }}">cars</a>
 
-  <a href="{{ url_for('main.trade_in') }}" title="trade in">trade in</a>
+  <a href="{{ url_for('main.allReviews') }}">car reviews</a>
 
-  <a href="{{ url_for('main.FAQs') }}" id="questions" title="FAQs">faq</a>
+  <a href="{{ url_for('main.insurance') }}">car insurance</a>
 
-  <a href="{{ url_for('main.contact') }}" id="contact" title="contact us">contact us</a>
+  <a href="{{ url_for('main.trade_in') }}">trade in</a>
+
+  <a href="{{ url_for('main.FAQs') }}">faq</a>
+
+  <a href="{{ url_for('main.contact') }}">contact us</a>
 
   {%if current_user.is_authenticated%} {% if current_user.admin %}
-  <a href="{{ url_for('auth.admin') }}" id="auth-complete" title="users list">admin</a>
+  <a href="{{ url_for('auth.admin') }}" id="auth-complete">admin</a>
   {% endif %}
-  <a href="{{ url_for('auth.logout') }}" id="logout" title="logout">logout</a>
+  <a href="{{ url_for('auth.logout') }}" id="logout">logout</a>
   {% else %}
-  <a href="{{ url_for('auth.login') }}" id="auth" title="login">login</a>
+  <a href="{{ url_for('auth.login') }}" id="auth">login</a>
   {% endif %}
 </nav>
-
 
 {% endblock %} {% block content %}
 <div class="container">
@@ -119,24 +118,6 @@
 </script>
 
 <script>
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function () {
-      this.classList.toggle("pressed");
-      var collapsibleBody = this.nextElementSibling;
-      if (collapsibleBody.style.maxHeight) {
-        collapsibleBody.style.maxHeight = null;
-      } else {
-        collapsibleBody.style.maxHeight = collapsibleBody.scrollHeight + "px";
-      }
-    });
-  }
-</script>
-
-
-<script>
   const selected = document.querySelector(".selected");
   const optionsContainer = document.querySelector(".options-container");
   const optionsList = document.querySelectorAll(".option");
@@ -152,4 +133,5 @@
     });
   });
 </script>
+
 {% endblock %}

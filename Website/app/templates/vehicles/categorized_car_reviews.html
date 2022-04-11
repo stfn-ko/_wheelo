@@ -1,0 +1,24 @@
+{% extends "base.html" %} 
+{% block app_content %}
+
+{% include 'vehicles/car_reviews.html' %}
+
+<div class="row fade-in-content">
+    {%for r in ctrev%}
+    <div>
+        <a href="#">
+            {%if r.image != 'default.jpg' %}
+            <div class="center-img">
+                <img
+                src="{{ url_for('static', filename='car_review_pics/' + r.image) }}"
+                />
+            </div>
+            {% endif %}
+            <p class="___">{{ r.title }}</p>
+            <p class="___">{{ r.caption }}</p>
+            <p class="___">{{ r.category }}</p>
+        </a>
+    </div>
+    {%endfor%}
+</div>
+{% endblock %}

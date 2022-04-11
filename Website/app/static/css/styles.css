@@ -336,6 +336,70 @@ html::-webkit-scrollbar-thumb {
 }
 /*end of select box*/
 
+/*category search*/
+.review-box{
+  margin: auto;
+}
+.search-cat-box{
+  width: 54em;
+  margin: auto;
+  margin-top: 0em;
+  margin-bottom: 5em;
+  position: relative;
+  border-radius: 70px;
+}
+.select-box-content{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.search-btn{
+  font-weight: bolder;
+  font-size: 2.38em;
+  width: 5em;
+  margin-left: 1em;
+  color: #3F69FF;
+  background: white;
+  border-radius: 50px;
+  border: 12px solid;
+  transition: 0.5s;
+}
+.search-btn:hover{
+  color: white;
+  border-color: #3F69FF;
+  background: #3F69FF;
+}
+#cat{
+  margin-top: 2em;
+  margin-left: 3em;
+  height: 14em;
+  flex-grow: 5;
+  margin-bottom: 2em;
+}
+#cat-text {
+  color: #3F69FF;
+  font-weight: bolder;
+  font-size: 4em;
+  padding-top: 0.3em;
+  margin-left: 0.5em;
+}
+.select-cat-box{
+  width: 50%;
+  margin-left: 3em;
+  color: #3F69FF;
+  padding-left: 0.5em;
+  font-size: 2.3em;
+  border: 0.4em solid;
+  border-radius: 50px;
+  font-weight: bolder;
+}
+.select-cat-box .option:hover{
+  color: #002f8e;
+  background-color: #f5f5f5;
+}
+
+/*end of category search*/
+
 /*end of search*/
 
 /*blog*/

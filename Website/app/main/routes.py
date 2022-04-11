@@ -150,7 +150,8 @@ def editPost(id):
             post.title = request.form['title']
             post.caption = request.form['caption']
             if form.picture.data:
-                post.picture = save_picture(form.picture.data, 'static/post_pics')
+                post.picture = save_picture(
+                    form.picture.data, 'static/post_pics')
             db.session.commit()
             return(redirect(url_for('main.index')))
         if request.method == 'POST' and form.delete.data:
@@ -227,13 +228,16 @@ def trade_in():
         # f.save(secure_filename(f.filename))
 
         if form.picture_one.data:
-            image_file_one = save_picture(form.picture_one.data, 'static/car_pics')
+            image_file_one = save_picture(
+                form.picture_one.data, 'static/car_pics')
 
         if form.picture_two.data:
-            image_file_two = save_picture(form.picture_two.data, 'static/car_pics')
+            image_file_two = save_picture(
+                form.picture_two.data, 'static/car_pics')
 
         if form.picture_three.data:
-            image_file_three = save_picture(form.picture.data, 'static/car_pics')
+            image_file_three = save_picture(
+                form.picture.data, 'static/car_pics')
 
         car = Vehicles(
             make_id=int(makeId),
@@ -352,10 +356,10 @@ def insurance():
     return render_template('vehicles/car_insurance.html', form=form)
 
 
-@main.route('/car_reviews', methods=['GET', 'POST'])
+@main.route('/car_reviews/all', methods=['GET', 'POST'])
 def allReviews():
     rev = CarReview.query.order_by(CarReview.id.asc())
-    return render_template('vehicles/car_reviews.html', rev=rev)
+    return render_template('vehicles/all_car_reviews.html', rev=rev)
 
 
 @main.route('/car_reviews/add', methods=['GET', 'POST'])
@@ -377,3 +381,24 @@ def addReview():
         db.session.commit()
         return redirect(url_for('main.allReviews'))
     return render_template('vehicles/add_review.html', form=form)
+
+
+@main.route('/car_reviews/categorized', methods=['GET', 'POST'])
+def catReviews():
+    ctrev = None
+    rev = CarReview.query.order_by(CarReview.id.asc())
+    target_string = request.form['category']
+
+    if request.method == 'POST':
+        ctrev = CarReview.query.filter(
+            or_(
+                CarReview.category.contains(target_string),
+                CarReview.title.contains(target_string)
+            )).all()
+
+    if target_string == 'any':
+        return redirect(url_for('main.allReviews'))
+    else:
+        search_msg = f'{len(ctrev)} review(s) found'
+
+    return render_template('vehicles/categorized_car_reviews.html', ctrev=ctrev, rev=rev, smg=search_msg)

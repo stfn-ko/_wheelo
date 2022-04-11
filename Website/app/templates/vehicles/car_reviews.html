@@ -1,39 +1,24 @@
-{% extends "base.html" %} 
-{% import 'bootstrap/wtf.html' as wtf %} 
-{% block app_content %}
 <div class="row fade-in-content">
-  <form class="review-form" method="POST" action="#">
-    <div class="form-group">
-      <input
-        class="form-control mr-sm-2"
-        placeholder="Search"
-        aria-label="Search"
-        type="text"
-        name="search"
-      />
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-        Search
-      </button>
+  <form
+    class="review-form"
+    method="POST"
+    action="{{ url_for('main.catReviews') }}"
+  >
+    <div class="search-cat-box">
+      <div class="search-field" id="cat">
+        <label for="category" id="cat-text">search by make</label>
+        <div class="select-box-content">
+          <select class="select-cat-box" name="category" id="category">
+            <option class="option" name="any">any</option>
+            {% for get in rev %}
+            <option class="option" name="{{get.category}}">
+              {{get.category}}
+            </option>
+            {% endfor %}
+          </select>
+          <input class="search-btn" type="submit" value="search" />
+        </div>
+      </div>
     </div>
   </form>
-
-  <a href="{{url_for('main.addReview')}}">foo</a>
-
-  {%for r in rev%}
-  <div>
-      <a href="#">
-        {%if r.image != 'default.jpg' %}
-            <div class="center-img">
-                <img
-                src="{{ url_for('static', filename='car_review_pics/' + r.image) }}">
-            </div>
-        {% endif %}
-        <p class="___">{{ r.title }}</p>
-        <p class="___">{{ r.caption }}</p>
-        <p class="___">{{ r.category }}</p>
-      </a>
-  </div>
-  {%endfor%}
-
 </div>
-{% endblock %}

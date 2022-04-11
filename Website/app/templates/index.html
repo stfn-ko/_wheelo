@@ -16,10 +16,10 @@
                   <input
                     type="vehicle"
                     class="vehicle"
-                    id="make-ch"
+                    id="{{get.make_id}}"
                     name="category"
                   />
-                  <label for="make-ch">{{get.make_name}}</label>
+                  <label for="{{get.make_id}}">{{get.make_name}}</label>
                 </div>
                 {% endfor %}
               </div>
@@ -208,3 +208,4 @@
 
   </div>
 {% endblock %}
+
