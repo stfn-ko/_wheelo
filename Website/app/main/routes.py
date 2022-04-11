@@ -293,7 +293,7 @@ def overview(id):
     makes_for_render = Make.query.order_by(Make.make_id.asc())
     models_for_render = Model.query.order_by(Model.model_id.asc())
     trading = Trade.query.order_by(Trade.trade_id.asc())
-    return render_template('product_cart.html', car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trading=trading)
+    return render_template('order_overview.html', car=vehicle_to_render, makes=makes_for_render, models=models_for_render, trading=trading)
 
 
 @main.route('/checkout/<id>', methods=['GET', 'POST'])
