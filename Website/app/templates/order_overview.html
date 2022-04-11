@@ -33,9 +33,17 @@
 			{% endif %}
 		{% endfor %}
 
+		<div class="one-row">
+			<h3> Delivery Fee </h3>
+			<h3> £0 </h3>
+		</div>
+
 		<br>
+		<br>
+
 		<div class="rounded_btn_div">
-			<a  href="{{ url_for('main.checkout', id=car.id) }}"><button class="rounded_btn"> Checkout </button>
+			<a  href="{{ url_for('main.checkout', id=car.id) }}"><button class="rounded_btn"> Checkout </button></a>
+			<a href="{{ url_for('main.vehicle', id=car.id) }}"><button class="rounded_btn"> Cancel </button></a>
 		</div>
 
 
