@@ -5,8 +5,8 @@
 
 <div class="row fade-in-content">
     {%for r in rev%}
-    <div>
-        <a href="#">
+    <div class="___">
+        <a href="{{ url_for('main.review', id = r.id) }}" >
             {%if r.image != 'default.jpg' %}
             <div class="center-img">
                 <img
@@ -15,7 +15,7 @@
             </div>
             {% endif %}
             <p class="___">{{ r.title }}</p>
-            <p class="___">{{ r.caption }}</p>
+            <p class="___">{{ r.preview_text }}</p>
             <p class="___">{{ r.category }}</p>
         </a>
     </div>
