@@ -4,80 +4,78 @@
 <div class="row fade-in-content">
   <div class="index-upper">
     <img src="{{ url_for('static', filename='index_pic.png') }}" id="index_pic"/>
-    <form
-    class="review-form"
-    method="POST"
-    action="{{ url_for('main.viewSearchedCars') }}">
-
+    <div class="search-form-box" id="bold-header-text">
+      <form class="search-form" method="POST" action="{{ url_for('main.viewSearchedCars') }}">
+        
         <div class="search-field" id="make">
-          <label for="make" id="make-text"><h1 class="make-text">Make</h1></label>
+          <label for="make"><h1 class="in-field-text">Make</h1></label>
           <div class="select-box-content">
-            <select class="select-make-box" name="make" id="make">
+            <select class="select-box" name="make" id="make">
               <option class="option" name="any">any</option>
               {% for get in makes %}
-                <option class="option" name="{{get.make_name}}"> {{get.make_name}}</option>
+              <option class="option" name="{{get.make_name}}"> {{get.make_name}}</option>
               {% endfor %}
             </select>
           </div>
         </div>
-
+        
         
         <div class="search-field" id="model">
-          <label for="model"><h1 id="model-text">Model</h1></label>   
-          <div class="select-model-box">
-            <input type="text" id="model" name="model"/>
+          <label for="model"><h1 class="in-field-text">Model</h1></label>   
+          <div class="input-box">
+            <input type="text" id="model" name="model" autocomplete="off"/>
           </div>
         </div>
         
         <div class="search-field" id="color">
-          <label for="color"><h1 id="color-text">Color</h1></label>  
-          <div class="select-color-box">
-            <input type="text" id="color" name="color" />
+          <label for="color"><h1 class="in-field-text">Color</h1></label>  
+          <div class="input-box">
+            <input type="text" id="color" name="color" autocomplete="off"/>
           </div>
         </div>
         
         <div class="search-field" id="registration">
-          <label for="registration_1"><h1 id="registration-text">Registration</h1></label>  
-          <select class="select-reg-box" name="registration_1" id="registration_1">
+          <label for="registration_1"><h1 class="in-field-text">Registration</h1>from</label>  
+          <select class="select-box" name="registration_1" id="registration_1">
             <option class="option" name="reg" #id="0"></option>
             {% for y in range(2022,1941,-1) %}
             <option class="option" name="reg" #id="{{y}}">{{y}}</option>
             {% endfor %}
           </select>
-          <label for="registration_2"></label>  
-          <select class="select-reg-box" name="registration_2" id="registration_2">
-                <option class="option" name="reg" #id="0"></option>
-                {% for y in range(2022,1941,-1) %}
-                  <option class="option" name="reg" #id="{{y}}">{{y}}</option>
-                {% endfor %}
-              </select>
-          </div>
+          <label for="registration_2">to</label>  
+          <select class="select-box" name="registration_2" id="registration_2">
+            <option class="option" name="reg" #id="0"></option>
+            {% for y in range(2022,1941,-1) %}
+            <option class="option" name="reg" #id="{{y}}">{{y}}</option>
+            {% endfor %}
+          </select>
         </div>
         
         <div class="search-field" id="price">
-          <label for="price_1"><h1 id="price-text">Price</h1></label>
+          <label for="price_1"><h1 class="in-field-text">Price</h1></label>
           <label for="price_2"></label>
-          <div class="select-price-box">
-            <input type="number" step="100" id="price_1" name="price_1" min="0"/>
-            <input type="number" step="100" id="price_2" name="price_2" />
+          <div class="input-box">
+            <input type="number" step="100" id="price_1" name="price_1" min="0" autocomplete="off" placeholder="from"/>
+            <input type="number" step="100" id="price_2" name="price_2" autocomplete="off" placeholder="to"/>
           </div>
         </div>
         
         <div class="search-field" id="mileage">
-          <label for="mileage_1"><h1 id="mileage-text">Mileage</h1></label>
+          <label for="mileage_1"><h1 class="in-field-text">Mileage</h1></label>
           <label for="mileage_2"></label>
-        <div class="select-mileage-box">
-          <input type="number" step="1000" id="mileage_1" name="mileage_1" min="0"/>
-          <input type="number" step="1000" id="mileage_2" name="mileage_2" />
-        </div>
+          <div class="input-box">
+            <input type="number" step="1000" id="mileage_1" name="mileage_1" min="0" autocomplete="off" placeholder="from"/>
+            <input type="number" step="1000" id="mileage_2" name="mileage_2" autocomplete="off" placeholder="to"/>
+          </div>
         </div>
         
-        <button type="submit" class="search-btn">Search</button>
-
-    </form>
+        <button type="submit" class="search-form-btn">Search</button>
+        
+      </form>
+    </div>
   </div>
     
-        
+    
       <div class="blog">
         {% if current_user.admin %}
           <h2 class="header-text" id="admin">Blog<a href="{{ url_for('main.newPost') }}" id="admin-new">"new"</a></h2> 

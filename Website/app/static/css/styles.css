@@ -155,6 +155,7 @@ input[type=file] {
 .review-box{
   margin: auto;
 }
+
 .search-cat-box{
   width: 54em;
   margin: auto;
@@ -162,9 +163,11 @@ input[type=file] {
   margin-bottom: 5em;
   position: relative;
   border-radius: 70px;
+  box-shadow: 0px 0px 20px 1px grey;
 }
 .select-box-content{
   display: flex;
+  margin-top: 1em;
   flex-direction: row;
   align-items: flex-start;
 }
@@ -176,13 +179,13 @@ input[type=file] {
   color: #3F69FF;
   background: white;
   border-radius: 50px;
-  border: 12px solid;
+  border: 12px solid white;
   transition: 0.5s;
 }
 .search-btn:hover{
   color: white;
-  border-color: #3F69FF;
   background: #3F69FF;
+  border: 12px solid white;
 }
 #cat{
   margin-top: 2em;
@@ -214,8 +217,6 @@ input[type=file] {
 }
 
 /*end of category search*/
-
-/*end of search*/
 
 /*blog*/
 .blog{
@@ -475,16 +476,113 @@ input[type=file] {
 
   
   /*index search box*/
+.search-form-box{
+  width: 65em;
+  height: auto;
+  margin: auto;
+  margin-top: -9em;
+  margin-bottom: 5em;
+  position: relative;
+  background: #3F69FF;
+  border-radius: 70px;
+  box-shadow: 0px 0px 20px 1px grey;
+}
+.search-form{
+  display: flex;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: flex-start;
+  font-weight: bolder;
+  color: #3F69FF;
+  padding: 3em;
+}
+.search-field-rev{
+  flex-basis: min-content;
+  border-radius: 40px;
+  height: 10em;
+  text-align: initial;
+  margin: 0.8em;
+}
+.search-field{
+  background: white;
+  flex-basis: min-content;
+  border-radius: 40px;
+  width: 18em;
+  height: 10em;
+  text-align: initial;
+  margin: 0.8em;
+  box-shadow: 0px 2px 15px 2px #002f8e;
+}
+#make.search-field{
+  flex-grow: 5;
+  font-size: 1.3em;
+  padding-left: 2em;
+}
+#model.search-field{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#color.search-field{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#registration.search-field{
+  display: flex;
+  flex-direction: row;
+  padding: 5.14em;
+  padding-right: 7.2em;
+  padding-left: 3em;
+  padding-top: 0em;
+  padding-bottom: 11.5em;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+#price, #mileage.search-field {
+  display: flex;
+  flex-direction: column;
+  height: 17em;
+  font-size: 0.88em;
+  align-items: center;
+  margin: 0.795em;
+  flex-wrap: nowrap;
+  margin-top: -3em;
+}
+.search-form-btn{
+  font-weight: bolder;
+  font-size: 2.38em;
+  width: 100%;
+  margin-top: 0.5em;
+  color: white;
+  background: #3F69FF;
+  border-radius: 50px;
+  border: 12px solid white;
+  transition: 0.5s;
+  box-shadow: 0px 2px 15px 2px #002f8e;
+}
+.search-form-btn:hover{
+  color: #3F69FF;
+  background: white;
+  box-shadow: 0px 2px 10px 2px #b1b1b1;
+}
 .index-upper{
   text-align: center;
   position: relative;
+  width: 100%;
 }
 .index-upper #index_pic{
-  width: 90em;
+  width: 100%;
   height: fit-content;
   margin-top: -4.5em;
 }
-
+.in-field-text{
+  font-size: 3em;
+  font-weight: bolder;
+}
 .rounded_btn_div{
   text-align: center;
 }
@@ -499,4 +597,44 @@ input[type=file] {
 }
 .rounded_btn:hover{
   border-color: black;
+}
+label {
+  display: contents;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+#make select.select-box{
+  border: 12px solid #9DB3FF;
+  border-radius: 50px;
+  width: 10em;
+  font-size: 1.6em;
+  padding-left: 0.5em;
+  margin-right: auto;
+}
+select.select-box{
+  border: 12px solid #9DB3FF;
+  border-radius: 50px;
+  padding-left: 1em;
+  margin-right: auto;
+}
+input[type=text]{
+  border: 12px solid #9DB3FF;
+  border-radius: 50px;
+  text-align: start;
+  margin: 1.5em;
+  width: 10em;
+  padding-left: 0.5em;
+  margin-top: 0em;
+}
+input[type=number]{
+  border: 12px solid #9DB3FF;
+  border-radius: 50px;
+  padding-left: 1em;
+  width: 12em;
+  text-align: start;
+  margin: 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  height: 4em;
 }
