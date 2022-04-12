@@ -29,11 +29,11 @@ The greatest project of all times presented by outstanding programmers:
 **3** | *Add a "unique name" plus  a "branding logo" for this site on every page.*  |[`Sprint1`](#sprint-1)|✅|`Stephan`
 **4** | *Implement an "information carousel" (or "slider") on the landing page displaying multiple images (or content) in that single space; it should be captivating enough to force visitors to focus on that information space while improving the overall visual appeal of the website.* |[`Sprint2`](#sprint-2) |✅|`Siobhan`
 **5** | *Site visitors should be able to get back to the landing page quickly and easily.* |[`Sprint2`](#sprint-2) |✅|`Stephan`
-**6** | *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |[`Sprint3`](#sprint-3)||`Stephan`
+**6** | *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |[`Sprint3`](#sprint-3)|✅|`Stephan`
 **7**| *Implement a page/facility to check vehicle history.* |[`Sprint3`](#sprint-3)|✅|`Siobhan`
-**8**| *Implement a page/facility to obtain a quote for car insurance.* |[`Sprint3`](#sprint-3)| |`Stephan`
-**9**| *Implement a car reviews/rating facility.* |[`Sprint3`](#sprint-3)| |`Stephan`
-**10** | *Implement a blog facility.* |[`Sprint3`](#sprint-3)| |`Stephan`
+**8**| *Implement a page/facility to obtain a quote for car insurance.* |[`Sprint3`](#sprint-3)|✅|`Stephan`
+**9**| *Implement a car reviews/rating facility.* |[`Sprint3`](#sprint-3)|✅|`Stephan`
+**10** | *Implement a blog facility.* |[`Sprint3`](#sprint-3)|✅|`Stephan`
 **11** | *Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* |[`Sprint3`](#sprint-3)| |`Stephan`
 **12** | *Implement a  "Trade-in" feature so that "authenticated customers" can trade in their cars.* |[`Sprint3`](#sprint-3)|✅|`Siobhan`
 **13** | *Implement an embedded "car technologies themed" RSS Feed feature on your landing page.* |[`Sprint2`](#sprint-2)|✅|`Siobhan`
@@ -111,7 +111,6 @@ The greatest project of all times presented by outstanding programmers:
  Task | Subtasks | `Dev`
 --- | --- | --- 
 *Site visitiors should be able to search for a car  using filter types like: "make",  "model" "price", age or "colour".* |add css to the rest of the inputs, create flask-html form|`Stephan`
-*Implement a page/facility to obtain instant valuation of a car using info such as e.g. CarReg and Mileage.* ||`Stephan`
 *Implement a car reviews/rating facility.* |add css to reviews|`Stephan`
 *Implement a blog facility.* |add css to post page; add css to all psots page|`Stephan`
 *Implement a page/facility to obtain a quote for car insurance.* ||`Stephan`
