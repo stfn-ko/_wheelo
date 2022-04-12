@@ -289,6 +289,13 @@ input[type=file] {
 .blog-box{
   display: inline-flex;
 }
+.blog-box-all{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
 .story-box{
   width: 220px;
   margin: 3.82em;
@@ -360,6 +367,14 @@ input[type=file] {
   position: absolute;
 }
 /*end of blog*/
+.posts{
+  padding: 3em;
+  color: white;
+  margin-bottom: 6em;
+  border-radius: 70px;
+  background: #3F69FF;
+  box-shadow: 0px 0px 20px 1px grey;
+}
 
 .collapsible{
   border-radius: 25px;

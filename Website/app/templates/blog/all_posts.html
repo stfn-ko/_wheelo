@@ -4,31 +4,35 @@
 
 <div class="row fade-in-content">
     <div class="posts">
-        <h2 style="text-align: center">All Posts</h2>
-        <p style="text-align: center;">
-        Here you can read all of the posts by our writers
-        </p>
+        <h1 style="text-align: center; font-weight:bolder">All Posts</h1>
+        <br>
+        <div class="blog-box-all">
+            {%for x in range(2)%}
+                {%for p in posts%}
+                    <div class="story-box">
+                        {% if current_user.admin %}
+                        <a href="{{ url_for('main.editPost', id = p.id) }}" 
+                        class="box-edit" id="non-btn">edit</a>
+                        {% else %}
+                        <a class="box-user" id="non-btn-hide">edit</a>
+                        {% endif %}
+                        
+                        {%if p.picture != 'default.jpg' %}
+                        <div >
+                            <a class="center-img" href="{{ url_for('main.getPost', id = p.id) }}">
+                            <img class="blog-pic"
+                            src="{{ url_for('static', filename='post_pics/' + p.picture) }}">
+                            </a>
+                        </div>
+                            <a href="{{ url_for('main.getPost', id = p.id) }}" class="blog-title" id="non-btn">{{ p.title }}</a>
+                        {% else %}
+                            <a href="{{ url_for('main.getPost', id = p.id) }}" class="blog-title-solo" id="non-btn">{{ p.title }}</a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endfor %}
 
-        {%for p in posts%}
-            <div class="___">
-                {% if current_user.admin %}
-                <a href="{{ url_for('main.editPost', id = p.id) }}" 
-                class="box-edit">edit</a>
-                {% else %}
-                <a class="box-user">edit</a>
-                {% endif %}
-                
-                {%if p.picture != 'default.jpg' %}
-                <div class="center-img">
-                    <img href="{{ url_for('main.getPost', id = p.id) }}" class="blog-pic" 
-                    src="{{ url_for('static', filename='post_pics/' + p.picture) }}">
-                </div>
-                    <a href="{{ url_for('main.getPost', id = p.id) }}" class="___">{{ p.title }}</a>
-                {% else %}
-                    <a href="{{ url_for('main.getPost', id = p.id) }}" class="___">{{ p.title }}</a>
-                {% endif %}
-            </div>
-        {% endfor %}
+        </div>
     </div>
 </div>
 
