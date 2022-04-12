@@ -5,18 +5,20 @@
 
 <div class="row fade-in-content">
     {%for r in rev%}
-    <div class="___">
-        <a href="{{ url_for('main.review', id = r.id) }}" >
+    <div class="review-container">
+        <a href="{{ url_for('main.review', id = r.id) }}" class="review-body" id="rev-img">
             {%if r.image != 'default.jpg' %}
-            <div class="center-img">
+            <div class="center-img" id="review-image">
                 <img
                 src="{{ url_for('static', filename='car_review_pics/' + r.image) }}"
                 />
             </div>
             {% endif %}
-            <p class="___">{{ r.title }}</p>
-            <p class="___">{{ r.preview_text }}</p>
-            <p class="___">{{ r.category }}</p>
+            <div class="review-text">
+                <p id="review-title">{{ r.title }}</p>
+                <p id="review-prev-text">{{ r.preview_text }}</p>
+                <p id="review-cat">{{ r.category }}</p>
+            </div>
         </a>
     </div>
     {%endfor%}

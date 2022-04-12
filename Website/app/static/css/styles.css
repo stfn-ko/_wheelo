@@ -513,7 +513,11 @@ input[type=file] {
   height: 10em;
   text-align: initial;
   margin: 0.8em;
+  transition: 0.5s;
   box-shadow: 0px 2px 15px 2px #002f8e;
+}
+.search-field:hover{
+  box-shadow: 0px 2px 10px 2px #b1b1b1;
 }
 #make.search-field{
   flex-grow: 5;
@@ -637,4 +641,48 @@ input[type=number]{
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   height: 4em;
+}
+/*end of index search box*/
+
+.review-container{
+  background: #3f69ff;
+  margin: auto;
+  border-radius: 70px;
+  margin-bottom: 3em;
+  width: 80em;
+  height: 15em;
+  box-shadow: 0px 0px 20px 1px grey;
+}
+.review-body{
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: medium;
+  padding: 2.2em;
+  align-items: center;
+}
+.review-body:hover{
+  text-decoration: none;
+  color: white;
+}
+#review-image{
+  padding: 3em;
+}
+.review-text{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+#review-title{
+  font-size: x-large;
+  font-weight: bolder;
+}
+#review-cat{
+  background: #7e9aff;
+  border-radius: 50px;
+  padding: 0.2em;
+  padding-right: 1em;
+  text-decoration: none;
+  padding-left: 1em;
 }
