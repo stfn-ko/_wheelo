@@ -622,7 +622,7 @@ select.select-box{
   padding-left: 1em;
   margin-right: auto;
 }
-input[type=text]{
+input.text-input-box[type=text]{
   border: 12px solid #9DB3FF;
   border-radius: 50px;
   text-align: start;

@@ -2,17 +2,17 @@
 {% block app_content %}
 
 <div class="row fade-in-content">
-  <div class="___">
+  <div class="s-rev-container">
 
     {%if rev.image != 'default.jpg' %}
         <div class="center-img">
-        <img src="{{ url_for('static', filename='car_review_pics/' + rev.image) }}"/>
+        <img class="s-rev-car-img" src="{{ url_for('static', filename='car_review_pics/' + rev.image) }}"/>
         </div>
     {% endif %}
 
-    <p class="___">{{ rev.title }}</p>
-    <p class="___">{{ rev.preview_text }}</p>
-    <p class="___">{{ rev.caption }}</p>
+    <h1 class="s-rev-tile">{{ rev.title }}</h1>
+    <h3 class="s-rev-prev-txt">{{ rev.preview_text }}</h3>
+    <p class="s-rev-cap">{{ rev.caption }}</p>
   </div>
 
 </div>
